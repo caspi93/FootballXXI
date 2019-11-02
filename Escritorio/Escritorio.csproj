@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF66B1E5-B529-4D41-89B3-76F25B82BFA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Escritorio</RootNamespace>
+    <AssemblyName>Escritorio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\ActualizarProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ActualizarProductoForm.Designer.cs">
+      <DependentUpon>ActualizarProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AdministradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministradorForm.Designer.cs">
+      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AgregarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarClienteForm.Designer.cs">
+      <DependentUpon>AgregarClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AgregarProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarProductoForm.Designer.cs">
+      <DependentUpon>AgregarProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\BuscarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\BuscarClienteForm.Designer.cs">
+      <DependentUpon>BuscarClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\BuscarVendedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\BuscarVendedorForm.Designer.cs">
+      <DependentUpon>BuscarVendedorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CajaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CajaForm.Designer.cs">
+      <DependentUpon>CajaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CrearEmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CrearEmpleadoForm.Designer.cs">
+      <DependentUpon>CrearEmpleadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\DatosEmpleadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\DatosEmpleadosForm.Designer.cs">
+      <DependentUpon>DatosEmpleadosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\DatosReporteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\DatosReporteForm.Designer.cs">
+      <DependentUpon>DatosReporteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VendedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VendedorForm.Designer.cs">
+      <DependentUpon>VendedorForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\ActualizarProductoForm.resx">
+      <DependentUpon>ActualizarProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AdministradorForm.resx">
+      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AgregarClienteForm.resx">
+      <DependentUpon>AgregarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AgregarProductoForm.resx">
+      <DependentUpon>AgregarProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\BuscarClienteForm.resx">
+      <DependentUpon>BuscarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\BuscarVendedorForm.resx">
+      <DependentUpon>BuscarVendedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CajaForm.resx">
+      <DependentUpon>CajaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CrearEmpleadoForm.resx">
+      <DependentUpon>CrearEmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\DatosEmpleadosForm.resx">
+      <DependentUpon>DatosEmpleadosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\DatosReporteForm.resx">
+      <DependentUpon>DatosReporteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VendedorForm.resx">
+      <DependentUpon>VendedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
