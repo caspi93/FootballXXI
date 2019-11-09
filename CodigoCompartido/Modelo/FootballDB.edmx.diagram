@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="448bcf6f3d78476790c617467345b670" Name="Diagram1">
+        <EntityTypeShape EntityType="Compartido.Model.Camisetas" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Clientes" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Empleados" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Facturas" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Generos" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Ligas" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Personas" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Roles" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Tallas" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.TiposDeDocumento" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.DetallesFactura" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.Pagos" Width="1.5" PointX="7.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.TallasCamiseta" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Compartido.Model.TallasGenero" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="Compartido.Model.CamLigaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.DetFacCamisetaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.TallaCamCamisetaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.ClientesPersonaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.FacturasClienteId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.EmpleadosRolId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.EmpleadosVendededorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.PagosEmpleadoId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.DetFacFacturaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.DetFacGeneroId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.PersonasGeneroId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.TallaCamGeneroId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.TallaGenGeneroId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.PersonasTipodDeDocumentoId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.DetFacTallaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.TallaCamTallaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Compartido.Model.TallaGenTallaId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

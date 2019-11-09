@@ -12,6 +12,7 @@ namespace Escritorio.Vistas {
     public partial class AgregarProductoForm : Form {
         public AgregarProductoForm() {
             InitializeComponent();
+
         }
 
         private void LblEquipo_Click(object sender, EventArgs e) {

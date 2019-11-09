@@ -13,5 +13,9 @@ namespace Escritorio.Vistas {
         public CrearEmpleadoForm() {
             InitializeComponent();
         }
+
+        private void BtnAtras_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

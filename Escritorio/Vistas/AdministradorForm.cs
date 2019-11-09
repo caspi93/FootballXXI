@@ -17,5 +17,15 @@ namespace Escritorio.Vistas {
         private void LblFootball_Click(object sender, EventArgs e) {
 
         }
+
+        private void BtnCerrarSesion_Click(object sender, EventArgs e) {
+            Close();
+
+        }
+
+        private void BtnCrearUsuarios_Click(object sender, EventArgs e) {
+             CrearEmpleadoForm crearEmpleadoForm = new CrearEmpleadoForm();
+             crearEmpleadoForm.Show();
+        }
     }
 }

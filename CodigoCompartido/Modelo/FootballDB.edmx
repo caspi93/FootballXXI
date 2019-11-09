@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Compartido.Modelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Camisetas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreEquipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LigaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FechaCreacion" Type="date" Nullable="false" />
+          <Property Name="PersonaId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'FootballXXI.dbo.DetallesFactura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DetallesFactura">
+          <Key>
+            <PropertyRef Name="FacturaId" />
+            <PropertyRef Name="CamisetaId" />
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="FacturaId" Type="int" Nullable="false" />
+          <Property Name="CamisetaId" Type="int" Nullable="false" />
+          <Property Name="TallaId" Type="int" Nullable="false" />
+          <Property Name="GeneroId" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Celular" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="NombreUsuario" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Profesion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FechaNac" Type="date" Nullable="false" />
+          <Property Name="Dirreccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="ClienteId" Type="int" Nullable="false" />
+          <Property Name="Total" Type="float" Nullable="false" />
+          <Property Name="VendedorId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Generos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="9" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ligas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ligas" Type="varchar" MaxLength="21" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'FootballXXI.dbo.Pagos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="EmpleadoId" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="Sueldo" />
+          </Key>
+          <Property Name="EmpleadoId" Type="int" Nullable="false" />
+          <Property Name="FechaPago" Type="datetime" Nullable="false" />
+          <Property Name="Sueldo" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrimerNombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="SegundoNombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="TiposDeDocumentoId" Type="int" Nullable="false" />
+          <Property Name="NumeroDocumento" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="GeneroId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tallas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreLargo" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="NombreCorto" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'FootballXXI.dbo.TallasCamiseta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TallasCamiseta">
+          <Key>
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="CamisetaId" />
+            <PropertyRef Name="Cantidad" />
+          </Key>
+          <Property Name="TallaId" Type="int" Nullable="false" />
+          <Property Name="GeneroId" Type="int" Nullable="false" />
+          <Property Name="CamisetaId" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'FootballXXI.dbo.TallasGenero' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TallasGenero">
+          <Key>
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="TallaId" Type="int" Nullable="false" />
+          <Property Name="GeneroId" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposDeDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreLargo" Type="varchar" MaxLength="21" Nullable="false" />
+          <Property Name="NombreCorto" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <Association Name="CamLigaId">
+          <End Role="Ligas" Type="Self.Ligas" Multiplicity="1" />
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ligas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Camisetas">
+              <PropertyRef Name="LigaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesPersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacCamisetaId">
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camisetas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="CamisetaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacFacturaId">
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="FacturaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosRolId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosVendededorId">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="VendedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FacturasClienteId">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PagosEmpleadoId">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="EmpleadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonasGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonasTipodDeDocumentoId">
+          <End Role="TiposDeDocumento" Type="Self.TiposDeDocumento" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposDeDocumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="TiposDeDocumentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamCamisetaId">
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camisetas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="CamisetaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaGenGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="TallasGenero" Type="Self.TallasGenero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasGenero">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaGenTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="TallasGenero" Type="Self.TallasGenero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasGenero">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompartidoModeloStoreContainer">
+          <EntitySet Name="Camisetas" EntityType="Self.Camisetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Generos" EntityType="Self.Generos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ligas" EntityType="Self.Ligas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tallas" EntityType="Self.Tallas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposDeDocumento" EntityType="Self.TiposDeDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallesFactura" EntityType="Self.DetallesFactura" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DetallesFactura].[FacturaId] AS [FacturaId], 
+    [DetallesFactura].[CamisetaId] AS [CamisetaId], 
+    [DetallesFactura].[TallaId] AS [TallaId], 
+    [DetallesFactura].[GeneroId] AS [GeneroId], 
+    [DetallesFactura].[Cantidad] AS [Cantidad], 
+    [DetallesFactura].[Precio] AS [Precio]
+    FROM [dbo].[DetallesFactura] AS [DetallesFactura]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pagos].[EmpleadoId] AS [EmpleadoId], 
+    [Pagos].[FechaPago] AS [FechaPago], 
+    [Pagos].[Sueldo] AS [Sueldo]
+    FROM [dbo].[Pagos] AS [Pagos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TallasCamiseta" EntityType="Self.TallasCamiseta" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TallasCamiseta].[TallaId] AS [TallaId], 
+    [TallasCamiseta].[GeneroId] AS [GeneroId], 
+    [TallasCamiseta].[CamisetaId] AS [CamisetaId], 
+    [TallasCamiseta].[Cantidad] AS [Cantidad]
+    FROM [dbo].[TallasCamiseta] AS [TallasCamiseta]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TallasGenero" EntityType="Self.TallasGenero" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TallasGenero].[TallaId] AS [TallaId], 
+    [TallasGenero].[GeneroId] AS [GeneroId], 
+    [TallasGenero].[Precio] AS [Precio]
+    FROM [dbo].[TallasGenero] AS [TallasGenero]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="CamLigaId" Association="Self.CamLigaId">
+            <End Role="Ligas" EntitySet="Ligas" />
+            <End Role="Camisetas" EntitySet="Camisetas" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesPersonaId" Association="Self.ClientesPersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacCamisetaId" Association="Self.DetFacCamisetaId">
+            <End Role="Camisetas" EntitySet="Camisetas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacFacturaId" Association="Self.DetFacFacturaId">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacGeneroId" Association="Self.DetFacGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacTallaId" Association="Self.DetFacTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosRolId" Association="Self.EmpleadosRolId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosVendededorId" Association="Self.EmpleadosVendededorId">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FacturasClienteId" Association="Self.FacturasClienteId">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="PagosEmpleadoId" Association="Self.PagosEmpleadoId">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="PersonasGeneroId" Association="Self.PersonasGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="PersonasTipodDeDocumentoId" Association="Self.PersonasTipodDeDocumentoId">
+            <End Role="TiposDeDocumento" EntitySet="TiposDeDocumento" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamCamisetaId" Association="Self.TallaCamCamisetaId">
+            <End Role="Camisetas" EntitySet="Camisetas" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamGeneroId" Association="Self.TallaCamGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamTallaId" Association="Self.TallaCamTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="TallaGenGeneroId" Association="Self.TallaGenGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="TallasGenero" EntitySet="TallasGenero" />
+          </AssociationSet>
+          <AssociationSet Name="TallaGenTallaId" Association="Self.TallaGenTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="TallasGenero" EntitySet="TallasGenero" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Compartido.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Camisetas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreEquipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LigaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ligas" Relationship="Self.CamLigaId" FromRole="Camisetas" ToRole="Ligas" />
+          <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacCamisetaId" FromRole="Camisetas" ToRole="DetallesFactura" />
+          <NavigationProperty Name="TallasCamiseta" Relationship="Self.TallaCamCamisetaId" FromRole="Camisetas" ToRole="TallasCamiseta" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PersonaId" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Personas" Relationship="Self.ClientesPersonaId" FromRole="Clientes" ToRole="Personas" />
+          <NavigationProperty Name="Facturas" Relationship="Self.FacturasClienteId" FromRole="Clientes" ToRole="Facturas" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Celular" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Profesion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNac" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Dirreccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RolId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.EmpleadosRolId" FromRole="Empleados" ToRole="Roles" />
+          <NavigationProperty Name="Facturas" Relationship="Self.EmpleadosVendededorId" FromRole="Empleados" ToRole="Facturas" />
+          <NavigationProperty Name="Pagos" Relationship="Self.PagosEmpleadoId" FromRole="Empleados" ToRole="Pagos" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ClienteId" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="VendedorId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FacturasClienteId" FromRole="Facturas" ToRole="Clientes" />
+          <NavigationProperty Name="Empleados" Relationship="Self.EmpleadosVendededorId" FromRole="Facturas" ToRole="Empleados" />
+          <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacFacturaId" FromRole="Facturas" ToRole="DetallesFactura" />
+        </EntityType>
+        <EntityType Name="Generos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacGeneroId" FromRole="Generos" ToRole="DetallesFactura" />
+          <NavigationProperty Name="Personas" Relationship="Self.PersonasGeneroId" FromRole="Generos" ToRole="Personas" />
+          <NavigationProperty Name="TallasCamiseta" Relationship="Self.TallaCamGeneroId" FromRole="Generos" ToRole="TallasCamiseta" />
+          <NavigationProperty Name="TallasGenero" Relationship="Self.TallaGenGeneroId" FromRole="Generos" ToRole="TallasGenero" />
+        </EntityType>
+        <EntityType Name="Ligas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ligas1" Type="String" MaxLength="21" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Camisetas" Relationship="Self.CamLigaId" FromRole="Ligas" ToRole="Camisetas" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrimerNombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SegundoNombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TiposDeDocumentoId" Type="Int32" Nullable="false" />
+          <Property Name="NumeroDocumento" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GeneroId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.ClientesPersonaId" FromRole="Personas" ToRole="Clientes" />
+          <NavigationProperty Name="Generos" Relationship="Self.PersonasGeneroId" FromRole="Personas" ToRole="Generos" />
+          <NavigationProperty Name="TiposDeDocumento" Relationship="Self.PersonasTipodDeDocumentoId" FromRole="Personas" ToRole="TiposDeDocumento" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.EmpleadosRolId" FromRole="Roles" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="Tallas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreLargo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreCorto" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacTallaId" FromRole="Tallas" ToRole="DetallesFactura" />
+          <NavigationProperty Name="TallasCamiseta" Relationship="Self.TallaCamTallaId" FromRole="Tallas" ToRole="TallasCamiseta" />
+          <NavigationProperty Name="TallasGenero" Relationship="Self.TallaGenTallaId" FromRole="Tallas" ToRole="TallasGenero" />
+        </EntityType>
+        <EntityType Name="TiposDeDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreLargo" Type="String" MaxLength="21" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreCorto" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.PersonasTipodDeDocumentoId" FromRole="TiposDeDocumento" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="DetallesFactura">
+          <Key>
+            <PropertyRef Name="FacturaId" />
+            <PropertyRef Name="CamisetaId" />
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="FacturaId" Type="Int32" Nullable="false" />
+          <Property Name="CamisetaId" Type="Int32" Nullable="false" />
+          <Property Name="TallaId" Type="Int32" Nullable="false" />
+          <Property Name="GeneroId" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Camisetas" Relationship="Self.DetFacCamisetaId" FromRole="DetallesFactura" ToRole="Camisetas" />
+          <NavigationProperty Name="Facturas" Relationship="Self.DetFacFacturaId" FromRole="DetallesFactura" ToRole="Facturas" />
+          <NavigationProperty Name="Generos" Relationship="Self.DetFacGeneroId" FromRole="DetallesFactura" ToRole="Generos" />
+          <NavigationProperty Name="Tallas" Relationship="Self.DetFacTallaId" FromRole="DetallesFactura" ToRole="Tallas" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="EmpleadoId" />
+            <PropertyRef Name="FechaPago" />
+            <PropertyRef Name="Sueldo" />
+          </Key>
+          <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
+          <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sueldo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.PagosEmpleadoId" FromRole="Pagos" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="TallasCamiseta">
+          <Key>
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="CamisetaId" />
+            <PropertyRef Name="Cantidad" />
+          </Key>
+          <Property Name="TallaId" Type="Int32" Nullable="false" />
+          <Property Name="GeneroId" Type="Int32" Nullable="false" />
+          <Property Name="CamisetaId" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Camisetas" Relationship="Self.TallaCamCamisetaId" FromRole="TallasCamiseta" ToRole="Camisetas" />
+          <NavigationProperty Name="Generos" Relationship="Self.TallaCamGeneroId" FromRole="TallasCamiseta" ToRole="Generos" />
+          <NavigationProperty Name="Tallas" Relationship="Self.TallaCamTallaId" FromRole="TallasCamiseta" ToRole="Tallas" />
+        </EntityType>
+        <EntityType Name="TallasGenero">
+          <Key>
+            <PropertyRef Name="TallaId" />
+            <PropertyRef Name="GeneroId" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="TallaId" Type="Int32" Nullable="false" />
+          <Property Name="GeneroId" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Generos" Relationship="Self.TallaGenGeneroId" FromRole="TallasGenero" ToRole="Generos" />
+          <NavigationProperty Name="Tallas" Relationship="Self.TallaGenTallaId" FromRole="TallasGenero" ToRole="Tallas" />
+        </EntityType>
+        <Association Name="CamLigaId">
+          <End Role="Ligas" Type="Self.Ligas" Multiplicity="1" />
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ligas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Camisetas">
+              <PropertyRef Name="LigaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacCamisetaId">
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camisetas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="CamisetaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamCamisetaId">
+          <End Role="Camisetas" Type="Self.Camisetas" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camisetas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="CamisetaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesPersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FacturasClienteId">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosRolId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosVendededorId">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="VendedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PagosEmpleadoId">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="EmpleadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacFacturaId">
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="FacturaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonasGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaGenGeneroId">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+          <End Role="TallasGenero" Type="Self.TallasGenero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasGenero">
+              <PropertyRef Name="GeneroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonasTipodDeDocumentoId">
+          <End Role="TiposDeDocumento" Type="Self.TiposDeDocumento" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposDeDocumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="TiposDeDocumentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetFacTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="DetallesFactura" Type="Self.DetallesFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallesFactura">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaCamTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="TallasCamiseta" Type="Self.TallasCamiseta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasCamiseta">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TallaGenTallaId">
+          <End Role="Tallas" Type="Self.Tallas" Multiplicity="1" />
+          <End Role="TallasGenero" Type="Self.TallasGenero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TallasGenero">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Camisetas" EntityType="Self.Camisetas" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Facturas" EntityType="Self.Facturas" />
+          <EntitySet Name="Generos" EntityType="Self.Generos" />
+          <EntitySet Name="Ligas" EntityType="Self.Ligas" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Tallas" EntityType="Self.Tallas" />
+          <EntitySet Name="TiposDeDocumento" EntityType="Self.TiposDeDocumento" />
+          <EntitySet Name="DetallesFactura" EntityType="Self.DetallesFactura" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" />
+          <EntitySet Name="TallasCamiseta" EntityType="Self.TallasCamiseta" />
+          <EntitySet Name="TallasGenero" EntityType="Self.TallasGenero" />
+          <AssociationSet Name="CamLigaId" Association="Self.CamLigaId">
+            <End Role="Ligas" EntitySet="Ligas" />
+            <End Role="Camisetas" EntitySet="Camisetas" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacCamisetaId" Association="Self.DetFacCamisetaId">
+            <End Role="Camisetas" EntitySet="Camisetas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamCamisetaId" Association="Self.TallaCamCamisetaId">
+            <End Role="Camisetas" EntitySet="Camisetas" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesPersonaId" Association="Self.ClientesPersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FacturasClienteId" Association="Self.FacturasClienteId">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosRolId" Association="Self.EmpleadosRolId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosVendededorId" Association="Self.EmpleadosVendededorId">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="PagosEmpleadoId" Association="Self.PagosEmpleadoId">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacFacturaId" Association="Self.DetFacFacturaId">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacGeneroId" Association="Self.DetFacGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="PersonasGeneroId" Association="Self.PersonasGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamGeneroId" Association="Self.TallaCamGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="TallaGenGeneroId" Association="Self.TallaGenGeneroId">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="TallasGenero" EntitySet="TallasGenero" />
+          </AssociationSet>
+          <AssociationSet Name="PersonasTipodDeDocumentoId" Association="Self.PersonasTipodDeDocumentoId">
+            <End Role="TiposDeDocumento" EntitySet="TiposDeDocumento" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="DetFacTallaId" Association="Self.DetFacTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="DetallesFactura" EntitySet="DetallesFactura" />
+          </AssociationSet>
+          <AssociationSet Name="TallaCamTallaId" Association="Self.TallaCamTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="TallasCamiseta" EntitySet="TallasCamiseta" />
+          </AssociationSet>
+          <AssociationSet Name="TallaGenTallaId" Association="Self.TallaGenTallaId">
+            <End Role="Tallas" EntitySet="Tallas" />
+            <End Role="TallasGenero" EntitySet="TallasGenero" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompartidoModeloStoreContainer" CdmEntityContainer="Entidades">
+          <EntitySetMapping Name="Camisetas">
+            <EntityTypeMapping TypeName="Compartido.Model.Camisetas">
+              <MappingFragment StoreEntitySet="Camisetas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
+                <ScalarProperty Name="LigaId" ColumnName="LigaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="Compartido.Model.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="Compartido.Model.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+                <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+                <ScalarProperty Name="Dirreccion" ColumnName="Dirreccion" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="Compartido.Model.Facturas">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="VendedorId" ColumnName="VendedorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generos">
+            <EntityTypeMapping TypeName="Compartido.Model.Generos">
+              <MappingFragment StoreEntitySet="Generos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ligas">
+            <EntityTypeMapping TypeName="Compartido.Model.Ligas">
+              <MappingFragment StoreEntitySet="Ligas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ligas1" ColumnName="Ligas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="Compartido.Model.Personas">
+              <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="TiposDeDocumentoId" ColumnName="TiposDeDocumentoId" />
+                <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+                <ScalarProperty Name="GeneroId" ColumnName="GeneroId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Compartido.Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tallas">
+            <EntityTypeMapping TypeName="Compartido.Model.Tallas">
+              <MappingFragment StoreEntitySet="Tallas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+                <ScalarProperty Name="NombreCorto" ColumnName="NombreCorto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposDeDocumento">
+            <EntityTypeMapping TypeName="Compartido.Model.TiposDeDocumento">
+              <MappingFragment StoreEntitySet="TiposDeDocumento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NombreLargo" ColumnName="NombreLargo" />
+                <ScalarProperty Name="NombreCorto" ColumnName="NombreCorto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetallesFactura">
+            <EntityTypeMapping TypeName="Compartido.Model.DetallesFactura">
+              <MappingFragment StoreEntitySet="DetallesFactura">
+                <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+                <ScalarProperty Name="CamisetaId" ColumnName="CamisetaId" />
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+                <ScalarProperty Name="GeneroId" ColumnName="GeneroId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagos">
+            <EntityTypeMapping TypeName="Compartido.Model.Pagos">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="EmpleadoId" ColumnName="EmpleadoId" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TallasCamiseta">
+            <EntityTypeMapping TypeName="Compartido.Model.TallasCamiseta">
+              <MappingFragment StoreEntitySet="TallasCamiseta">
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+                <ScalarProperty Name="GeneroId" ColumnName="GeneroId" />
+                <ScalarProperty Name="CamisetaId" ColumnName="CamisetaId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TallasGenero">
+            <EntityTypeMapping TypeName="Compartido.Model.TallasGenero">
+              <MappingFragment StoreEntitySet="TallasGenero">
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+                <ScalarProperty Name="GeneroId" ColumnName="GeneroId" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

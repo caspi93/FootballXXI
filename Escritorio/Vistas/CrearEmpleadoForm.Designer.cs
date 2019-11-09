@@ -237,6 +237,7 @@
             this.btnAtras.TabIndex = 18;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
             // txtPrimerNombre
             // 
@@ -352,7 +353,7 @@
             this.cbRoles.Size = new System.Drawing.Size(254, 21);
             this.cbRoles.TabIndex = 33;
             // 
-            // CrearUsuarioForm
+            // CrearEmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -390,7 +391,7 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.lblFootball);
-            this.Name = "CrearUsuarioForm";
+            this.Name = "CrearEmpleadoForm";
             this.Text = "CrearUsuarioForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -242,8 +242,9 @@
             this.btnAtras.TabIndex = 19;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
-            // Form2
+            // BuscarVendedorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +269,7 @@
             this.Controls.Add(this.txtBuscarVendedor);
             this.Controls.Add(this.btnBuscarVendedor);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "BuscarVendedorForm";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

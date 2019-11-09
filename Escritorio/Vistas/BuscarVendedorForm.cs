@@ -17,5 +17,9 @@ namespace Escritorio.Vistas {
         private void Label15_Click(object sender, EventArgs e) {
 
         }
+
+        private void BtnAtras_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

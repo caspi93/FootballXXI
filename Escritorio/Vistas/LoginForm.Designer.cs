@@ -76,6 +76,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(206, 20);
             this.txtClave.TabIndex = 4;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // btnEntrar
             // 
@@ -86,6 +87,7 @@
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
             // btnCancelar
             // 
@@ -96,6 +98,7 @@
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // LoginForm
             // 

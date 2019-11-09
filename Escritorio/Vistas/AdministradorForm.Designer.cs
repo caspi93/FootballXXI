@@ -48,8 +48,9 @@
             this.btnCrearUsuarios.Name = "btnCrearUsuarios";
             this.btnCrearUsuarios.Size = new System.Drawing.Size(246, 50);
             this.btnCrearUsuarios.TabIndex = 1;
-            this.btnCrearUsuarios.Text = "Crear Usuario";
+            this.btnCrearUsuarios.Text = "Crear Empleado";
             this.btnCrearUsuarios.UseVisualStyleBackColor = true;
+            this.btnCrearUsuarios.Click += new System.EventHandler(this.BtnCrearUsuarios_Click);
             // 
             // btnVerUsuarios
             // 
@@ -58,7 +59,7 @@
             this.btnVerUsuarios.Name = "btnVerUsuarios";
             this.btnVerUsuarios.Size = new System.Drawing.Size(246, 48);
             this.btnVerUsuarios.TabIndex = 2;
-            this.btnVerUsuarios.Text = "Ver Usuarios";
+            this.btnVerUsuarios.Text = "Ver Empleados";
             this.btnVerUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnVerReportes
@@ -80,6 +81,7 @@
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
             // AdministradorForm
             // 

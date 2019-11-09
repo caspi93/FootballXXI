@@ -66,8 +66,10 @@ create table Clientes(
 FechaCreacion date not null,
 PersonaId int not null,
 constraint ClientesPersonaId foreign key(PersonaId) references(Personas),
+Celular varchar(12) not null,
 Email varchar(100) not null
 );
+
 
 create table Empleados(
 Id int identity(1,1) primary key not null,
