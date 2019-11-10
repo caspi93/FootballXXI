@@ -12,15 +12,13 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TallasCamiseta
+    public partial class TallaGenero
     {
         public int TallaId { get; set; }
         public int GeneroId { get; set; }
-        public int CamisetaId { get; set; }
-        public int Cantidad { get; set; }
+        public double Precio { get; set; }
     
-        public virtual Camisetas Camisetas { get; set; }
-        public virtual Generos Generos { get; set; }
-        public virtual Tallas Tallas { get; set; }
+        public virtual Genero Generos { get; set; }
+        public virtual Talla Tallas { get; set; }
     }
 }

@@ -12,18 +12,13 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class DetallesFactura
+    public partial class Pago
     {
-        public int FacturaId { get; set; }
-        public int CamisetaId { get; set; }
-        public int TallaId { get; set; }
-        public int GeneroId { get; set; }
-        public int Cantidad { get; set; }
-        public double Precio { get; set; }
+        public int EmpleadoId { get; set; }
+        public System.DateTime FechaPago { get; set; }
+        public double Sueldo { get; set; }
+        public int Id { get; set; }
     
-        public virtual Camisetas Camisetas { get; set; }
-        public virtual Facturas Facturas { get; set; }
-        public virtual Generos Generos { get; set; }
-        public virtual Tallas Tallas { get; set; }
+        public virtual Empleado Empleados { get; set; }
     }
 }

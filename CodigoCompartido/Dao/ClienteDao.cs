@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class ClienteDao {
+    public class ClienteDao {
 
         private Entidades db;
 
@@ -14,13 +14,13 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public Clientes CrearCliente(Clientes cliente) {
+        public Cliente CrearCliente(Cliente cliente) {
             db.Clientes.Add(cliente);
             db.SaveChanges();
             return cliente;
         }
 
-        public List<Clientes> GetClientes() {
+        public List<Cliente> GetClientes() {
             return db.Clientes.ToList();
         }
     }

@@ -165,6 +165,7 @@
             this.btnCrearCliente.TabIndex = 12;
             this.btnCrearCliente.Text = "Crear Cliente";
             this.btnCrearCliente.UseVisualStyleBackColor = true;
+            this.btnCrearCliente.Click += new System.EventHandler(this.BtnCrearCliente_Click);
             // 
             // btnFinalizarCompra
             // 
@@ -176,7 +177,7 @@
             this.btnFinalizarCompra.Text = "Finalizar Compra";
             this.btnFinalizarCompra.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // BuscarClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -195,8 +196,8 @@
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblFootball);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "BuscarClienteForm";
+            this.Text = "Buscar Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

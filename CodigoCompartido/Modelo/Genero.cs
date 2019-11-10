@@ -12,27 +12,27 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Generos
+    public partial class Genero
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Generos()
+        public Genero()
         {
-            this.DetallesFactura = new HashSet<DetallesFactura>();
-            this.Personas = new HashSet<Personas>();
-            this.TallasCamiseta = new HashSet<TallasCamiseta>();
-            this.TallasGenero = new HashSet<TallasGenero>();
+            this.DetallesFactura = new HashSet<DetalleFactura>();
+            this.Personas = new HashSet<Persona>();
+            this.TallasCamiseta = new HashSet<TallaCamiseta>();
+            this.TallasGenero = new HashSet<TallaGenero>();
         }
     
         public int Id { get; set; }
         public string Nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetallesFactura> DetallesFactura { get; set; }
+        public virtual ICollection<DetalleFactura> DetallesFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personas> Personas { get; set; }
+        public virtual ICollection<Persona> Personas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TallasCamiseta> TallasCamiseta { get; set; }
+        public virtual ICollection<TallaCamiseta> TallasCamiseta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TallasGenero> TallasGenero { get; set; }
+        public virtual ICollection<TallaGenero> TallasGenero { get; set; }
     }
 }

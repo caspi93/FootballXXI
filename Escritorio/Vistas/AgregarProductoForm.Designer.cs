@@ -137,6 +137,7 @@
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAtras
             // 
@@ -157,9 +158,11 @@
             this.cbLigas.Name = "cbLigas";
             this.cbLigas.Size = new System.Drawing.Size(278, 21);
             this.cbLigas.TabIndex = 11;
+            this.cbLigas.SelectedIndexChanged += new System.EventHandler(this.CbLigas_SelectedIndexChanged);
             // 
             // cbGeneros
             // 
+            this.cbGeneros.Enabled = false;
             this.cbGeneros.FormattingEnabled = true;
             this.cbGeneros.Items.AddRange(new object[] {
             "Seleccione un género"});
@@ -167,9 +170,11 @@
             this.cbGeneros.Name = "cbGeneros";
             this.cbGeneros.Size = new System.Drawing.Size(294, 21);
             this.cbGeneros.TabIndex = 12;
+            this.cbGeneros.SelectedIndexChanged += new System.EventHandler(this.CbGeneros_SelectedIndexChanged);
             // 
             // cbEquipos
             // 
+            this.cbEquipos.Enabled = false;
             this.cbEquipos.FormattingEnabled = true;
             this.cbEquipos.Items.AddRange(new object[] {
             "Seleccione un equipo"});
@@ -177,9 +182,11 @@
             this.cbEquipos.Name = "cbEquipos";
             this.cbEquipos.Size = new System.Drawing.Size(278, 21);
             this.cbEquipos.TabIndex = 13;
+            this.cbEquipos.SelectedIndexChanged += new System.EventHandler(this.CbEquipos_SelectedIndexChanged);
             // 
             // cbTallas
             // 
+            this.cbTallas.Enabled = false;
             this.cbTallas.FormattingEnabled = true;
             this.cbTallas.Items.AddRange(new object[] {
             "Seleccione una talla"});
@@ -187,6 +194,7 @@
             this.cbTallas.Name = "cbTallas";
             this.cbTallas.Size = new System.Drawing.Size(291, 21);
             this.cbTallas.TabIndex = 14;
+            this.cbTallas.SelectedIndexChanged += new System.EventHandler(this.CbTallas_SelectedIndexChanged);
             // 
             // AgregarProductoForm
             // 

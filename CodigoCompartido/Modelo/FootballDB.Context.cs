@@ -25,19 +25,20 @@ namespace Compartido.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Camisetas> Camisetas { get; set; }
-        public virtual DbSet<Clientes> Clientes { get; set; }
-        public virtual DbSet<Empleados> Empleados { get; set; }
-        public virtual DbSet<Facturas> Facturas { get; set; }
-        public virtual DbSet<Generos> Generos { get; set; }
-        public virtual DbSet<Ligas> Ligas { get; set; }
-        public virtual DbSet<Personas> Personas { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<Tallas> Tallas { get; set; }
-        public virtual DbSet<TiposDeDocumento> TiposDeDocumento { get; set; }
-        public virtual DbSet<DetallesFactura> DetallesFactura { get; set; }
-        public virtual DbSet<Pagos> Pagos { get; set; }
-        public virtual DbSet<TallasCamiseta> TallasCamiseta { get; set; }
-        public virtual DbSet<TallasGenero> TallasGenero { get; set; }
+        public virtual DbSet<Camiseta> Camisetas { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Factura> Facturas { get; set; }
+        public virtual DbSet<Genero> Generos { get; set; }
+        public virtual DbSet<Liga> Ligas { get; set; }
+        public virtual DbSet<Persona> Personas { get; set; }
+        public virtual DbSet<Rol> Roles { get; set; }
+        public virtual DbSet<Talla> Tallas { get; set; }
+        public virtual DbSet<TipoDeDocumento> TiposDeDocumento { get; set; }
+        public virtual DbSet<DetalleFactura> DetallesFactura { get; set; }
+        public virtual DbSet<Pago> Pagos { get; set; }
+        public virtual DbSet<TallaCamiseta> TallasCamiseta { get; set; }
+        public virtual DbSet<TallaGenero> TallasGenero { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

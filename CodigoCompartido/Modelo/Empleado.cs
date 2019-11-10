@@ -12,19 +12,29 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Roles
+    public partial class Empleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Roles()
+        public Empleado()
         {
-            this.Empleados = new HashSet<Empleados>();
+            this.Facturas = new HashSet<Factura>();
+            this.Pagos = new HashSet<Pago>();
         }
     
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Codigo { get; set; }
+        public string Email { get; set; }
+        public string Celular { get; set; }
+        public string Clave { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Profesion { get; set; }
+        public System.DateTime FechaNac { get; set; }
+        public string Dirreccion { get; set; }
+        public int RolId { get; set; }
     
+        public virtual Rol Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleados> Empleados { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pago> Pagos { get; set; }
     }
 }

@@ -13,5 +13,10 @@ namespace Escritorio.Vistas {
         public BuscarClienteForm() {
             InitializeComponent();
         }
+
+        private void BtnCrearCliente_Click(object sender, EventArgs e) {
+            var agregarClienteForm = new AgrearClienteForm();
+            agregarClienteForm.Show();
+        }
     }
 }

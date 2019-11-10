@@ -13,7 +13,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public Empleados Login(string usuario, string clave) {
+        public Empleado Login(string usuario, string clave) {
             var consulta = from e in db.Empleados
                            where e.NombreUsuario == usuario && e.Clave == clave
                            select e;
@@ -21,13 +21,13 @@ namespace Compartido.Dao {
             return consulta.SingleOrDefault();
         }
 
-        public Empleados CrearEmpleado(Empleados empleado) {
+        public Empleado CrearEmpleado(Empleado empleado) {
             db.Empleados.Add(empleado);
             db.SaveChanges();
             return empleado;
         }
 
-        public List<Empleados> GetEmpleados() {
+        public List<Empleado> GetEmpleados() {
             return db.Empleados.ToList();
         }
     }

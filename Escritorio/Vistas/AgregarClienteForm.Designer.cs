@@ -1,5 +1,5 @@
 ﻿namespace Escritorio.Vistas {
-    partial class Form1 {
+    partial class AgrearClienteForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -40,6 +40,10 @@
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.bntAtras = new System.Windows.Forms.Button();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -180,28 +184,67 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(599, 412);
+            this.btnGuardar.Location = new System.Drawing.Point(599, 490);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(101, 37);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // bntAtras
             // 
             this.bntAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAtras.Location = new System.Drawing.Point(469, 412);
+            this.bntAtras.Location = new System.Drawing.Point(471, 490);
             this.bntAtras.Name = "bntAtras";
             this.bntAtras.Size = new System.Drawing.Size(102, 37);
             this.bntAtras.TabIndex = 16;
             this.bntAtras.Text = "Atrás";
             this.bntAtras.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // lblCelular
+            // 
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.Location = new System.Drawing.Point(51, 398);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(76, 24);
+            this.lblCelular.TabIndex = 17;
+            this.lblCelular.Text = "Celular";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Location = new System.Drawing.Point(54, 440);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(74, 24);
+            this.lblCorreo.TabIndex = 18;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(416, 402);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(284, 20);
+            this.txtCelular.TabIndex = 19;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(416, 443);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(284, 20);
+            this.txtCorreo.TabIndex = 20;
+            // 
+            // AgrearClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 452);
+            this.ClientSize = new System.Drawing.Size(747, 539);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.bntAtras);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cbGeneros);
@@ -219,7 +262,7 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.lblFootball);
-            this.Name = "Form1";
+            this.Name = "AgrearClienteForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,5 +288,9 @@
         private System.Windows.Forms.ComboBox cbGeneros;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button bntAtras;
+        private System.Windows.Forms.Label lblCelular;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtCorreo;
     }
 }

@@ -12,23 +12,19 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Facturas
+    public partial class TipoDeDocumento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Facturas()
+        public TipoDeDocumento()
         {
-            this.DetallesFactura = new HashSet<DetallesFactura>();
+            this.Personas = new HashSet<Persona>();
         }
     
-        public System.DateTime FechaCreacion { get; set; }
-        public int ClienteId { get; set; }
-        public double Total { get; set; }
-        public int VendedorId { get; set; }
         public int Id { get; set; }
+        public string NombreLargo { get; set; }
+        public string NombreCorto { get; set; }
     
-        public virtual Clientes Clientes { get; set; }
-        public virtual Empleados Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetallesFactura> DetallesFactura { get; set; }
+        public virtual ICollection<Persona> Personas { get; set; }
     }
 }

@@ -12,12 +12,15 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Pagos
+    public partial class TallaCamiseta
     {
-        public int EmpleadoId { get; set; }
-        public System.DateTime FechaPago { get; set; }
-        public double Sueldo { get; set; }
+        public int TallaId { get; set; }
+        public int GeneroId { get; set; }
+        public int CamisetaId { get; set; }
+        public int Cantidad { get; set; }
     
-        public virtual Empleados Empleados { get; set; }
+        public virtual Camiseta Camisetas { get; set; }
+        public virtual Genero Generos { get; set; }
+        public virtual Talla Tallas { get; set; }
     }
 }

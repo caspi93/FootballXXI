@@ -12,25 +12,26 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Tallas
+    public partial class Persona
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tallas()
+        public Persona()
         {
-            this.DetallesFactura = new HashSet<DetallesFactura>();
-            this.TallasCamiseta = new HashSet<TallasCamiseta>();
-            this.TallasGenero = new HashSet<TallasGenero>();
+            this.Clientes = new HashSet<Cliente>();
         }
     
         public int Id { get; set; }
-        public string NombreLargo { get; set; }
-        public string NombreCorto { get; set; }
+        public string PrimerNombre { get; set; }
+        public string SegundoNombre { get; set; }
+        public string PrimerApellido { get; set; }
+        public string SegundoApellido { get; set; }
+        public int TiposDeDocumentoId { get; set; }
+        public string NumeroDocumento { get; set; }
+        public int GeneroId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetallesFactura> DetallesFactura { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TallasCamiseta> TallasCamiseta { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TallasGenero> TallasGenero { get; set; }
+        public virtual ICollection<Cliente> Clientes { get; set; }
+        public virtual Genero Generos { get; set; }
+        public virtual TipoDeDocumento TiposDeDocumento { get; set; }
     }
 }

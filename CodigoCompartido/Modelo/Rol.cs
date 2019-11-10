@@ -12,19 +12,19 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TiposDeDocumento
+    public partial class Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TiposDeDocumento()
+        public Rol()
         {
-            this.Personas = new HashSet<Personas>();
+            this.Empleados = new HashSet<Empleado>();
         }
     
         public int Id { get; set; }
-        public string NombreLargo { get; set; }
-        public string NombreCorto { get; set; }
+        public string Nombre { get; set; }
+        public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personas> Personas { get; set; }
+        public virtual ICollection<Empleado> Empleados { get; set; }
     }
 }

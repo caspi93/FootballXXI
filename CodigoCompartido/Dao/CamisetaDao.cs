@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class CamisetaDao {
+    public class CamisetaDao {
 
         private Entidades db;
 
@@ -14,8 +14,13 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public List<Camisetas> GetCamisetas() {
-            return db.Camisetas.ToList();
+        public List<Camiseta> GetCamisetas(Liga liga) {
+            var consulta = from c in db.Camisetas
+                           where c.LigaId == liga.Id
+                           select c;
+
+            return consulta.ToList();
+
         }
     }
 }

@@ -12,29 +12,23 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Empleados
+    public partial class Camiseta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Empleados()
+        public Camiseta()
         {
-            this.Facturas = new HashSet<Facturas>();
-            this.Pagos = new HashSet<Pagos>();
+            this.DetallesFactura = new HashSet<DetalleFactura>();
+            this.TallasCamiseta = new HashSet<TallaCamiseta>();
         }
     
         public int Id { get; set; }
-        public string Email { get; set; }
-        public string Celular { get; set; }
-        public string Clave { get; set; }
-        public string NombreUsuario { get; set; }
-        public string Profesion { get; set; }
-        public System.DateTime FechaNac { get; set; }
-        public string Dirreccion { get; set; }
-        public int RolId { get; set; }
+        public string NombreEquipo { get; set; }
+        public int LigaId { get; set; }
     
-        public virtual Roles Roles { get; set; }
+        public virtual Liga Ligas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Facturas> Facturas { get; set; }
+        public virtual ICollection<DetalleFactura> DetallesFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pagos> Pagos { get; set; }
+        public virtual ICollection<TallaCamiseta> TallasCamiseta { get; set; }
     }
 }

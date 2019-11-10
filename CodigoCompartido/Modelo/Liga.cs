@@ -12,18 +12,18 @@ namespace Compartido.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Ligas
+    public partial class Liga
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ligas()
+        public Liga()
         {
-            this.Camisetas = new HashSet<Camisetas>();
+            this.Camisetas = new HashSet<Camiseta>();
         }
     
         public int Id { get; set; }
         public string Ligas1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Camisetas> Camisetas { get; set; }
+        public virtual ICollection<Camiseta> Camisetas { get; set; }
     }
 }

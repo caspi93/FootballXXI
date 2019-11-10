@@ -13,7 +13,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public Personas CrearPersona(Personas persona) {
+        public Persona CrearPersona(Persona persona) {
             db.Personas.Add(persona);
             db.SaveChanges();
             return persona;

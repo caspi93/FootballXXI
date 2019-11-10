@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class TallaDao {
+    public class TallaDao {
 
         private Entidades db;
 
@@ -14,7 +14,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public List<Tallas> GetTallas() {
+        public List<Talla> GetTallas() {
             return db.Tallas.ToList();
         }
     }

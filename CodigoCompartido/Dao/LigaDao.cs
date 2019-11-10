@@ -6,15 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class LigaDao {
+    public class LigaDao {
         private Entidades db;
 
         public LigaDao(Entidades db) {
             this.db = db;
         }
 
-        public List<Generos> GetLigas() {
-            return db.Generos.ToList();
+        public List<Liga> GetLigas() {
+            return db.Ligas.ToList();
         }
     }
 }

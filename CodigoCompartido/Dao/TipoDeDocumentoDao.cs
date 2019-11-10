@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class TipoDeDocumentoDao {
+    public class TipoDeDocumentoDao {
 
         private Entidades db;
 
@@ -14,7 +14,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
-        public List<TiposDeDocumento> GetTiposDeDocumento() {
+        public List<TipoDeDocumento> GetTiposDeDocumento() {
             return db.TiposDeDocumento.ToList();
         }
     }

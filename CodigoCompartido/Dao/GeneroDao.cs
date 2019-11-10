@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class GeneroDao {
+    public class GeneroDao {
         private Entidades db;
 
         public GeneroDao(Entidades db) {
             this.db = db;
         }
 
-        public List<Generos> GetGeneros() {
+        public List<Genero> GetGeneros() {
             return db.Generos.ToList();
         }
     }
