@@ -15,6 +15,7 @@ namespace Compartido.Dao {
         }
 
         public Cliente CrearCliente(Cliente cliente) {
+            cliente.FechaCreacion = DateTime.Now;
             db.Clientes.Add(cliente);
             db.SaveChanges();
             return cliente;

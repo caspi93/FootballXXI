@@ -567,8 +567,6 @@
             <PropertyRef Name="CamisetaId" />
             <PropertyRef Name="TallaId" />
             <PropertyRef Name="GeneroId" />
-            <PropertyRef Name="Cantidad" />
-            <PropertyRef Name="Precio" />
           </Key>
           <Property Name="FacturaId" Type="Int32" Nullable="false" />
           <Property Name="CamisetaId" Type="Int32" Nullable="false" />
@@ -583,9 +581,6 @@
         </EntityType>
         <EntityType Name="Pago">
           <Key>
-            <PropertyRef Name="EmpleadoId" />
-            <PropertyRef Name="FechaPago" />
-            <PropertyRef Name="Sueldo" />
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
@@ -599,7 +594,6 @@
             <PropertyRef Name="TallaId" />
             <PropertyRef Name="GeneroId" />
             <PropertyRef Name="CamisetaId" />
-            <PropertyRef Name="Cantidad" />
           </Key>
           <Property Name="TallaId" Type="Int32" Nullable="false" />
           <Property Name="GeneroId" Type="Int32" Nullable="false" />
@@ -613,7 +607,6 @@
           <Key>
             <PropertyRef Name="TallaId" />
             <PropertyRef Name="GeneroId" />
-            <PropertyRef Name="Precio" />
           </Key>
           <Property Name="TallaId" Type="Int32" Nullable="false" />
           <Property Name="GeneroId" Type="Int32" Nullable="false" />
