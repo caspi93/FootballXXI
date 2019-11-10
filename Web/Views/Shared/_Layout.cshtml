@@ -18,15 +18,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administrar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
-                        @Html.ActionLink("Administrar", "Formulario", "Home",null)
-                        <a class="nav-link js-scroll-trigger" href="#about">Administrar</a>
+                        <a class="nav-link js-scroll-trigger" href="#contac">Contactos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Contactos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#portfolio">Registrarse</a>
+                        @Html.ActionLink("Registrarse", "Formulario", "Home", null)
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Iniciar Sesión</a>
@@ -39,8 +49,8 @@
     <!-- Masthead -->
     <header class="masthead">
 
-       @RenderBody()
-                    
+        @RenderBody()
+
     </header>
     <div class="container body-content">
         <hr />
@@ -52,8 +62,11 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/creative")
+    @Scripts.Render("~/bundles/jquery-easing")
+    @Scripts.Render("~/bundles/jquery-magnific")
+    @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
 </html>
