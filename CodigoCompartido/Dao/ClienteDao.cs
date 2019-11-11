@@ -24,5 +24,13 @@ namespace Compartido.Dao {
         public List<Cliente> GetClientes() {
             return db.Clientes.ToList();
         }
+
+        public Cliente buscarCliente(string numeroDocumento) {
+            var consulta = from c in db.Clientes
+                           where c.Personas.NumeroDocumento == numeroDocumento 
+                           select c;
+
+            return consulta.SingleOrDefault();
+        }
     }
 }

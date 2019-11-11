@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.lblFootball = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblPrimerNombre = new System.Windows.Forms.Label();
             this.lblPrimerApellido = new System.Windows.Forms.Label();
@@ -37,6 +37,8 @@
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnCrearCliente = new System.Windows.Forms.Button();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -49,12 +51,12 @@
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
             // 
-            // textBox1
+            // txtBuscarCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(296, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(296, 110);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(165, 20);
+            this.txtBuscarCliente.TabIndex = 1;
             // 
             // btnBuscarCliente
             // 
@@ -65,6 +67,7 @@
             this.btnBuscarCliente.TabIndex = 2;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // lblPrimerNombre
             // 
@@ -79,10 +82,10 @@
             // lblPrimerApellido
             // 
             this.lblPrimerApellido.AutoSize = true;
-            this.lblPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrimerApellido.Location = new System.Drawing.Point(25, 244);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(127, 18);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(134, 20);
             this.lblPrimerApellido.TabIndex = 4;
             this.lblPrimerApellido.Text = "Primer Apellido:";
             // 
@@ -139,10 +142,10 @@
             // lblFechaCreacion
             // 
             this.lblFechaCreacion.AutoSize = true;
-            this.lblFechaCreacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaCreacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaCreacion.Location = new System.Drawing.Point(391, 332);
             this.lblFechaCreacion.Name = "lblFechaCreacion";
-            this.lblFechaCreacion.Size = new System.Drawing.Size(155, 18);
+            this.lblFechaCreacion.Size = new System.Drawing.Size(165, 20);
             this.lblFechaCreacion.TabIndex = 10;
             this.lblFechaCreacion.Text = "Fecha de Creación:";
             // 
@@ -155,6 +158,7 @@
             this.btnAtras.TabIndex = 11;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
             // btnCrearCliente
             // 
@@ -169,6 +173,7 @@
             // 
             // btnFinalizarCompra
             // 
+            this.btnFinalizarCompra.Enabled = false;
             this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizarCompra.Location = new System.Drawing.Point(555, 468);
             this.btnFinalizarCompra.Name = "btnFinalizarCompra";
@@ -177,11 +182,33 @@
             this.btnFinalizarCompra.Text = "Finalizar Compra";
             this.btnFinalizarCompra.UseVisualStyleBackColor = true;
             // 
+            // lblCelular
+            // 
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.Location = new System.Drawing.Point(29, 377);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(65, 20);
+            this.lblCelular.TabIndex = 14;
+            this.lblCelular.Text = "Celular";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Location = new System.Drawing.Point(392, 383);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(63, 20);
+            this.lblCorreo.TabIndex = 15;
+            this.lblCorreo.Text = "Correo";
+            // 
             // BuscarClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 518);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.btnFinalizarCompra);
             this.Controls.Add(this.btnCrearCliente);
             this.Controls.Add(this.btnAtras);
@@ -194,7 +221,7 @@
             this.Controls.Add(this.lblPrimerApellido);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.btnBuscarCliente);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscarCliente);
             this.Controls.Add(this.lblFootball);
             this.Name = "BuscarClienteForm";
             this.Text = "Buscar Cliente";
@@ -206,7 +233,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblFootball;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lblPrimerNombre;
         private System.Windows.Forms.Label lblPrimerApellido;
@@ -219,5 +246,7 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btnCrearCliente;
         private System.Windows.Forms.Button btnFinalizarCompra;
+        private System.Windows.Forms.Label lblCelular;
+        private System.Windows.Forms.Label lblCorreo;
     }
 }

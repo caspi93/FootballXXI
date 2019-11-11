@@ -42,7 +42,12 @@ namespace Escritorio.Vistas {
             cliente.Email = txtCorreo.Text;
 
             var clienteDao = new ClienteDao(db);
-            clienteDao.CrearCliente(cliente);
+            if (clienteDao.CrearCliente(cliente) != null) {
+                MessageBox.Show("El cliente ha sido creado correctamente");
+                Close();
+            } else {
+                MessageBox.Show("Ha ocurrido un error");
+            }
         }
     }
 }
