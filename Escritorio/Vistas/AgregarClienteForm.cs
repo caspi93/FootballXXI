@@ -13,10 +13,13 @@ using System.Windows.Forms;
 namespace Escritorio.Vistas {
     public partial class AgrearClienteForm : Form {
         private readonly Entidades db;
-        public AgrearClienteForm() {
+        private Factura factura;
+
+        public AgrearClienteForm(Factura factura) {
             InitializeComponent();
 
             db = new Entidades();
+            this.factura = factura;
 
             var generoDao = new GeneroDao(db);
             var generos = generoDao.GetGeneros();
@@ -28,8 +31,9 @@ namespace Escritorio.Vistas {
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e) {
-            var cliente = new Cliente();
-            cliente.Persona = new Persona();
+            var cliente = new Cliente {
+                Persona = new Persona()
+            };
 
             cliente.Persona.PrimerNombre = txtPrimerNombre.Text;
             cliente.Persona.SegundoNombre = txtSegundoNombre.Text;
@@ -44,6 +48,7 @@ namespace Escritorio.Vistas {
             var clienteDao = new ClienteDao(db);
             if (clienteDao.CrearCliente(cliente) != null) {
                 MessageBox.Show("El cliente ha sido creado correctamente");
+                factura.Cliente = cliente;
                 Close();
             } else {
                 MessageBox.Show("Ha ocurrido un error");

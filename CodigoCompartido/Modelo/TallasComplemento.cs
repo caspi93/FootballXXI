@@ -9,5 +9,11 @@ namespace Compartido.Modelo {
         public override string ToString() {
             return NombreCorto;
         }
+
+        public string NombreTalla {
+            get {
+                return NombreCorto;
+            }
+        }
     }
 }

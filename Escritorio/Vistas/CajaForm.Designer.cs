@@ -23,23 +23,26 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.lblFootball = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVendedor = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.THNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblCaja = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSelVen = new System.Windows.Forms.Button();
             this.btnCancelarCompra = new System.Windows.Forms.Button();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
             this.tnCerrarSesion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.THNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -72,50 +75,22 @@
             this.lblVendedor.TabIndex = 2;
             this.lblVendedor.Text = "Vendedor:";
             // 
-            // dataGridView1
+            // tblCaja
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblCaja.AutoGenerateColumns = false;
+            this.tblCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblCaja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.THNombre,
             this.THGenero,
             this.thTalla,
             this.thPrecioUnitario,
-            this.thCantidad,
-            this.thSubtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(122, 272);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 158);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // THNombre
-            // 
-            this.THNombre.HeaderText = "Nombre";
-            this.THNombre.Name = "THNombre";
-            // 
-            // THGenero
-            // 
-            this.THGenero.HeaderText = "Género";
-            this.THGenero.Name = "THGenero";
-            // 
-            // thTalla
-            // 
-            this.thTalla.HeaderText = "Talla";
-            this.thTalla.Name = "thTalla";
-            // 
-            // thPrecioUnitario
-            // 
-            this.thPrecioUnitario.HeaderText = "Precio Uniario";
-            this.thPrecioUnitario.Name = "thPrecioUnitario";
-            // 
-            // thCantidad
-            // 
-            this.thCantidad.HeaderText = "Cantidad";
-            this.thCantidad.Name = "thCantidad";
-            // 
-            // thSubtotal
-            // 
-            this.thSubtotal.HeaderText = "Subtotal";
-            this.thSubtotal.Name = "thSubtotal";
+            this.thSubtotal,
+            this.cantidadDataGridViewTextBoxColumn});
+            this.tblCaja.DataSource = this.detalleFacturaBindingSource;
+            this.tblCaja.Location = new System.Drawing.Point(126, 272);
+            this.tblCaja.Name = "tblCaja";
+            this.tblCaja.Size = new System.Drawing.Size(644, 158);
+            this.tblCaja.TabIndex = 3;
             // 
             // lblTotal
             // 
@@ -167,6 +142,7 @@
             this.btnFinalizarCompra.TabIndex = 8;
             this.btnFinalizarCompra.Text = "Finalizar Compra";
             this.btnFinalizarCompra.UseVisualStyleBackColor = true;
+            this.btnFinalizarCompra.Click += new System.EventHandler(this.BtnFinalizarCompra_Click);
             // 
             // tnCerrarSesion
             // 
@@ -177,6 +153,46 @@
             this.tnCerrarSesion.TabIndex = 9;
             this.tnCerrarSesion.Text = "Cerrar Sesión";
             this.tnCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // THNombre
+            // 
+            this.THNombre.DataPropertyName = " NombreCamiseta";
+            this.THNombre.HeaderText = "Nombre";
+            this.THNombre.Name = "THNombre";
+            // 
+            // THGenero
+            // 
+            this.THGenero.DataPropertyName = "NombreGenero";
+            this.THGenero.HeaderText = "Género";
+            this.THGenero.Name = "THGenero";
+            this.THGenero.ReadOnly = true;
+            // 
+            // thTalla
+            // 
+            this.thTalla.DataPropertyName = "NombreTalla";
+            this.thTalla.HeaderText = "Talla";
+            this.thTalla.Name = "thTalla";
+            this.thTalla.ReadOnly = true;
+            // 
+            // thPrecioUnitario
+            // 
+            this.thPrecioUnitario.HeaderText = "Precio Uniario";
+            this.thPrecioUnitario.Name = "thPrecioUnitario";
+            // 
+            // thSubtotal
+            // 
+            this.thSubtotal.HeaderText = "Subtotal";
+            this.thSubtotal.Name = "thSubtotal";
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // detalleFacturaBindingSource
+            // 
+            this.detalleFacturaBindingSource.DataSource = typeof(Compartido.Modelo.DetalleFactura);
             // 
             // CajaForm
             // 
@@ -189,13 +205,15 @@
             this.Controls.Add(this.btnSelVen);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tblCaja);
             this.Controls.Add(this.lblVendedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFootball);
             this.Name = "CajaForm";
             this.Text = "CajaForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Activated += new System.EventHandler(this.CajaForm_Activated);
+            ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,18 +224,19 @@
         private System.Windows.Forms.Label lblFootball;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblVendedor;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn THNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn THGenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thTalla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thPrecioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thSubtotal;
+        private System.Windows.Forms.DataGridView tblCaja;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSelVen;
         private System.Windows.Forms.Button btnCancelarCompra;
         private System.Windows.Forms.Button btnFinalizarCompra;
         private System.Windows.Forms.Button tnCerrarSesion;
+        private System.Windows.Forms.BindingSource detalleFacturaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THGenero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thTalla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thPrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thSubtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
     }
 }

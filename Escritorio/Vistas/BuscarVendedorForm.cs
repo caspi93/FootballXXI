@@ -11,13 +11,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Escritorio.Vistas {
-    public partial class BuscarVendedorForm : Form {
 
+    public partial class BuscarVendedorForm : Form {
+        private Empleado vendedor;
+        private Factura factura;
         readonly Entidades db;
 
-        public BuscarVendedorForm() {
+        public BuscarVendedorForm(Factura factura) {
             InitializeComponent();
             db = new Entidades();
+            this.factura = factura;
         }
 
         private void Label15_Click(object sender, EventArgs e) {
@@ -55,5 +58,9 @@ namespace Escritorio.Vistas {
             }
         }
 
+        private void BtSeleccionar_Click(object sender, EventArgs e) {
+            factura.Vendedor = vendedor;
+            Close();
+        }
     }
 }

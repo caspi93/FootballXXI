@@ -29,5 +29,12 @@ namespace Escritorio.Vistas {
             var editarEmpleado = new EditarEmpleado(empleado);
             editarEmpleado.Show();
         }
+
+        private void DatosEmpleadosForm_Activated(object sender, EventArgs e) {
+            var empleadoDao = new EmpleadoDao(db);
+            var empleados = empleadoDao.GetEmpleados();
+            tblEmpleados.DataSource = empleados;
+        }
     }
 }
+

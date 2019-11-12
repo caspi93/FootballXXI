@@ -69,7 +69,9 @@
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ClientesComplemento.cs" />
+    <Compile Include="Modelo\DetalleFacturaComplemento.cs" />
     <Compile Include="Modelo\EmpleadosComplemento.cs" />
+    <Compile Include="Modelo\FacturaComplemento.cs" />
     <Compile Include="Modelo\PersonasComplemento.cs" />
     <Compile Include="Modelo\RolesComplemento.cs" />
     <Compile Include="Modelo\DetalleFactura.cs">

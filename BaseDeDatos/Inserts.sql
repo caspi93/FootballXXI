@@ -54,3 +54,9 @@ from Tallas as t,
 Camisetas as c,
 Generos as g
 where g.Id != 3;
+
+insert into TallasGenero(TallaId, GeneroId, Precio)
+select t.Id, g.Id, 10000
+from Tallas as t,
+Generos as g
+where g.Id != 3;

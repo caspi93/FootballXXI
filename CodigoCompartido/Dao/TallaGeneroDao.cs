@@ -14,6 +14,8 @@ namespace Compartido.Dao {
         }
 
         public TallaGenero GetTallaGenero(Talla talla, Genero genero) {
+            Console.WriteLine("la id de la talla es: " + talla.Id);
+            Console.WriteLine("la id del genero es: " + genero.Id);
             var consulta = from tg in db.TallasGenero
                            where tg.TallaId == talla.Id && tg.GeneroId == genero.Id
                            select tg;

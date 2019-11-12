@@ -96,9 +96,15 @@ Profesion varchar(100) not null,
 FechaNac date not null,
 Dirreccion varchar(100) not null,
 RolId int not null,
-constraint EmpleadosRolId foreign key(RolId) references Roles
+constraint EmpleadosRolId foreign key(RolId) references Roles,
+PersonaId int not null,
+constraint EmpleadosPersonaId foreign key(PersonaId) references Personas
 );
 
+alter table Empleados add PersonaId int,
+constraint EmpleadosPersonaId foreign key(PersonaId) references Personas;
+
+alter table Empleados alter column PersonaId int not null; 
 
 create table Facturas(
 FechaCreacion datetime not null,
