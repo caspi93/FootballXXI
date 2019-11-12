@@ -37,6 +37,7 @@
         <AssociationConnector Association="Compartido.Model.TallaCamTallaId" ManuallyRouted="false" />
         <AssociationConnector Association="Compartido.Model.TallaGenTallaId" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Compartido.Model.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="Compartido.Model.EmpleadosPersonaId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

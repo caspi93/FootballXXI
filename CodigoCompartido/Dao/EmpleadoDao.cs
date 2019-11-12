@@ -30,5 +30,18 @@ namespace Compartido.Dao {
         public List<Empleado> GetEmpleados() {
             return db.Empleados.ToList();
         }
+
+        public Empleado buscarVendedor(string numeroDocumento) {
+            var consulta = from e in db.Empleados
+                           where e.Persona.NumeroDocumento == numeroDocumento
+                           select e;
+
+            return consulta.SingleOrDefault();
+        }
+
+        public Empleado editarEmpleado(Empleado empleado) {
+            db.SaveChanges();
+            return empleado;
+        }
     }
 }

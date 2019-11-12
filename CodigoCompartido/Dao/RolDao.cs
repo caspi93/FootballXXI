@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Dao {
-    class RolDao {
+    public class RolDao {
 
         private Entidades db;
 

@@ -27,7 +27,7 @@ namespace Compartido.Dao {
 
         public Cliente buscarCliente(string numeroDocumento) {
             var consulta = from c in db.Clientes
-                           where c.Personas.NumeroDocumento == numeroDocumento 
+                           where c.Persona.NumeroDocumento == numeroDocumento 
                            select c;
 
             return consulta.SingleOrDefault();

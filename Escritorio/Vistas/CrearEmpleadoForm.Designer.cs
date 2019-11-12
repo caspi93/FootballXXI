@@ -49,13 +49,13 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
-            this.txtFecNac = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.txtProfesion = new System.Windows.Forms.TextBox();
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.cbRoles = new System.Windows.Forms.ComboBox();
+            this.txtFecNac = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -227,6 +227,7 @@
             this.btnTerminar.TabIndex = 17;
             this.btnTerminar.Text = "Terminar";
             this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.BtnTerminar_Click);
             // 
             // btnAtras
             // 
@@ -295,13 +296,6 @@
             this.txtSegundoApellido.Size = new System.Drawing.Size(195, 20);
             this.txtSegundoApellido.TabIndex = 26;
             // 
-            // txtFecNac
-            // 
-            this.txtFecNac.Location = new System.Drawing.Point(617, 188);
-            this.txtFecNac.Name = "txtFecNac";
-            this.txtFecNac.Size = new System.Drawing.Size(161, 20);
-            this.txtFecNac.TabIndex = 27;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(518, 254);
@@ -332,6 +326,7 @@
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(254, 21);
             this.cbTipoDoc.TabIndex = 31;
+            this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.CbTipoDoc_SelectedIndexChanged);
             // 
             // cbGeneros
             // 
@@ -353,18 +348,26 @@
             this.cbRoles.Size = new System.Drawing.Size(254, 21);
             this.cbRoles.TabIndex = 33;
             // 
+            // txtFecNac
+            // 
+            this.txtFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFecNac.Location = new System.Drawing.Point(617, 188);
+            this.txtFecNac.Name = "txtFecNac";
+            this.txtFecNac.Size = new System.Drawing.Size(161, 20);
+            this.txtFecNac.TabIndex = 34;
+            // 
             // CrearEmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 474);
+            this.Controls.Add(this.txtFecNac);
             this.Controls.Add(this.cbRoles);
             this.Controls.Add(this.cbGeneros);
             this.Controls.Add(this.cbTipoDoc);
             this.Controls.Add(this.txtProfesion);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.txtFecNac);
             this.Controls.Add(this.txtSegundoApellido);
             this.Controls.Add(this.txtSegundoNombre);
             this.Controls.Add(this.txtDireccion);
@@ -426,12 +429,12 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtSegundoNombre;
         private System.Windows.Forms.TextBox txtSegundoApellido;
-        private System.Windows.Forms.TextBox txtFecNac;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtProfesion;
         private System.Windows.Forms.ComboBox cbTipoDoc;
         private System.Windows.Forms.ComboBox cbGeneros;
         private System.Windows.Forms.ComboBox cbRoles;
+        private System.Windows.Forms.DateTimePicker txtFecNac;
     }
 }

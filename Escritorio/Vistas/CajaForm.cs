@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Compartido.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,17 @@ using System.Windows.Forms;
 
 namespace Escritorio.Vistas {
     public partial class CajaForm : Form {
+
+        private Factura factura;
         public CajaForm() {
             InitializeComponent();
+            factura = new Factura();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e) {
+            var agregarProductoForm = new AgregarProductoForm(factura);
+            agregarProductoForm.Show();
+
         }
     }
 }

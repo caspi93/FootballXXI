@@ -26,8 +26,8 @@ namespace Compartido.Modelo
         public int VendedorId { get; set; }
         public int Id { get; set; }
     
-        public virtual Cliente Clientes { get; set; }
-        public virtual Empleado Empleados { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Empleado Vendedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFactura> DetallesFactura { get; set; }
     }

@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Compartido.Modelo {
-    public partial class Genero {
+    public partial class Rol {
+
         public override string ToString() {
             return Nombre;
         }
@@ -15,8 +16,8 @@ namespace Compartido.Modelo {
                 return false;
             }
 
-            if (obj is Genero) {
-                return Id == ((Genero)obj).Id;
+            if (obj is Rol) {
+                return Id == ((Rol)obj).Id;
             }
 
             return false;

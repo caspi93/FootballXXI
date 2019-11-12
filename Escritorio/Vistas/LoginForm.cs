@@ -23,7 +23,7 @@ namespace Escritorio.Vistas {
                 if (empleado != null) {
 
                     Form window = null;
-                    switch (empleado.Roles.Codigo) {
+                    switch (empleado.Rol.Codigo) {
                         case "CAJ":
                             window = new CajaForm();
                             break;

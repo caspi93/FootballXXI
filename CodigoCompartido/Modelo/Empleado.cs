@@ -30,11 +30,13 @@ namespace Compartido.Modelo
         public System.DateTime FechaNac { get; set; }
         public string Dirreccion { get; set; }
         public int RolId { get; set; }
+        public int PersonaId { get; set; }
     
-        public virtual Rol Roles { get; set; }
+        public virtual Rol Rol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Facturas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pago> Pagos { get; set; }
+        public virtual Persona Persona { get; set; }
     }
 }

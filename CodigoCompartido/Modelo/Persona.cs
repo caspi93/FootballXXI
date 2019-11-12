@@ -18,6 +18,7 @@ namespace Compartido.Modelo
         public Persona()
         {
             this.Clientes = new HashSet<Cliente>();
+            this.Empleados = new HashSet<Empleado>();
         }
     
         public int Id { get; set; }
@@ -33,5 +34,7 @@ namespace Compartido.Modelo
         public virtual ICollection<Cliente> Clientes { get; set; }
         public virtual Genero Generos { get; set; }
         public virtual TipoDeDocumento TiposDeDocumento { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Empleado> Empleados { get; set; }
     }
 }

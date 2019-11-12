@@ -26,7 +26,7 @@ namespace Compartido.Modelo
         public int Id { get; set; }
         public string Celular { get; set; }
     
-        public virtual Persona Personas { get; set; }
+        public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Facturas { get; set; }
     }

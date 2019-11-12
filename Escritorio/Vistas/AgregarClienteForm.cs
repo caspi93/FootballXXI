@@ -29,15 +29,15 @@ namespace Escritorio.Vistas {
 
         private void BtnGuardar_Click(object sender, EventArgs e) {
             var cliente = new Cliente();
-            cliente.Personas = new Persona();
+            cliente.Persona = new Persona();
 
-            cliente.Personas.PrimerNombre = txtPrimerNombre.Text;
-            cliente.Personas.SegundoNombre = txtSegundoNombre.Text;
-            cliente.Personas.PrimerApellido = txtPrimerApellido.Text;
-            cliente.Personas.SegundoApellido = txtPrimerApellido.Text;
-            cliente.Personas.TiposDeDocumento = (TipoDeDocumento)cbTiposDoc.SelectedItem;
-            cliente.Personas.NumeroDocumento = txtNumIde.Text;
-            cliente.Personas.Generos = (Genero)cbGeneros.SelectedItem;
+            cliente.Persona.PrimerNombre = txtPrimerNombre.Text;
+            cliente.Persona.SegundoNombre = txtSegundoNombre.Text;
+            cliente.Persona.PrimerApellido = txtPrimerApellido.Text;
+            cliente.Persona.SegundoApellido = txtPrimerApellido.Text;
+            cliente.Persona.TiposDeDocumento = (TipoDeDocumento)cbTiposDoc.SelectedItem;
+            cliente.Persona.NumeroDocumento = txtNumIde.Text;
+            cliente.Persona.Generos = (Genero)cbGeneros.SelectedItem;
             cliente.Celular = txtCelular.Text;
             cliente.Email = txtCorreo.Text;
 

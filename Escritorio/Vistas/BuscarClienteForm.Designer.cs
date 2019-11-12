@@ -43,17 +43,17 @@
             // 
             // lblFootball
             // 
-            this.lblFootball.AutoSize = true;
             this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(290, 34);
+            this.lblFootball.Location = new System.Drawing.Point(12, 34);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(770, 33);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBuscarCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(296, 110);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(314, 110);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(165, 20);
             this.txtBuscarCliente.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(324, 136);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(341, 136);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(100, 29);
             this.btnBuscarCliente.TabIndex = 2;
@@ -152,7 +152,7 @@
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(74, 468);
+            this.btnAtras.Location = new System.Drawing.Point(275, 468);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(121, 38);
             this.btnAtras.TabIndex = 11;
@@ -163,7 +163,7 @@
             // btnCrearCliente
             // 
             this.btnCrearCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCliente.Location = new System.Drawing.Point(296, 468);
+            this.btnCrearCliente.Location = new System.Drawing.Point(402, 468);
             this.btnCrearCliente.Name = "btnCrearCliente";
             this.btnCrearCliente.Size = new System.Drawing.Size(192, 38);
             this.btnCrearCliente.TabIndex = 12;
@@ -175,7 +175,7 @@
             // 
             this.btnFinalizarCompra.Enabled = false;
             this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarCompra.Location = new System.Drawing.Point(555, 468);
+            this.btnFinalizarCompra.Location = new System.Drawing.Point(600, 468);
             this.btnFinalizarCompra.Name = "btnFinalizarCompra";
             this.btnFinalizarCompra.Size = new System.Drawing.Size(182, 38);
             this.btnFinalizarCompra.TabIndex = 13;

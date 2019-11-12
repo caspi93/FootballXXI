@@ -10,5 +10,17 @@ namespace Compartido.Modelo {
         public override string ToString() {
             return NombreLargo;
         }
+
+        public override bool Equals(object obj) {
+            if (obj == null) {
+                return false;
+            }
+
+            if (obj is TipoDeDocumento) {
+                return Id == ((TipoDeDocumento)obj).Id;
+            }
+
+            return false;
+        }
     }
 }

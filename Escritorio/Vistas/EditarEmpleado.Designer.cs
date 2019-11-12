@@ -52,11 +52,11 @@
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
-            this.txtsegundoApellido = new System.Windows.Forms.TextBox();
-            this.txtFecNac = new System.Windows.Forms.TextBox();
+            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.txtProfesion = new System.Windows.Forms.TextBox();
+            this.txtFecNac = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -230,6 +230,7 @@
             this.btnTerminar.TabIndex = 16;
             this.btnTerminar.Text = "Terminar";
             this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.BtnTerminar_Click);
             // 
             // bnAtras
             // 
@@ -320,19 +321,12 @@
             this.txtSegundoNombre.Size = new System.Drawing.Size(214, 20);
             this.txtSegundoNombre.TabIndex = 27;
             // 
-            // txtsegundoApellido
+            // txtSegundoApellido
             // 
-            this.txtsegundoApellido.Location = new System.Drawing.Point(640, 137);
-            this.txtsegundoApellido.Name = "txtsegundoApellido";
-            this.txtsegundoApellido.Size = new System.Drawing.Size(211, 20);
-            this.txtsegundoApellido.TabIndex = 28;
-            // 
-            // txtFecNac
-            // 
-            this.txtFecNac.Location = new System.Drawing.Point(671, 203);
-            this.txtFecNac.Name = "txtFecNac";
-            this.txtFecNac.Size = new System.Drawing.Size(180, 20);
-            this.txtFecNac.TabIndex = 29;
+            this.txtSegundoApellido.Location = new System.Drawing.Point(640, 137);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(211, 20);
+            this.txtSegundoApellido.TabIndex = 28;
             // 
             // txtCorreo
             // 
@@ -355,17 +349,25 @@
             this.txtProfesion.Size = new System.Drawing.Size(291, 20);
             this.txtProfesion.TabIndex = 32;
             // 
+            // txtFecNac
+            // 
+            this.txtFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFecNac.Location = new System.Drawing.Point(671, 201);
+            this.txtFecNac.Name = "txtFecNac";
+            this.txtFecNac.Size = new System.Drawing.Size(180, 20);
+            this.txtFecNac.TabIndex = 33;
+            // 
             // EditarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1119, 528);
+            this.Controls.Add(this.txtFecNac);
             this.Controls.Add(this.txtProfesion);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.txtFecNac);
-            this.Controls.Add(this.txtsegundoApellido);
+            this.Controls.Add(this.txtSegundoApellido);
             this.Controls.Add(this.txtSegundoNombre);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtNombreUsuario);
@@ -431,10 +433,10 @@
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtSegundoNombre;
-        private System.Windows.Forms.TextBox txtsegundoApellido;
-        private System.Windows.Forms.TextBox txtFecNac;
+        private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtProfesion;
+        private System.Windows.Forms.DateTimePicker txtFecNac;
     }
 }

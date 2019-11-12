@@ -19,6 +19,6 @@ namespace Compartido.Modelo
         public double Sueldo { get; set; }
         public int Id { get; set; }
     
-        public virtual Empleado Empleados { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

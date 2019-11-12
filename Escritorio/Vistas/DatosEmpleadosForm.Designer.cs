@@ -23,9 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.lblFootball = new System.Windows.Forms.Label();
             this.lblDatos = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnEditarEmpleado = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.thNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,9 +38,11 @@
             this.thRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditarEmpleado = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tblEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -60,10 +65,13 @@
             this.lblDatos.TabIndex = 1;
             this.lblDatos.Text = "Datos de los empleados";
             // 
-            // dataGridView1
+            // tblEmpleados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblEmpleados.AllowUserToAddRows = false;
+            this.tblEmpleados.AllowUserToDeleteRows = false;
+            this.tblEmpleados.AutoGenerateColumns = false;
+            this.tblEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.thNombres,
             this.thApellidos,
             this.thTipoDoc,
@@ -72,56 +80,18 @@
             this.thDireccion,
             this.thRol,
             this.thCelular,
-            this.thCorreo});
-            this.dataGridView1.Location = new System.Drawing.Point(120, 206);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(940, 150);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // thNombres
-            // 
-            this.thNombres.HeaderText = "Nombres";
-            this.thNombres.Name = "thNombres";
-            // 
-            // thApellidos
-            // 
-            this.thApellidos.HeaderText = "Apellidos";
-            this.thApellidos.Name = "thApellidos";
-            // 
-            // thTipoDoc
-            // 
-            this.thTipoDoc.HeaderText = "T.Documento";
-            this.thTipoDoc.Name = "thTipoDoc";
-            // 
-            // thNumIde
-            // 
-            this.thNumIde.HeaderText = "N.Documento";
-            this.thNumIde.Name = "thNumIde";
-            // 
-            // thGenero
-            // 
-            this.thGenero.HeaderText = "Género";
-            this.thGenero.Name = "thGenero";
-            // 
-            // thDireccion
-            // 
-            this.thDireccion.HeaderText = "Dirección";
-            this.thDireccion.Name = "thDireccion";
-            // 
-            // thRol
-            // 
-            this.thRol.HeaderText = "Cargo";
-            this.thRol.Name = "thRol";
-            // 
-            // thCelular
-            // 
-            this.thCelular.HeaderText = "N.Celular";
-            this.thCelular.Name = "thCelular";
-            // 
-            // thCorreo
-            // 
-            this.thCorreo.HeaderText = "Correo";
-            this.thCorreo.Name = "thCorreo";
+            this.thCorreo,
+            this.edadDataGridViewTextBoxColumn,
+            this.nombreUsuarioDataGridViewTextBoxColumn});
+            this.tblEmpleados.DataSource = this.empleadoBindingSource;
+            this.tblEmpleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.tblEmpleados.Location = new System.Drawing.Point(12, 122);
+            this.tblEmpleados.MultiSelect = false;
+            this.tblEmpleados.Name = "tblEmpleados";
+            this.tblEmpleados.ReadOnly = true;
+            this.tblEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblEmpleados.Size = new System.Drawing.Size(1198, 430);
+            this.tblEmpleados.TabIndex = 2;
             // 
             // btnEditarEmpleado
             // 
@@ -132,6 +102,7 @@
             this.btnEditarEmpleado.TabIndex = 3;
             this.btnEditarEmpleado.Text = "Editar Empleado";
             this.btnEditarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEditarEmpleado.Click += new System.EventHandler(this.BtnEditarEmpleado_Click);
             // 
             // btnAtras
             // 
@@ -143,6 +114,83 @@
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
             // 
+            // thNombres
+            // 
+            this.thNombres.DataPropertyName = "Nombres";
+            this.thNombres.HeaderText = "Nombres";
+            this.thNombres.Name = "thNombres";
+            this.thNombres.ReadOnly = true;
+            // 
+            // thApellidos
+            // 
+            this.thApellidos.DataPropertyName = "Apellidos";
+            this.thApellidos.HeaderText = "Apellidos";
+            this.thApellidos.Name = "thApellidos";
+            this.thApellidos.ReadOnly = true;
+            // 
+            // thTipoDoc
+            // 
+            this.thTipoDoc.DataPropertyName = "NombreTipoDoc";
+            this.thTipoDoc.HeaderText = "T.Documento";
+            this.thTipoDoc.Name = "thTipoDoc";
+            this.thTipoDoc.ReadOnly = true;
+            // 
+            // thNumIde
+            // 
+            this.thNumIde.DataPropertyName = "NumDoc";
+            this.thNumIde.HeaderText = "N.Documento";
+            this.thNumIde.Name = "thNumIde";
+            this.thNumIde.ReadOnly = true;
+            // 
+            // thGenero
+            // 
+            this.thGenero.DataPropertyName = "NombreGenero";
+            this.thGenero.HeaderText = "Género";
+            this.thGenero.Name = "thGenero";
+            this.thGenero.ReadOnly = true;
+            // 
+            // thDireccion
+            // 
+            this.thDireccion.DataPropertyName = "Dirreccion";
+            this.thDireccion.HeaderText = "Dirección";
+            this.thDireccion.Name = "thDireccion";
+            // 
+            // thRol
+            // 
+            this.thRol.DataPropertyName = "NombreRol";
+            this.thRol.HeaderText = "Cargo";
+            this.thRol.Name = "thRol";
+            this.thRol.ReadOnly = true;
+            // 
+            // thCelular
+            // 
+            this.thCelular.DataPropertyName = "Celular";
+            this.thCelular.HeaderText = "N.Celular";
+            this.thCelular.Name = "thCelular";
+            // 
+            // thCorreo
+            // 
+            this.thCorreo.DataPropertyName = "Email";
+            this.thCorreo.HeaderText = "Correo";
+            this.thCorreo.Name = "thCorreo";
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreUsuarioDataGridViewTextBoxColumn
+            // 
+            this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "NombreUsuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "Nombre Usuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataSource = typeof(Compartido.Modelo.Empleado);
+            // 
             // DatosEmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,12 +198,13 @@
             this.ClientSize = new System.Drawing.Size(1222, 605);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnEditarEmpleado);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tblEmpleados);
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.lblFootball);
             this.Name = "DatosEmpleadosForm";
             this.Text = "DatosEmpleadosForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +214,10 @@
 
         private System.Windows.Forms.Label lblFootball;
         private System.Windows.Forms.Label lblDatos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblEmpleados;
+        private System.Windows.Forms.Button btnEditarEmpleado;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.BindingSource empleadoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn thNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn thApellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn thTipoDoc;
@@ -175,7 +227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCelular;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCorreo;
-        private System.Windows.Forms.Button btnEditarEmpleado;
-        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuarioDataGridViewTextBoxColumn;
     }
 }

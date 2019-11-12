@@ -32,13 +32,13 @@ namespace Escritorio.Vistas {
             Cliente cliente = clienteDao.buscarCliente(numeroDocumento);
 
             if (cliente != null) {
-                lblPrimerNombre.Text = "Primer Nombre: " + cliente.Personas.PrimerNombre;
-                lblSegundoNombre.Text = "Segundo Nombre: " + cliente.Personas.SegundoNombre;
-                lblPrimerApellido.Text = "Primer Apellido: " + cliente.Personas.PrimerApellido;
-                lblSegundoApellido.Text = "Segundo Apellido: " + cliente.Personas.SegundoApellido;
-                lblTipoDoc.Text = "Tipo de Documento: " + cliente.Personas.TiposDeDocumento.NombreCorto;
-                lblNumIde.Text = "Número de Documento: " + cliente.Personas.NumeroDocumento;
-                lblGenero.Text = "Género: " + cliente.Personas.Generos.Nombre;
+                lblPrimerNombre.Text = "Primer Nombre: " + cliente.Persona.PrimerNombre;
+                lblSegundoNombre.Text = "Segundo Nombre: " + cliente.Persona.SegundoNombre;
+                lblPrimerApellido.Text = "Primer Apellido: " + cliente.Persona.PrimerApellido;
+                lblSegundoApellido.Text = "Segundo Apellido: " + cliente.Persona.SegundoApellido;
+                lblTipoDoc.Text = "Tipo de Documento: " + cliente.Persona.TiposDeDocumento.NombreCorto;
+                lblNumIde.Text = "Número de Documento: " + cliente.Persona.NumeroDocumento;
+                lblGenero.Text = "Género: " + cliente.Persona.Generos.Nombre;
                 lblFechaCreacion.Text = "Fecha de Creación: " + cliente.FechaCreacion;
                 lblCelular.Text = "Celular: " + cliente.Celular;
                 lblCorreo.Text = "Correo: " + cliente.Email;
@@ -52,5 +52,6 @@ namespace Escritorio.Vistas {
         private void BtnAtras_Click(object sender, EventArgs e) {
             Close();
         }
+
     }
 }

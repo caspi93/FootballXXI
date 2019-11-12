@@ -64,6 +64,7 @@
             this.btnBuscarVendedor.TabIndex = 1;
             this.btnBuscarVendedor.Text = "Buscar ";
             this.btnBuscarVendedor.UseVisualStyleBackColor = true;
+            this.btnBuscarVendedor.Click += new System.EventHandler(this.BtnBuscarVendedor_Click);
             // 
             // txtBuscarVendedor
             // 
@@ -226,7 +227,7 @@
             // btSeleccionar
             // 
             this.btSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSeleccionar.Location = new System.Drawing.Point(609, 578);
+            this.btSeleccionar.Location = new System.Drawing.Point(627, 568);
             this.btSeleccionar.Name = "btSeleccionar";
             this.btSeleccionar.Size = new System.Drawing.Size(161, 37);
             this.btSeleccionar.TabIndex = 18;
@@ -236,7 +237,7 @@
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(450, 578);
+            this.btnAtras.Location = new System.Drawing.Point(523, 568);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(98, 37);
             this.btnAtras.TabIndex = 19;

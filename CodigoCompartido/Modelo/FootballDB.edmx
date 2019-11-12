@@ -50,6 +50,7 @@
           <Property Name="FechaNac" Type="date" Nullable="false" />
           <Property Name="Dirreccion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RolId" Type="int" Nullable="false" />
+          <Property Name="PersonaId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Facturas">
           <Key>
@@ -220,6 +221,18 @@
             </Principal>
             <Dependent Role="DetallesFactura">
               <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpleadosPersonaId">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="PersonaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -395,6 +408,10 @@
             <End Role="Tallas" EntitySet="Tallas" />
             <End Role="DetallesFactura" EntitySet="DetallesFactura" />
           </AssociationSet>
+          <AssociationSet Name="EmpleadosPersonaId" Association="Self.EmpleadosPersonaId">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
           <AssociationSet Name="EmpleadosRolId" Association="Self.EmpleadosRolId">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Empleados" EntitySet="Empleados" />
@@ -463,7 +480,7 @@
           <Property Name="PersonaId" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Personas" Relationship="Self.ClientesPersonaId" FromRole="Clientes" ToRole="Personas" />
+          <NavigationProperty Name="Persona" Relationship="Self.ClientesPersonaId" FromRole="Clientes" ToRole="Personas" />
           <NavigationProperty Name="Facturas" Relationship="Self.FacturasClienteId" FromRole="Clientes" ToRole="Facturas" />
           <Property Name="Celular" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -480,9 +497,11 @@
           <Property Name="FechaNac" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Dirreccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RolId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Roles" Relationship="Self.EmpleadosRolId" FromRole="Empleados" ToRole="Roles" />
+          <NavigationProperty Name="Rol" Relationship="Self.EmpleadosRolId" FromRole="Empleados" ToRole="Roles" />
           <NavigationProperty Name="Facturas" Relationship="Self.EmpleadosVendededorId" FromRole="Empleados" ToRole="Facturas" />
           <NavigationProperty Name="Pagos" Relationship="Self.PagosEmpleadoId" FromRole="Empleados" ToRole="Pagos" />
+          <Property Name="PersonaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="Compartido.Model.EmpleadosPersonaId" FromRole="Empleado" ToRole="Persona" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -493,8 +512,8 @@
           <Property Name="Total" Type="Double" Nullable="false" />
           <Property Name="VendedorId" Type="Int32" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FacturasClienteId" FromRole="Facturas" ToRole="Clientes" />
-          <NavigationProperty Name="Empleados" Relationship="Self.EmpleadosVendededorId" FromRole="Facturas" ToRole="Empleados" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FacturasClienteId" FromRole="Facturas" ToRole="Clientes" />
+          <NavigationProperty Name="Vendedor" Relationship="Self.EmpleadosVendededorId" FromRole="Facturas" ToRole="Empleados" />
           <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacFacturaId" FromRole="Facturas" ToRole="DetallesFactura" />
         </EntityType>
         <EntityType Name="Genero">
@@ -531,6 +550,7 @@
           <NavigationProperty Name="Clientes" Relationship="Self.ClientesPersonaId" FromRole="Personas" ToRole="Clientes" />
           <NavigationProperty Name="Generos" Relationship="Self.PersonasGeneroId" FromRole="Personas" ToRole="Generos" />
           <NavigationProperty Name="TiposDeDocumento" Relationship="Self.PersonasTipodDeDocumentoId" FromRole="Personas" ToRole="TiposDeDocumento" />
+          <NavigationProperty Name="Empleados" Relationship="Compartido.Model.EmpleadosPersonaId" FromRole="Persona" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -586,7 +606,7 @@
           <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
           <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Sueldo" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Empleados" Relationship="Self.PagosEmpleadoId" FromRole="Pagos" ToRole="Empleados" />
+          <NavigationProperty Name="Empleado" Relationship="Self.PagosEmpleadoId" FromRole="Pagos" ToRole="Empleados" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="TallaCamiseta">
@@ -902,6 +922,10 @@
             <End Role="TallasGenero" EntitySet="TallasGenero" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="Compartido.Model.sysdiagrams" />
+          <AssociationSet Name="EmpleadosPersonaId" Association="Compartido.Model.EmpleadosPersonaId">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Empleado" EntitySet="Empleados" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -913,6 +937,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="EmpleadosPersonaId">
+          <End Type="Compartido.Model.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="Compartido.Model.Empleado" Role="Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -942,6 +978,7 @@
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="Compartido.Model.Empleado">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Celular" ColumnName="Celular" />
