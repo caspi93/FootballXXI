@@ -28,6 +28,9 @@ namespace Escritorio.Vistas {
 
         private void CajaForm_Activated(object sender, EventArgs e) {
             tblCaja.DataSource = factura.DetallesFactura;
+            var dt = new DataTable();
+            dt.
+            //MessageBox.Show("El tamaño es: " + factura.DetallesFactura.Count);
         }
 
         private void BtnFinalizarCompra_Click(object sender, EventArgs e) {

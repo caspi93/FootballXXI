@@ -77,9 +77,11 @@
             this.cbGeneros.Name = "cbGeneros";
             this.cbGeneros.Size = new System.Drawing.Size(296, 21);
             this.cbGeneros.TabIndex = 3;
+            this.cbGeneros.SelectedIndexChanged += new System.EventHandler(this.CbGeneros_SelectedIndexChanged);
             // 
             // cbTallas
             // 
+            this.cbTallas.Enabled = false;
             this.cbTallas.FormattingEnabled = true;
             this.cbTallas.Items.AddRange(new object[] {
             "Seleccione una talla"});

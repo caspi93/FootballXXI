@@ -137,6 +137,7 @@
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAtras
             // 
@@ -165,7 +166,7 @@
             this.cbGeneros.Enabled = false;
             this.cbGeneros.FormattingEnabled = true;
             this.cbGeneros.Items.AddRange(new object[] {
-            "Seleccione unn género"});
+            "Seleccione un género"});
             this.cbGeneros.Location = new System.Drawing.Point(392, 109);
             this.cbGeneros.Name = "cbGeneros";
             this.cbGeneros.Size = new System.Drawing.Size(239, 21);
