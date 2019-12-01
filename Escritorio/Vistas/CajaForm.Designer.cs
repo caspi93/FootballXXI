@@ -28,19 +28,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.tblCaja = new System.Windows.Forms.DataGridView();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnSelVen = new System.Windows.Forms.Button();
-            this.btnCancelarCompra = new System.Windows.Forms.Button();
-            this.btnFinalizarCompra = new System.Windows.Forms.Button();
-            this.tnCerrarSesion = new System.Windows.Forms.Button();
             this.THNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnSelVen = new System.Windows.Forms.Button();
+            this.btnCancelarCompra = new System.Windows.Forms.Button();
+            this.btnSeleccionarCliente = new System.Windows.Forms.Button();
+            this.tnCerrarSesion = new System.Windows.Forms.Button();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnFinalizarCompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -87,10 +89,44 @@
             this.thSubtotal,
             this.cantidadDataGridViewTextBoxColumn});
             this.tblCaja.DataSource = this.detalleFacturaBindingSource;
-            this.tblCaja.Location = new System.Drawing.Point(126, 272);
+            this.tblCaja.Location = new System.Drawing.Point(126, 324);
             this.tblCaja.Name = "tblCaja";
             this.tblCaja.Size = new System.Drawing.Size(644, 158);
             this.tblCaja.TabIndex = 3;
+            // 
+            // THNombre
+            // 
+            this.THNombre.DataPropertyName = "NombreCamiseta";
+            this.THNombre.HeaderText = "Nombre";
+            this.THNombre.Name = "THNombre";
+            this.THNombre.ReadOnly = true;
+            // 
+            // THGenero
+            // 
+            this.THGenero.DataPropertyName = "NombreGenero";
+            this.THGenero.HeaderText = "Género";
+            this.THGenero.Name = "THGenero";
+            this.THGenero.ReadOnly = true;
+            // 
+            // thTalla
+            // 
+            this.thTalla.DataPropertyName = "NombreTalla";
+            this.thTalla.HeaderText = "Talla";
+            this.thTalla.Name = "thTalla";
+            this.thTalla.ReadOnly = true;
+            // 
+            // thPrecioUnitario
+            // 
+            this.thPrecioUnitario.DataPropertyName = "Precio";
+            this.thPrecioUnitario.HeaderText = "Precio Uniario";
+            this.thPrecioUnitario.Name = "thPrecioUnitario";
+            // 
+            // thSubtotal
+            // 
+            this.thSubtotal.DataPropertyName = "Subtotal";
+            this.thSubtotal.HeaderText = "Subtotal";
+            this.thSubtotal.Name = "thSubtotal";
+            this.thSubtotal.ReadOnly = true;
             // 
             // lblTotal
             // 
@@ -122,6 +158,7 @@
             this.btnSelVen.TabIndex = 6;
             this.btnSelVen.Text = "Seleccionar Vendedor";
             this.btnSelVen.UseVisualStyleBackColor = true;
+            this.btnSelVen.Click += new System.EventHandler(this.BtnSelVen_Click);
             // 
             // btnCancelarCompra
             // 
@@ -132,57 +169,39 @@
             this.btnCancelarCompra.TabIndex = 7;
             this.btnCancelarCompra.Text = "Cancelar Comprar";
             this.btnCancelarCompra.UseVisualStyleBackColor = true;
+            this.btnCancelarCompra.Click += new System.EventHandler(this.BtnCancelarCompra_Click);
             // 
-            // btnFinalizarCompra
+            // btnSeleccionarCliente
             // 
-            this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarCompra.Location = new System.Drawing.Point(654, 510);
-            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
-            this.btnFinalizarCompra.Size = new System.Drawing.Size(173, 34);
-            this.btnFinalizarCompra.TabIndex = 8;
-            this.btnFinalizarCompra.Text = "Finalizar Compra";
-            this.btnFinalizarCompra.UseVisualStyleBackColor = true;
-            this.btnFinalizarCompra.Click += new System.EventHandler(this.BtnFinalizarCompra_Click);
+            this.btnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarCliente.Location = new System.Drawing.Point(654, 510);
+            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
+            this.btnSeleccionarCliente.Size = new System.Drawing.Size(173, 34);
+            this.btnSeleccionarCliente.TabIndex = 8;
+            this.btnSeleccionarCliente.Text = "Seleccionar Cliente";
+            this.btnSeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btnSeleccionarCliente.Click += new System.EventHandler(this.BtnFinalizarCompra_Click);
             // 
             // tnCerrarSesion
             // 
             this.tnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnCerrarSesion.Location = new System.Drawing.Point(654, 564);
+            this.tnCerrarSesion.Location = new System.Drawing.Point(438, 553);
             this.tnCerrarSesion.Name = "tnCerrarSesion";
-            this.tnCerrarSesion.Size = new System.Drawing.Size(173, 34);
+            this.tnCerrarSesion.Size = new System.Drawing.Size(184, 34);
             this.tnCerrarSesion.TabIndex = 9;
             this.tnCerrarSesion.Text = "Cerrar Sesión";
             this.tnCerrarSesion.UseVisualStyleBackColor = true;
+            this.tnCerrarSesion.Click += new System.EventHandler(this.TnCerrarSesion_Click);
             // 
-            // THNombre
+            // lblCliente
             // 
-            this.THNombre.DataPropertyName = " NombreCamiseta";
-            this.THNombre.HeaderText = "Nombre";
-            this.THNombre.Name = "THNombre";
-            // 
-            // THGenero
-            // 
-            this.THGenero.DataPropertyName = "NombreGenero";
-            this.THGenero.HeaderText = "Género";
-            this.THGenero.Name = "THGenero";
-            this.THGenero.ReadOnly = true;
-            // 
-            // thTalla
-            // 
-            this.thTalla.DataPropertyName = "NombreTalla";
-            this.thTalla.HeaderText = "Talla";
-            this.thTalla.Name = "thTalla";
-            this.thTalla.ReadOnly = true;
-            // 
-            // thPrecioUnitario
-            // 
-            this.thPrecioUnitario.HeaderText = "Precio Uniario";
-            this.thPrecioUnitario.Name = "thPrecioUnitario";
-            // 
-            // thSubtotal
-            // 
-            this.thSubtotal.HeaderText = "Subtotal";
-            this.thSubtotal.Name = "thSubtotal";
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(17, 258);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(70, 20);
+            this.lblCliente.TabIndex = 10;
+            this.lblCliente.Text = "Cliente:";
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
@@ -194,13 +213,26 @@
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(Compartido.Modelo.DetalleFactura);
             // 
+            // btnFinalizarCompra
+            // 
+            this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarCompra.Location = new System.Drawing.Point(654, 553);
+            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
+            this.btnFinalizarCompra.Size = new System.Drawing.Size(173, 34);
+            this.btnFinalizarCompra.TabIndex = 11;
+            this.btnFinalizarCompra.Text = "Finalizar Compra";
+            this.btnFinalizarCompra.UseVisualStyleBackColor = true;
+            this.btnFinalizarCompra.Click += new System.EventHandler(this.BtnFinalizarCompra_Click_1);
+            // 
             // CajaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 599);
-            this.Controls.Add(this.tnCerrarSesion);
             this.Controls.Add(this.btnFinalizarCompra);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.tnCerrarSesion);
+            this.Controls.Add(this.btnSeleccionarCliente);
             this.Controls.Add(this.btnCancelarCompra);
             this.Controls.Add(this.btnSelVen);
             this.Controls.Add(this.btnAgregar);
@@ -229,7 +261,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSelVen;
         private System.Windows.Forms.Button btnCancelarCompra;
-        private System.Windows.Forms.Button btnFinalizarCompra;
+        private System.Windows.Forms.Button btnSeleccionarCliente;
         private System.Windows.Forms.Button tnCerrarSesion;
         private System.Windows.Forms.BindingSource detalleFacturaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn THNombre;
@@ -238,5 +270,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn thSubtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Button btnFinalizarCompra;
     }
 }

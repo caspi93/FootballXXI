@@ -56,6 +56,7 @@ namespace Escritorio.Vistas {
             empleado.Dirreccion = txtDireccion.Text;
             empleado.NombreUsuario = txtNombreUsuario.Text;
             empleado.Clave = txtClave.Text;
+            empleado.Salario = Convert.ToDouble(txtSalario.Text);
 
             var empleadoDao = new EmpleadoDao(db);
             if (empleadoDao.CrearEmpleado(empleado) != null) {

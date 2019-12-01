@@ -34,27 +34,27 @@ namespace Escritorio.Vistas {
         private void BtnBuscarVendedor_Click(object sender, EventArgs e) {
             string numeroDocumento = txtBuscarVendedor.Text;
             var empleadoDao = new EmpleadoDao(db);
-            Empleado empleado = empleadoDao.buscarVendedor(numeroDocumento);
+            vendedor = empleadoDao.buscarVendedor(numeroDocumento);
 
-            if (empleado != null) {
-                lblPrimerNombre.Text = "Primer Nombre: " + empleado.Persona.PrimerNombre;
-                lblSegundoNombre.Text = "Segundo Nombre: " + empleado.Persona.SegundoNombre;
-                lblPrimerApellido.Text = "Primer Apellido: " + empleado.Persona.PrimerApellido;
-                lblSegundoApellido.Text = "Segundo Apellido: " + empleado.Persona.SegundoApellido;
-                lblTipoDoc.Text = "Tipo de Documento: " + empleado.Persona.TiposDeDocumento.NombreCorto;
-                lblNumIde.Text = "Número de Documento: " + empleado.Persona.NumeroDocumento;
-                lblGenero.Text = "Género: " + empleado.Persona.Generos.Nombre;
-                lblFecNac.Text = "Fecha de Nacimiento: " + empleado.FechaNac;
-                lblCelular.Text = "Celular: " + empleado.Celular;
-                lblEmail.Text = "Correo: " + empleado.Email;
-                lblDireccion.Text = "Dirección: " + empleado.Dirreccion;
-                lblProfesion.Text = "Profesión: " + empleado.Profesion;
-                lblNombreUsuario.Text = "Nombre de Usuario: " + empleado.NombreUsuario;
-                lblRol.Text = "Cargo: " + empleado.Rol.Nombre;
-                lblEdad.Text = "Edad: " + empleado.Edad;
+            if (vendedor != null) {
+                lblPrimerNombre.Text = "Primer Nombre: " + vendedor.Persona.PrimerNombre;
+                lblSegundoNombre.Text = "Segundo Nombre: " + vendedor.Persona.SegundoNombre;
+                lblPrimerApellido.Text = "Primer Apellido: " + vendedor.Persona.PrimerApellido;
+                lblSegundoApellido.Text = "Segundo Apellido: " + vendedor.Persona.SegundoApellido;
+                lblTipoDoc.Text = "Tipo de Documento: " + vendedor.Persona.TiposDeDocumento.NombreCorto;
+                lblNumIde.Text = "Número de Documento: " + vendedor.Persona.NumeroDocumento;
+                lblGenero.Text = "Género: " + vendedor.Persona.Generos.Nombre;
+                lblFecNac.Text = "Fecha de Nacimiento: " + vendedor.FechaNac;
+                lblCelular.Text = "Celular: " + vendedor.Celular;
+                lblEmail.Text = "Correo: " + vendedor.Email;
+                lblDireccion.Text = "Dirección: " + vendedor.Dirreccion;
+                lblProfesion.Text = "Profesión: " + vendedor.Profesion;
+                lblNombreUsuario.Text = "Nombre de Usuario: " + vendedor.NombreUsuario;
+                lblRol.Text = "Cargo: " + vendedor.Rol.Nombre;
+                lblEdad.Text = "Edad: " + vendedor.Edad;
 
             } else {
-                MessageBox.Show("El cliente no existe");
+                MessageBox.Show("El vendedor no existe");
             }
         }
 

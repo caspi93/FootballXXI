@@ -30,12 +30,18 @@ namespace Compartido.Dao {
 
         public bool actualizarCantidad(DetalleFactura detalleFactura) {
             var consulta = from tc in db.TallasCamiseta
-                           where tc.CamisetaId == detalleFactura.CamisetaId &&
-                           tc.GeneroId == detalleFactura.GeneroId &&
-                           tc.TallaId == detalleFactura.TallaId
+                           where tc.CamisetaId == detalleFactura.Camisetas.Id &&
+                           tc.GeneroId == detalleFactura.Generos.Id &&
+                           tc.TallaId == detalleFactura.Tallas.Id
                            select tc;
             var tallaCamiseta = consulta.Single();
             return actualizarCantidad(tallaCamiseta, -detalleFactura.Cantidad);
+        }
+
+        public void actualizarCantidad(Factura factura) {
+            foreach(var detatalleFactura in factura.DetallesFactura) {
+                actualizarCantidad(detatalleFactura);
+            }
         }
 
     }

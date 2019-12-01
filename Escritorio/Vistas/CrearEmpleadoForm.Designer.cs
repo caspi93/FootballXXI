@@ -56,6 +56,8 @@
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.cbRoles = new System.Windows.Forms.ComboBox();
             this.txtFecNac = new System.Windows.Forms.DateTimePicker();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -356,11 +358,30 @@
             this.txtFecNac.Size = new System.Drawing.Size(161, 20);
             this.txtFecNac.TabIndex = 34;
             // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalario.Location = new System.Drawing.Point(891, 363);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(65, 20);
+            this.lblSalario.TabIndex = 35;
+            this.lblSalario.Text = "Salario";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(792, 390);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(254, 20);
+            this.txtSalario.TabIndex = 36;
+            // 
             // CrearEmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 474);
+            this.Controls.Add(this.txtSalario);
+            this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.txtFecNac);
             this.Controls.Add(this.cbRoles);
             this.Controls.Add(this.cbGeneros);
@@ -436,5 +457,7 @@
         private System.Windows.Forms.ComboBox cbGeneros;
         private System.Windows.Forms.ComboBox cbRoles;
         private System.Windows.Forms.DateTimePicker txtFecNac;
+        private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.TextBox txtSalario;
     }
 }

@@ -31,6 +31,7 @@ namespace Compartido.Modelo
         public string Dirreccion { get; set; }
         public int RolId { get; set; }
         public int PersonaId { get; set; }
+        public Nullable<double> Salario { get; set; }
     
         public virtual Rol Rol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

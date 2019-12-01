@@ -47,6 +47,7 @@ namespace Escritorio.Vistas {
             txtNombreUsuario.Text = empleado.NombreUsuario;
             txtClave.Text = empleado.Clave;
             txtFecNac.Value = empleado.FechaNac;
+            txtSalario.Text = empleado.Salario.ToString();
         }
 
         private void Label12_Click(object sender, EventArgs e) {
@@ -75,6 +76,7 @@ namespace Escritorio.Vistas {
             empleado.Dirreccion = txtDireccion.Text;
             empleado.NombreUsuario = txtNombreUsuario.Text;
             empleado.Clave = txtClave.Text;
+            empleado.Salario = Convert.ToDouble(txtSalario.Text);
 
             var editarEmpleadoDao = new EmpleadoDao(db);
 
@@ -84,6 +86,10 @@ namespace Escritorio.Vistas {
             } else {
                 MessageBox.Show("Ha ocurrido un error");
             }
+
+        }
+
+        private void LblSalario_Click(object sender, EventArgs e) {
 
         }
     }

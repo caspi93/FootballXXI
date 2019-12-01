@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarEmpleado));
             this.lblFootball = new System.Windows.Forms.Label();
             this.lblPrimerNombre = new System.Windows.Forms.Label();
             this.lblSegundoNombre = new System.Windows.Forms.Label();
@@ -57,6 +56,8 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.txtProfesion = new System.Windows.Forms.TextBox();
             this.txtFecNac = new System.Windows.Forms.DateTimePicker();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -215,7 +216,7 @@
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(958, 363);
+            this.lblRol.Location = new System.Drawing.Point(966, 315);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(41, 24);
             this.lblRol.TabIndex = 15;
@@ -267,7 +268,7 @@
             this.cbRoles.FormattingEnabled = true;
             this.cbRoles.Items.AddRange(new object[] {
             "Seleccione un rol"});
-            this.cbRoles.Location = new System.Drawing.Point(863, 390);
+            this.cbRoles.Location = new System.Drawing.Point(863, 353);
             this.cbRoles.Name = "cbRoles";
             this.cbRoles.Size = new System.Drawing.Size(227, 21);
             this.cbRoles.TabIndex = 20;
@@ -357,12 +358,31 @@
             this.txtFecNac.Size = new System.Drawing.Size(180, 20);
             this.txtFecNac.TabIndex = 33;
             // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalario.Location = new System.Drawing.Point(942, 395);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(74, 24);
+            this.lblSalario.TabIndex = 34;
+            this.lblSalario.Text = "Salario";
+            this.lblSalario.Click += new System.EventHandler(this.LblSalario_Click);
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(874, 431);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(214, 20);
+            this.txtSalario.TabIndex = 35;
+            // 
             // EditarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1119, 528);
+            this.Controls.Add(this.txtSalario);
+            this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.txtFecNac);
             this.Controls.Add(this.txtProfesion);
             this.Controls.Add(this.txtClave);
@@ -438,5 +458,7 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtProfesion;
         private System.Windows.Forms.DateTimePicker txtFecNac;
+        private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.TextBox txtSalario;
     }
 }

@@ -55,6 +55,10 @@ namespace Escritorio.Vistas {
             if (equipo >= 1) {
                 cbGeneros.Enabled = true;
                 camiseta = (Camiseta)cbEquipos.SelectedItem;
+                MessageBox.Show("La liga es: " + camiseta.LigaId);
+                MessageBox.Show("La id es: " + camiseta.Id);
+                MessageBox.Show("El nombre del equipo es: " + camiseta.NombreEquipo);
+               
                 var tallasCamisetaDao = new TallaCamisetaDao(db);
                 tallasCamisetas = tallasCamisetaDao.GetTallaCamisetas(camiseta);
                 var generoDao = new GeneroDao(db);

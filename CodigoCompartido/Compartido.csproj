@@ -77,7 +77,6 @@
     <Compile Include="Modelo\DetalleFactura.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\DetallesFacturaComplemento.cs" />
     <Compile Include="Modelo\Empleado.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>

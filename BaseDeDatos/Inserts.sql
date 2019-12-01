@@ -47,6 +47,8 @@ select * from Empleados;
 select * from Ligas;
 select * from Tallas;
 select * from TallasCamiseta;
+select * from TallasGenero where TallaId = 3;
+select * from TallasCamiseta where TallaId = 3;
 
 insert into TallasCamiseta(TallaId, CamisetaId, GeneroId, Cantidad)
 select t.Id, c.Id, g.Id, 10

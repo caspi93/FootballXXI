@@ -16,6 +16,7 @@ namespace Escritorio.Vistas {
 
         readonly Entidades db;
         private Factura factura;
+        private Cliente cliente;
 
         public BuscarClienteForm(Factura factura) {
             InitializeComponent();
@@ -32,11 +33,10 @@ namespace Escritorio.Vistas {
 
             string numeroDocumento = txtBuscarCliente.Text;
             var clienteDao = new ClienteDao(db);
-            var cliente = clienteDao.buscarCliente(numeroDocumento);
+            cliente = clienteDao.buscarCliente(numeroDocumento);
 
             if (cliente != null) {
-                factura.Cliente = cliente;
-                LlenarCliente(cliente);
+                LlenarCliente();
             } else {
                 MessageBox.Show("El cliente no existe");
             }
@@ -49,11 +49,12 @@ namespace Escritorio.Vistas {
 
         private void BuscarClienteForm_Activated(object sender, EventArgs e) {
             if (factura.Cliente != null) {
-                LlenarCliente(factura.Cliente);
+                cliente = factura.Cliente;
+                LlenarCliente();
             }
         }
 
-        private void LlenarCliente(Cliente cliente) {
+        private void LlenarCliente() {
             lblPrimerNombre.Text = "Primer Nombre: " + cliente.Persona.PrimerNombre;
             lblSegundoNombre.Text = "Segundo Nombre: " + cliente.Persona.SegundoNombre;
             lblPrimerApellido.Text = "Primer Apellido: " + cliente.Persona.PrimerApellido;
@@ -64,7 +65,12 @@ namespace Escritorio.Vistas {
             lblFechaCreacion.Text = "Fecha de Creación: " + cliente.FechaCreacion;
             lblCelular.Text = "Celular: " + cliente.Celular;
             lblCorreo.Text = "Correo: " + cliente.Email;
-            btnFinalizarCompra.Enabled = true;
+            btnSeleccionarCliente.Enabled = true;
+        }
+
+        private void BtnSeleccionarCliente_Click(object sender, EventArgs e) {
+            factura.Cliente = cliente;
+            Close();
         }
     }
 }

@@ -36,7 +36,7 @@
             this.lblFechaCreacion = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnCrearCliente = new System.Windows.Forms.Button();
-            this.btnFinalizarCompra = new System.Windows.Forms.Button();
+            this.btnSeleccionarCliente = new System.Windows.Forms.Button();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -171,16 +171,17 @@
             this.btnCrearCliente.UseVisualStyleBackColor = true;
             this.btnCrearCliente.Click += new System.EventHandler(this.BtnCrearCliente_Click);
             // 
-            // btnFinalizarCompra
+            // btnSeleccionarCliente
             // 
-            this.btnFinalizarCompra.Enabled = false;
-            this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarCompra.Location = new System.Drawing.Point(600, 468);
-            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
-            this.btnFinalizarCompra.Size = new System.Drawing.Size(182, 38);
-            this.btnFinalizarCompra.TabIndex = 13;
-            this.btnFinalizarCompra.Text = "Finalizar Compra";
-            this.btnFinalizarCompra.UseVisualStyleBackColor = true;
+            this.btnSeleccionarCliente.Enabled = false;
+            this.btnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarCliente.Location = new System.Drawing.Point(600, 468);
+            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
+            this.btnSeleccionarCliente.Size = new System.Drawing.Size(182, 38);
+            this.btnSeleccionarCliente.TabIndex = 13;
+            this.btnSeleccionarCliente.Text = "Seleccionar";
+            this.btnSeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btnSeleccionarCliente.Click += new System.EventHandler(this.BtnSeleccionarCliente_Click);
             // 
             // lblCelular
             // 
@@ -209,7 +210,7 @@
             this.ClientSize = new System.Drawing.Size(794, 518);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblCelular);
-            this.Controls.Add(this.btnFinalizarCompra);
+            this.Controls.Add(this.btnSeleccionarCliente);
             this.Controls.Add(this.btnCrearCliente);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblFechaCreacion);
@@ -245,7 +246,7 @@
         private System.Windows.Forms.Label lblFechaCreacion;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btnCrearCliente;
-        private System.Windows.Forms.Button btnFinalizarCompra;
+        private System.Windows.Forms.Button btnSeleccionarCliente;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblCorreo;
     }
