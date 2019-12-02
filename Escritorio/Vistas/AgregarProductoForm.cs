@@ -112,6 +112,8 @@ namespace Escritorio.Vistas {
                 MessageBox.Show("La cantidad supera los limites. " +
                                 "Por favor intente nuevamente");
             } else {
+                camiseta = db.Camisetas.Where(c => c.Id == camiseta.Id).Single();
+                tallaGenero = db.TallasGenero.Where(tg => tg.TallaId == tallaGenero.TallaId && tg.GeneroId == tallaGenero.GeneroId).Single();
                 var detalleFactura = new DetalleFactura(factura, camiseta, tallaGenero, cantidad);
                 factura.DetallesFactura.Add(detalleFactura);
                 Close();

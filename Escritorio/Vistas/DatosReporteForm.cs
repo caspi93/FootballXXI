@@ -38,5 +38,12 @@ namespace Escritorio.Vistas {
                 cbTallas.Items.AddRange(tallas.ToArray());
             }
         }
+
+        private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
+            int t = cbTallas.SelectedIndex;
+            if (t >= 1) {
+
+            }
+        }
     }
 }

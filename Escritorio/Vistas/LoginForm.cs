@@ -31,7 +31,7 @@ namespace Escritorio.Vistas {
                             window = new AdministradorForm();
                             break;
                         case "VEN":
-                            window = new VendedorForm();
+                            window = new VendedorForm(empleado);
                             break;
                     }
 

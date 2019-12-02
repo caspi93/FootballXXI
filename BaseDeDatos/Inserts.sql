@@ -62,3 +62,23 @@ select t.Id, g.Id, 10000
 from Tallas as t,
 Generos as g
 where g.Id != 3;
+
+insert into Facturas (FechaCreacion, ClienteId, Total, VendedorId)
+	values (CURRENT_TIMESTAMP, 3, 10000, 2);
+
+insert into DetallesFactura (FacturaId, CamisetaId, TallaId, GeneroId, Cantidad, Precio)
+	values (1, 3, 5, 2, 1, 10000);
+
+
+select * from Clientes;
+select * from Empleados;
+select * from Facturas;
+select * from Tallas;
+select * from Personas;
+select * from Generos;
+
+select * from TallasCamiseta tc
+where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
+
+update Empleados set Salario = 3000000 where id = 1;
+update Empleados set Salario = 1500000 where id = 2;

@@ -27,8 +27,6 @@
             this.lblPrimerNombre = new System.Windows.Forms.Label();
             this.lblPrimerApellido = new System.Windows.Forms.Label();
             this.lblNumeroIde = new System.Windows.Forms.Label();
-            this.lblSegundoNombre = new System.Windows.Forms.Label();
-            this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblComision = new System.Windows.Forms.Label();
             this.lblSalario = new System.Windows.Forms.Label();
@@ -53,55 +51,35 @@
             this.lblPrimerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrimerNombre.Location = new System.Drawing.Point(13, 114);
             this.lblPrimerNombre.Name = "lblPrimerNombre";
-            this.lblPrimerNombre.Size = new System.Drawing.Size(132, 20);
+            this.lblPrimerNombre.Size = new System.Drawing.Size(85, 20);
             this.lblPrimerNombre.TabIndex = 1;
-            this.lblPrimerNombre.Text = "Primer Nombre:";
+            this.lblPrimerNombre.Text = "Nombres:";
             // 
             // lblPrimerApellido
             // 
             this.lblPrimerApellido.AutoSize = true;
             this.lblPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrimerApellido.Location = new System.Drawing.Point(12, 155);
+            this.lblPrimerApellido.Location = new System.Drawing.Point(366, 114);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(134, 20);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(87, 20);
             this.lblPrimerApellido.TabIndex = 2;
-            this.lblPrimerApellido.Text = "Primer Apellido:";
+            this.lblPrimerApellido.Text = "Apellidos:";
             // 
             // lblNumeroIde
             // 
             this.lblNumeroIde.AutoSize = true;
             this.lblNumeroIde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroIde.Location = new System.Drawing.Point(13, 194);
+            this.lblNumeroIde.Location = new System.Drawing.Point(15, 166);
             this.lblNumeroIde.Name = "lblNumeroIde";
             this.lblNumeroIde.Size = new System.Drawing.Size(182, 20);
             this.lblNumeroIde.TabIndex = 3;
             this.lblNumeroIde.Text = "Número de Identidad:";
             // 
-            // lblSegundoNombre
-            // 
-            this.lblSegundoNombre.AutoSize = true;
-            this.lblSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSegundoNombre.Location = new System.Drawing.Point(363, 113);
-            this.lblSegundoNombre.Name = "lblSegundoNombre";
-            this.lblSegundoNombre.Size = new System.Drawing.Size(153, 20);
-            this.lblSegundoNombre.TabIndex = 4;
-            this.lblSegundoNombre.Text = "Segundo Nombre:";
-            // 
-            // lblSegundoApellido
-            // 
-            this.lblSegundoApellido.AutoSize = true;
-            this.lblSegundoApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSegundoApellido.Location = new System.Drawing.Point(366, 155);
-            this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(155, 20);
-            this.lblSegundoApellido.TabIndex = 5;
-            this.lblSegundoApellido.Text = "Segundo Apellido:";
-            // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(366, 194);
+            this.lblCodigo.Location = new System.Drawing.Point(366, 166);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(178, 20);
             this.lblCodigo.TabIndex = 6;
@@ -168,8 +146,6 @@
             this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.lblComision);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.lblSegundoApellido);
-            this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblNumeroIde);
             this.Controls.Add(this.lblPrimerApellido);
             this.Controls.Add(this.lblPrimerNombre);
@@ -187,8 +163,6 @@
         private System.Windows.Forms.Label lblPrimerNombre;
         private System.Windows.Forms.Label lblPrimerApellido;
         private System.Windows.Forms.Label lblNumeroIde;
-        private System.Windows.Forms.Label lblSegundoNombre;
-        private System.Windows.Forms.Label lblSegundoApellido;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblComision;
         private System.Windows.Forms.Label lblSalario;

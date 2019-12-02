@@ -13,7 +13,7 @@ namespace Escritorio {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.CajaForm());
+            Application.Run(new Vistas.DatosReporteForm());
         }
     }
 }

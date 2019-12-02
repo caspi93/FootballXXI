@@ -53,6 +53,7 @@
     <Compile Include="Dao\CamisetaDao.cs" />
     <Compile Include="Dao\ClienteDao.cs" />
     <Compile Include="Dao\EmpleadoDao.cs" />
+    <Compile Include="Dao\FacturaDao.cs" />
     <Compile Include="Dao\GeneroDao.cs" />
     <Compile Include="Dao\LigaDao.cs" />
     <Compile Include="Dao\PersonaDao.cs" />

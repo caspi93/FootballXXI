@@ -76,9 +76,12 @@ namespace Escritorio.Vistas {
 
         private void BtnFinalizarCompra_Click_1(object sender, EventArgs e) {
             var tallaCamisetaDao = new TallaCamisetaDao(db);
-            tallaCamisetaDao.actualizarCantidad(factura);
-            limpiarVentana();
-
+            var facturaDao = new FacturaDao(db);
+            if (facturaDao.crearFactura(factura) != null) {
+                tallaCamisetaDao.actualizarCantidad(factura);
+                MessageBox.Show("La compra se ha realizado exitosamente");
+                limpiarVentana();
+            }
         }
 
         private void limpiarVentana() {

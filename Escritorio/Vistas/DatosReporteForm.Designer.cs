@@ -89,6 +89,7 @@
             this.cbTallas.Name = "cbTallas";
             this.cbTallas.Size = new System.Drawing.Size(305, 21);
             this.cbTallas.TabIndex = 4;
+            this.cbTallas.SelectedIndexChanged += new System.EventHandler(this.CbTallas_SelectedIndexChanged);
             // 
             // dataGridView1
             // 

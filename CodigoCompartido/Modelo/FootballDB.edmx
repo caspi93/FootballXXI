@@ -51,7 +51,7 @@
           <Property Name="Dirreccion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RolId" Type="int" Nullable="false" />
           <Property Name="PersonaId" Type="int" Nullable="false" />
-          <Property Name="Salario" Type="float" />
+          <Property Name="Salario" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Facturas">
           <Key>
@@ -503,7 +503,7 @@
           <NavigationProperty Name="Pagos" Relationship="Self.PagosEmpleadoId" FromRole="Empleados" ToRole="Pagos" />
           <Property Name="PersonaId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Persona" Relationship="Compartido.Model.EmpleadosPersonaId" FromRole="Empleado" ToRole="Persona" />
-          <Property Name="Salario" Type="Double" />
+          <Property Name="Salario" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
