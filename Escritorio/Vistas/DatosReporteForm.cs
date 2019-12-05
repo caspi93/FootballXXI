@@ -14,6 +14,9 @@ namespace Escritorio.Vistas {
     public partial class DatosReporteForm : Form {
 
         readonly Entidades db;
+
+        Genero genero;
+
         public DatosReporteForm() {
             InitializeComponent();
 
@@ -23,26 +26,32 @@ namespace Escritorio.Vistas {
             cbGeneros.Items.AddRange(generos.ToArray());
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-
-        }
-
         private void CbGeneros_SelectedIndexChanged(object sender, EventArgs e) {
 
             int g = cbGeneros.SelectedIndex;
             if (g >= 1) {
                 cbTallas.Enabled = true;
-                var genero = (Genero)cbGeneros.SelectedItem;
+                genero = (Genero)cbGeneros.SelectedItem;
                 var tallaDao = new TallaDao(db);
                 var tallas = tallaDao.GetTallas();
+                cbTallas.Items.Clear();
+                cbTallas.Items.Add("Seleccione una talla");
                 cbTallas.Items.AddRange(tallas.ToArray());
             }
+
         }
 
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
             int t = cbTallas.SelectedIndex;
             if (t >= 1) {
+                var talla = (Talla)cbTallas.SelectedItem;
+                var tallaGenero = new TallaGenero {
+                    TallaId = talla.Id,
+                    GeneroId = genero.Id
+                };
 
+                var tallaCamisetaDao = new TallaCamisetaDao(db);
+                tblDatosReporte.DataSource = tallaCamisetaDao.calcularVentas(tallaGenero);
             }
         }
     }

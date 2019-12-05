@@ -27,5 +27,10 @@ namespace Escritorio.Vistas {
              CrearEmpleadoForm crearEmpleadoForm = new CrearEmpleadoForm();
              crearEmpleadoForm.Show();
         }
+
+        private void BtnPagarNomina_Click(object sender, EventArgs e) {
+            var pagosForm = new PagosForm();
+            pagosForm.Show();
+        }
     }
 }

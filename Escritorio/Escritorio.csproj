@@ -133,6 +133,12 @@
     <Compile Include="Vistas\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PagosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\PagosForm.Designer.cs">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VendedorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,10 +190,14 @@
     <EmbeddedResource Include="Vistas\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\PagosForm.resx">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VendedorForm.resx">
       <DependentUpon>VendedorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Compartido.Modelo.DatosReporte.datasource" />
     <None Include="Properties\DataSources\Compartido.Modelo.DetalleFactura.datasource" />
     <None Include="Properties\DataSources\Compartido.Modelo.Empleado.datasource" />
     <None Include="Properties\Settings.settings">

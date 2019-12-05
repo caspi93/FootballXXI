@@ -23,19 +23,22 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblTalla = new System.Windows.Forms.Label();
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.cbTallas = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblDatosReporte = new System.Windows.Forms.DataGridView();
+            this.btnActPro = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.thNombreLiga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantVen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnActPro = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosReporteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,39 +94,20 @@
             this.cbTallas.TabIndex = 4;
             this.cbTallas.SelectedIndexChanged += new System.EventHandler(this.CbTallas_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // tblDatosReporte
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblDatosReporte.AutoGenerateColumns = false;
+            this.tblDatosReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblDatosReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.thNombreLiga,
             this.thEquipo,
             this.thCantEx,
             this.thCantVen});
-            this.dataGridView1.Location = new System.Drawing.Point(164, 251);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 56);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // thNombreLiga
-            // 
-            this.thNombreLiga.HeaderText = "Nombre de la liga";
-            this.thNombreLiga.Name = "thNombreLiga";
-            // 
-            // thEquipo
-            // 
-            this.thEquipo.HeaderText = "Nombre del equipo";
-            this.thEquipo.Name = "thEquipo";
-            // 
-            // thCantEx
-            // 
-            this.thCantEx.HeaderText = "Cantidad Existente";
-            this.thCantEx.Name = "thCantEx";
-            // 
-            // thCantVen
-            // 
-            this.thCantVen.HeaderText = "Cantidad Vendida";
-            this.thCantVen.Name = "thCantVen";
+            this.tblDatosReporte.DataSource = this.datosReporteBindingSource;
+            this.tblDatosReporte.Location = new System.Drawing.Point(176, 127);
+            this.tblDatosReporte.Name = "tblDatosReporte";
+            this.tblDatosReporte.Size = new System.Drawing.Size(444, 264);
+            this.tblDatosReporte.TabIndex = 5;
             // 
             // btnActPro
             // 
@@ -145,6 +129,34 @@
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
             // 
+            // datosReporteBindingSource
+            // 
+            this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
+            // 
+            // thNombreLiga
+            // 
+            this.thNombreLiga.DataPropertyName = "NombreLiga";
+            this.thNombreLiga.HeaderText = "Nombre de la liga";
+            this.thNombreLiga.Name = "thNombreLiga";
+            // 
+            // thEquipo
+            // 
+            this.thEquipo.DataPropertyName = "NombreEquipo";
+            this.thEquipo.HeaderText = "Nombre del equipo";
+            this.thEquipo.Name = "thEquipo";
+            // 
+            // thCantEx
+            // 
+            this.thCantEx.DataPropertyName = "CantidadExistente";
+            this.thCantEx.HeaderText = "Cantidad Existente";
+            this.thCantEx.Name = "thCantEx";
+            // 
+            // thCantVen
+            // 
+            this.thCantVen.DataPropertyName = "CantidadVendida";
+            this.thCantVen.HeaderText = "Cantidad Vendida";
+            this.thCantVen.Name = "thCantVen";
+            // 
             // DatosReporteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,7 +164,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnActPro);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tblDatosReporte);
             this.Controls.Add(this.cbTallas);
             this.Controls.Add(this.cbGeneros);
             this.Controls.Add(this.lblTalla);
@@ -160,7 +172,8 @@
             this.Controls.Add(this.label1);
             this.Name = "DatosReporteForm";
             this.Text = "DatosReporteForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosReporteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,12 +186,13 @@
         private System.Windows.Forms.Label lblTalla;
         private System.Windows.Forms.ComboBox cbGeneros;
         private System.Windows.Forms.ComboBox cbTallas;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblDatosReporte;
+        private System.Windows.Forms.Button btnActPro;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.BindingSource datosReporteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn thNombreLiga;
         private System.Windows.Forms.DataGridViewTextBoxColumn thEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCantEx;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCantVen;
-        private System.Windows.Forms.Button btnActPro;
-        private System.Windows.Forms.Button btnAtras;
     }
 }

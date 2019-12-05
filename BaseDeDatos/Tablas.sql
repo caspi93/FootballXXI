@@ -106,7 +106,7 @@ constraint EmpleadosPersonaId foreign key(PersonaId) references Personas;
 
 alter table Empleados alter column PersonaId int not null; 
 
-alter table Empleados add Salario float;
+alter table Empleados alter column Salario float not null;
 
 
 create table Facturas(

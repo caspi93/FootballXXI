@@ -82,3 +82,5 @@ where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
 
 update Empleados set Salario = 3000000 where id = 1;
 update Empleados set Salario = 1500000 where id = 2;
+
+select sum(total) from Facturas where Id = 222;

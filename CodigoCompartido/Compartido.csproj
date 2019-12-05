@@ -70,6 +70,7 @@
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ClientesComplemento.cs" />
+    <Compile Include="Modelo\DatosReporte.cs" />
     <Compile Include="Modelo\DetalleFacturaComplemento.cs" />
     <Compile Include="Modelo\EmpleadosComplemento.cs" />
     <Compile Include="Modelo\FacturaComplemento.cs" />

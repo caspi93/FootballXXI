@@ -28,6 +28,7 @@
             this.btnVerUsuarios = new System.Windows.Forms.Button();
             this.btnVerReportes = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnPagarNomina = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -75,7 +76,7 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(89, 399);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(89, 458);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(246, 39);
             this.btnCerrarSesion.TabIndex = 4;
@@ -83,11 +84,23 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
+            // btnPagarNomina
+            // 
+            this.btnPagarNomina.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagarNomina.Location = new System.Drawing.Point(89, 318);
+            this.btnPagarNomina.Name = "btnPagarNomina";
+            this.btnPagarNomina.Size = new System.Drawing.Size(246, 46);
+            this.btnPagarNomina.TabIndex = 5;
+            this.btnPagarNomina.Text = "Pagar Nómina";
+            this.btnPagarNomina.UseVisualStyleBackColor = true;
+            this.btnPagarNomina.Click += new System.EventHandler(this.BtnPagarNomina_Click);
+            // 
             // AdministradorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 450);
+            this.ClientSize = new System.Drawing.Size(436, 521);
+            this.Controls.Add(this.btnPagarNomina);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnVerReportes);
             this.Controls.Add(this.btnVerUsuarios);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Button btnVerUsuarios;
         private System.Windows.Forms.Button btnVerReportes;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnPagarNomina;
     }
 }
