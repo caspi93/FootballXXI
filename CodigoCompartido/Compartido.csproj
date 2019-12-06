@@ -56,6 +56,7 @@
     <Compile Include="Dao\FacturaDao.cs" />
     <Compile Include="Dao\GeneroDao.cs" />
     <Compile Include="Dao\LigaDao.cs" />
+    <Compile Include="Dao\PagoDao.cs" />
     <Compile Include="Dao\PersonaDao.cs" />
     <Compile Include="Dao\RolDao.cs" />
     <Compile Include="Dao\TallaCamisetaDao.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Modelo\DetalleFacturaComplemento.cs" />
     <Compile Include="Modelo\EmpleadosComplemento.cs" />
     <Compile Include="Modelo\FacturaComplemento.cs" />
+    <Compile Include="Modelo\PagoEmpleados.cs" />
     <Compile Include="Modelo\PersonasComplemento.cs" />
     <Compile Include="Modelo\RolesComplemento.cs" />
     <Compile Include="Modelo\DetalleFactura.cs">

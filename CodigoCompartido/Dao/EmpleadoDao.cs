@@ -43,5 +43,34 @@ namespace Compartido.Dao {
             db.SaveChanges();
             return empleado;
         }
+
+        public List<PagoEmpleados> GetNomina() {
+            var consulta = from e in db.Empleados
+                           select new {
+                               Codigo = e.Id,
+                               Nombres = e.Persona.PrimerNombre + " " + e.Persona.SegundoNombre,
+                               Apellidos = e.Persona.PrimerApellido + " " + e.Persona.SegundoApellido,
+                               Cargo = e.Rol,
+                               SalarioBasico = e.Salario,
+                               UltimaFechaPago = (
+                                    from p in db.Pagos where p.EmpleadoId == e.Id
+                                    select (DateTime?)p.FechaPago
+                               ).Max()
+                           };
+            var datos = consulta.ToList();
+            var pagoEmpleados = new List<PagoEmpleados>();
+            foreach (var pe in datos) {
+                pagoEmpleados.Add(new PagoEmpleados {
+                    Codigo = pe.Codigo,
+                    Nombres = pe.Nombres,
+                    Apellidos = pe.Apellidos,
+                    Cargo = pe.Cargo,
+                    SalarioBasico = pe.SalarioBasico,
+                    UltimaFechaPago = pe.UltimaFechaPago,
+
+                });
+            }
+            return pagoEmpleados;
+        }
     }
 }

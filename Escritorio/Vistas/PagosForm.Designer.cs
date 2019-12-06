@@ -23,10 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.lblFootball = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblPagoNomina = new System.Windows.Forms.DataGridView();
             this.lblTabla = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnPagar = new System.Windows.Forms.Button();
+            this.btnAtrás = new System.Windows.Forms.Button();
+            this.pagoEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.thCodEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,9 +39,8 @@
             this.thSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thComisiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPagar = new System.Windows.Forms.Button();
-            this.btnAtrás = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPagoNomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagoEmpleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -50,10 +53,11 @@
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
             // 
-            // dataGridView1
+            // tblPagoNomina
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblPagoNomina.AutoGenerateColumns = false;
+            this.tblPagoNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblPagoNomina.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.thCodEmpleado,
             this.thNombres,
             this.thApellidos,
@@ -62,10 +66,12 @@
             this.thSalario,
             this.thComisiones,
             this.thTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(61, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 268);
-            this.dataGridView1.TabIndex = 1;
+            this.tblPagoNomina.DataSource = this.pagoEmpleadosBindingSource;
+            this.tblPagoNomina.Location = new System.Drawing.Point(61, 136);
+            this.tblPagoNomina.Name = "tblPagoNomina";
+            this.tblPagoNomina.Size = new System.Drawing.Size(843, 268);
+            this.tblPagoNomina.TabIndex = 1;
+            this.tblPagoNomina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // lblTabla
             // 
@@ -87,46 +93,6 @@
             this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "Total a Pagar:";
             // 
-            // thCodEmpleado
-            // 
-            this.thCodEmpleado.HeaderText = "Código de Empleado";
-            this.thCodEmpleado.Name = "thCodEmpleado";
-            // 
-            // thNombres
-            // 
-            this.thNombres.HeaderText = "Nombres";
-            this.thNombres.Name = "thNombres";
-            // 
-            // thApellidos
-            // 
-            this.thApellidos.HeaderText = "Apellidos";
-            this.thApellidos.Name = "thApellidos";
-            // 
-            // thCargo
-            // 
-            this.thCargo.HeaderText = "Cargo";
-            this.thCargo.Name = "thCargo";
-            // 
-            // thUltFecPago
-            // 
-            this.thUltFecPago.HeaderText = "Última fecha de pago";
-            this.thUltFecPago.Name = "thUltFecPago";
-            // 
-            // thSalario
-            // 
-            this.thSalario.HeaderText = "Salario básico";
-            this.thSalario.Name = "thSalario";
-            // 
-            // thComisiones
-            // 
-            this.thComisiones.HeaderText = "Comisones";
-            this.thComisiones.Name = "thComisiones";
-            // 
-            // thTotal
-            // 
-            this.thTotal.HeaderText = "Salario más comisión";
-            this.thTotal.Name = "thTotal";
-            // 
             // btnPagar
             // 
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +112,59 @@
             this.btnAtrás.TabIndex = 5;
             this.btnAtrás.Text = "Atrás";
             this.btnAtrás.UseVisualStyleBackColor = true;
+            this.btnAtrás.Click += new System.EventHandler(this.BtnAtrás_Click);
+            // 
+            // pagoEmpleadosBindingSource
+            // 
+            this.pagoEmpleadosBindingSource.DataSource = typeof(Compartido.Modelo.PagoEmpleados);
+            // 
+            // thCodEmpleado
+            // 
+            this.thCodEmpleado.DataPropertyName = "Codigo";
+            this.thCodEmpleado.HeaderText = "Código de Empleado";
+            this.thCodEmpleado.Name = "thCodEmpleado";
+            // 
+            // thNombres
+            // 
+            this.thNombres.DataPropertyName = "Nombres";
+            this.thNombres.HeaderText = "Nombres";
+            this.thNombres.Name = "thNombres";
+            // 
+            // thApellidos
+            // 
+            this.thApellidos.DataPropertyName = "Apellidos";
+            this.thApellidos.HeaderText = "Apellidos";
+            this.thApellidos.Name = "thApellidos";
+            // 
+            // thCargo
+            // 
+            this.thCargo.DataPropertyName = "Cargo";
+            this.thCargo.HeaderText = "Cargo";
+            this.thCargo.Name = "thCargo";
+            // 
+            // thUltFecPago
+            // 
+            this.thUltFecPago.DataPropertyName = "UltimaFechaPago";
+            this.thUltFecPago.HeaderText = "Última fecha de pago";
+            this.thUltFecPago.Name = "thUltFecPago";
+            // 
+            // thSalario
+            // 
+            this.thSalario.DataPropertyName = "SalarioBasico";
+            this.thSalario.HeaderText = "Salario básico";
+            this.thSalario.Name = "thSalario";
+            // 
+            // thComisiones
+            // 
+            this.thComisiones.DataPropertyName = "Comisiones";
+            this.thComisiones.HeaderText = "Comisones";
+            this.thComisiones.Name = "thComisiones";
+            // 
+            // thTotal
+            // 
+            this.thTotal.DataPropertyName = "SalarioComisiones";
+            this.thTotal.HeaderText = "Salario más comisión";
+            this.thTotal.Name = "thTotal";
             // 
             // PagosForm
             // 
@@ -156,11 +175,12 @@
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTabla);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tblPagoNomina);
             this.Controls.Add(this.lblFootball);
             this.Name = "PagosForm";
             this.Text = "PagosForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPagoNomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagoEmpleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +189,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblFootball;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblPagoNomina;
+        private System.Windows.Forms.Label lblTabla;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.Button btnAtrás;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCodEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn thNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn thApellidos;
@@ -178,9 +202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thSalario;
         private System.Windows.Forms.DataGridViewTextBoxColumn thComisiones;
         private System.Windows.Forms.DataGridViewTextBoxColumn thTotal;
-        private System.Windows.Forms.Label lblTabla;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Button btnPagar;
-        private System.Windows.Forms.Button btnAtrás;
+        private System.Windows.Forms.BindingSource pagoEmpleadosBindingSource;
     }
 }

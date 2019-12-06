@@ -200,6 +200,7 @@
     <None Include="Properties\DataSources\Compartido.Modelo.DatosReporte.datasource" />
     <None Include="Properties\DataSources\Compartido.Modelo.DetalleFactura.datasource" />
     <None Include="Properties\DataSources\Compartido.Modelo.Empleado.datasource" />
+    <None Include="Properties\DataSources\Compartido.Modelo.PagoEmpleados.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
