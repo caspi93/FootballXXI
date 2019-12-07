@@ -30,13 +30,17 @@
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.cbTallas = new System.Windows.Forms.ComboBox();
             this.tblDatosReporte = new System.Windows.Forms.DataGridView();
-            this.btnActPro = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
-            this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.thNombreLiga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantVen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnActPro = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.nombreLigaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadExistenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadVendidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosReporteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -102,36 +106,16 @@
             this.thNombreLiga,
             this.thEquipo,
             this.thCantEx,
-            this.thCantVen});
+            this.thCantVen,
+            this.nombreLigaDataGridViewTextBoxColumn,
+            this.nombreEquipoDataGridViewTextBoxColumn,
+            this.cantidadExistenteDataGridViewTextBoxColumn,
+            this.cantidadVendidaDataGridViewTextBoxColumn});
             this.tblDatosReporte.DataSource = this.datosReporteBindingSource;
             this.tblDatosReporte.Location = new System.Drawing.Point(176, 127);
             this.tblDatosReporte.Name = "tblDatosReporte";
             this.tblDatosReporte.Size = new System.Drawing.Size(444, 264);
             this.tblDatosReporte.TabIndex = 5;
-            // 
-            // btnActPro
-            // 
-            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActPro.Location = new System.Drawing.Point(483, 411);
-            this.btnActPro.Name = "btnActPro";
-            this.btnActPro.Size = new System.Drawing.Size(231, 27);
-            this.btnActPro.TabIndex = 6;
-            this.btnActPro.Text = "Actualizar Producto";
-            this.btnActPro.UseVisualStyleBackColor = true;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(324, 411);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(119, 27);
-            this.btnAtras.TabIndex = 7;
-            this.btnAtras.Text = "Atrás";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            // 
-            // datosReporteBindingSource
-            // 
-            this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
             // 
             // thNombreLiga
             // 
@@ -156,6 +140,55 @@
             this.thCantVen.DataPropertyName = "CantidadVendida";
             this.thCantVen.HeaderText = "Cantidad Vendida";
             this.thCantVen.Name = "thCantVen";
+            // 
+            // datosReporteBindingSource
+            // 
+            this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
+            // 
+            // btnActPro
+            // 
+            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActPro.Location = new System.Drawing.Point(483, 411);
+            this.btnActPro.Name = "btnActPro";
+            this.btnActPro.Size = new System.Drawing.Size(231, 27);
+            this.btnActPro.TabIndex = 6;
+            this.btnActPro.Text = "Actualizar Producto";
+            this.btnActPro.UseVisualStyleBackColor = true;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(324, 411);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(119, 27);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
+            // 
+            // nombreLigaDataGridViewTextBoxColumn
+            // 
+            this.nombreLigaDataGridViewTextBoxColumn.DataPropertyName = "NombreLiga";
+            this.nombreLigaDataGridViewTextBoxColumn.HeaderText = "NombreLiga";
+            this.nombreLigaDataGridViewTextBoxColumn.Name = "nombreLigaDataGridViewTextBoxColumn";
+            // 
+            // nombreEquipoDataGridViewTextBoxColumn
+            // 
+            this.nombreEquipoDataGridViewTextBoxColumn.DataPropertyName = "NombreEquipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.HeaderText = "NombreEquipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.Name = "nombreEquipoDataGridViewTextBoxColumn";
+            // 
+            // cantidadExistenteDataGridViewTextBoxColumn
+            // 
+            this.cantidadExistenteDataGridViewTextBoxColumn.DataPropertyName = "CantidadExistente";
+            this.cantidadExistenteDataGridViewTextBoxColumn.HeaderText = "CantidadExistente";
+            this.cantidadExistenteDataGridViewTextBoxColumn.Name = "cantidadExistenteDataGridViewTextBoxColumn";
+            // 
+            // cantidadVendidaDataGridViewTextBoxColumn
+            // 
+            this.cantidadVendidaDataGridViewTextBoxColumn.DataPropertyName = "CantidadVendida";
+            this.cantidadVendidaDataGridViewTextBoxColumn.HeaderText = "CantidadVendida";
+            this.cantidadVendidaDataGridViewTextBoxColumn.Name = "cantidadVendidaDataGridViewTextBoxColumn";
             // 
             // DatosReporteForm
             // 
@@ -194,5 +227,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCantEx;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCantVen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreLigaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadExistenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadVendidaDataGridViewTextBoxColumn;
     }
 }

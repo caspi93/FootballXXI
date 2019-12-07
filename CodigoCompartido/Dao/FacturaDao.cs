@@ -37,9 +37,9 @@ namespace Compartido.Dao {
             var consulta = from f in db.Facturas
                            where f.VendedorId == vendedor.Id
                           && f.FechaCreacion >= inicioDeMes
-                           select f.Total * 0.03;
+                           select (double?)(f.Total * 0.03);
 
-            return consulta.ToList().Sum();
+            return consulta.Sum().GetValueOrDefault();
         }
     }
 }

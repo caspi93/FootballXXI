@@ -62,6 +62,7 @@
             this.btnVerUsuarios.TabIndex = 2;
             this.btnVerUsuarios.Text = "Ver Empleados";
             this.btnVerUsuarios.UseVisualStyleBackColor = true;
+            this.btnVerUsuarios.Click += new System.EventHandler(this.BtnVerUsuarios_Click);
             // 
             // btnVerReportes
             // 
@@ -72,6 +73,7 @@
             this.btnVerReportes.TabIndex = 3;
             this.btnVerReportes.Text = "Ver Reportes";
             this.btnVerReportes.UseVisualStyleBackColor = true;
+            this.btnVerReportes.Click += new System.EventHandler(this.BtnVerReportes_Click);
             // 
             // btnCerrarSesion
             // 

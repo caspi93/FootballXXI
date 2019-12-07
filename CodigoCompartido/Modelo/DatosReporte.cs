@@ -13,6 +13,6 @@ namespace Compartido.Modelo {
 
         public int CantidadExistente { get; set; }
 
-        public int CantidadVendida { get; set; }
+        public int? CantidadVendida { get; set; }
     }
 }

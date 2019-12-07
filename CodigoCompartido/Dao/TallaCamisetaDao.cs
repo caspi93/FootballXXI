@@ -52,32 +52,21 @@ namespace Compartido.Dao {
                            on c.LigaId equals l.Id
                            where tc.TallaId == tallaGenero.TallaId 
                            && tc.GeneroId == tallaGenero.GeneroId
-                           select new {
+                           select new DatosReporte {
                                NombreLiga = l.Ligas1,
-                               c.NombreEquipo,
+                               NombreEquipo = c.NombreEquipo,
                                CantidadExistente = tc.Cantidad,
                                CantidadVendida = (
                                     from df in db.DetallesFactura
                                     where df.CamisetaId == c.Id
                                     && df.TallaId == tc.TallaId
                                     && df.GeneroId == tc.GeneroId
-                                    select df.Cantidad
-                               ).ToList()
+                                    select (int?)df.Cantidad
+                               ).Sum()
                            };
 
             var datos = consulta.ToList();
-
-            var datosReporte = new List<DatosReporte>();
-            foreach(var dr in datos) {
-                datosReporte.Add(new DatosReporte {
-                    NombreLiga = dr.NombreLiga,
-                    NombreEquipo = dr.NombreEquipo,
-                    CantidadExistente = dr.CantidadExistente,
-                    CantidadVendida = dr.CantidadVendida.Sum()
-                });
-            }
-
-            return datosReporte;
+            return datos;
         }
 
     }

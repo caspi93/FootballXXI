@@ -76,6 +76,7 @@ select * from Facturas;
 select * from Tallas;
 select * from Personas;
 select * from Generos;
+select * from Pagos;
 
 select * from TallasCamiseta tc
 where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
@@ -84,3 +85,8 @@ update Empleados set Salario = 3000000 where id = 1;
 update Empleados set Salario = 1500000 where id = 2;
 
 select sum(total) from Facturas where Id = 222;
+
+insert into Pagos (EmpleadoId, FechaPago, Sueldo)
+	values (2, CURRENT_TIMESTAMP, 1550000);
+
+delete from Tallas where Id >= 15;

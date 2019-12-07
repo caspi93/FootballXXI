@@ -29,3 +29,6 @@ select Ligas, NombreEquipo, Cantidad, coalesce((
             inner join TallasCamiseta tc
             on c.Id = tc.CamisetaId
             where tc.TallaId = 5 and tc.GeneroId = 2;
+
+
+select * from Pagos; 

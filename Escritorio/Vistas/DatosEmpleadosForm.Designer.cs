@@ -27,8 +27,6 @@
             this.lblFootball = new System.Windows.Forms.Label();
             this.lblDatos = new System.Windows.Forms.Label();
             this.tblEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnEditarEmpleado = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.thNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +39,8 @@
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEditarEmpleado = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,27 +93,6 @@
             this.tblEmpleados.Size = new System.Drawing.Size(1198, 430);
             this.tblEmpleados.TabIndex = 2;
             // 
-            // btnEditarEmpleado
-            // 
-            this.btnEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarEmpleado.Location = new System.Drawing.Point(939, 558);
-            this.btnEditarEmpleado.Name = "btnEditarEmpleado";
-            this.btnEditarEmpleado.Size = new System.Drawing.Size(243, 35);
-            this.btnEditarEmpleado.TabIndex = 3;
-            this.btnEditarEmpleado.Text = "Editar Empleado";
-            this.btnEditarEmpleado.UseVisualStyleBackColor = true;
-            this.btnEditarEmpleado.Click += new System.EventHandler(this.BtnEditarEmpleado_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(778, 558);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(118, 35);
-            this.btnAtras.TabIndex = 4;
-            this.btnAtras.Text = "Atrás";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            // 
             // thNombres
             // 
             this.thNombres.DataPropertyName = "Nombres";
@@ -154,6 +133,7 @@
             this.thDireccion.DataPropertyName = "Dirreccion";
             this.thDireccion.HeaderText = "Dirección";
             this.thDireccion.Name = "thDireccion";
+            this.thDireccion.ReadOnly = true;
             // 
             // thRol
             // 
@@ -167,12 +147,14 @@
             this.thCelular.DataPropertyName = "Celular";
             this.thCelular.HeaderText = "N.Celular";
             this.thCelular.Name = "thCelular";
+            this.thCelular.ReadOnly = true;
             // 
             // thCorreo
             // 
             this.thCorreo.DataPropertyName = "Email";
             this.thCorreo.HeaderText = "Correo";
             this.thCorreo.Name = "thCorreo";
+            this.thCorreo.ReadOnly = true;
             // 
             // edadDataGridViewTextBoxColumn
             // 
@@ -186,10 +168,33 @@
             this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "NombreUsuario";
             this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "Nombre Usuario";
             this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
+            this.nombreUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // empleadoBindingSource
             // 
             this.empleadoBindingSource.DataSource = typeof(Compartido.Modelo.Empleado);
+            // 
+            // btnEditarEmpleado
+            // 
+            this.btnEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEmpleado.Location = new System.Drawing.Point(939, 558);
+            this.btnEditarEmpleado.Name = "btnEditarEmpleado";
+            this.btnEditarEmpleado.Size = new System.Drawing.Size(243, 35);
+            this.btnEditarEmpleado.TabIndex = 3;
+            this.btnEditarEmpleado.Text = "Editar Empleado";
+            this.btnEditarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEditarEmpleado.Click += new System.EventHandler(this.BtnEditarEmpleado_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(778, 558);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(118, 35);
+            this.btnAtras.TabIndex = 4;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
             // DatosEmpleadosForm
             // 

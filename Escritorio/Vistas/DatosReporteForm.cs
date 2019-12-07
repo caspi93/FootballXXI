@@ -54,5 +54,9 @@ namespace Escritorio.Vistas {
                 tblDatosReporte.DataSource = tallaCamisetaDao.calcularVentas(tallaGenero);
             }
         }
+
+        private void BtnAtras_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

@@ -35,6 +35,10 @@ namespace Escritorio.Vistas {
             var empleados = empleadoDao.GetEmpleados();
             tblEmpleados.DataSource = empleados;
         }
+
+        private void BtnAtras_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }
 

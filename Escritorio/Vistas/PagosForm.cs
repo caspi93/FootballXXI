@@ -29,5 +29,31 @@ namespace Escritorio.Vistas {
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
+
+        private void BtnPagar_Click(object sender, EventArgs e) {
+            var pagos = new List<Pago>();
+            var pagoNomina = tblPagoNomina.SelectedRows;
+            foreach (var pn in pagoNomina) {
+                var fila = (DataGridViewRow)pn;
+                var pagoEmpleado = (PagoEmpleados)fila.DataBoundItem;
+                var pago = new Pago {
+                    EmpleadoId = pagoEmpleado.Codigo,
+                    FechaPago = DateTime.Now,
+                    Sueldo = pagoEmpleado.SalarioComisiones
+                };
+                pagos.Add(pago);
+            }
+
+            if (pagos.Count > 0) {
+                var pagoDao = new PagoDao(db);
+                pagoDao.CrearPagos(pagos);
+                MessageBox.Show("El pago se ha hecho exitosamente");
+            } else {
+                MessageBox.Show("Debe seleccionar una o más columnas");
+            }
+
+            
+            
+        }
     }
 }

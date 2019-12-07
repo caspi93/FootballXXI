@@ -45,6 +45,8 @@ namespace Compartido.Dao {
         }
 
         public List<PagoEmpleados> GetNomina() {
+            var inicioDeMes = DateTime.Now.AddDays(-DateTime.Now.Day*5 + 1);
+
             var consulta = from e in db.Empleados
                            select new {
                                Codigo = e.Id,
@@ -55,7 +57,13 @@ namespace Compartido.Dao {
                                UltimaFechaPago = (
                                     from p in db.Pagos where p.EmpleadoId == e.Id
                                     select (DateTime?)p.FechaPago
-                               ).Max()
+                               ).Max(),
+                               Comisiones = (
+                                   from f in db.Facturas
+                                   where f.VendedorId == e.Id
+                                  && f.FechaCreacion >= inicioDeMes
+                                   select (double?)(f.Total * 0.03)
+                               ).Sum()
                            };
             var datos = consulta.ToList();
             var pagoEmpleados = new List<PagoEmpleados>();
@@ -67,7 +75,8 @@ namespace Compartido.Dao {
                     Cargo = pe.Cargo,
                     SalarioBasico = pe.SalarioBasico,
                     UltimaFechaPago = pe.UltimaFechaPago,
-
+                    Comisiones = pe.Comisiones.GetValueOrDefault(),
+                    SalarioComisiones = pe.SalarioBasico + pe.Comisiones.GetValueOrDefault()
                 });
             }
             return pagoEmpleados;

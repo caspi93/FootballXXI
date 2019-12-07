@@ -145,3 +145,7 @@ Sueldo float not null
 );
 
 alter table Pagos add Id int identity(1,1) primary key not null;
+
+
+
+

@@ -32,5 +32,15 @@ namespace Escritorio.Vistas {
             var pagosForm = new PagosForm();
             pagosForm.Show();
         }
+
+        private void BtnVerUsuarios_Click(object sender, EventArgs e) {
+            var datosEmpleados = new DatosEmpleadosForm();
+            datosEmpleados.Show();
+        }
+
+        private void BtnVerReportes_Click(object sender, EventArgs e) {
+            var datosReporte = new DatosReporteForm();
+            datosReporte.Show();
+        }
     }
 }
