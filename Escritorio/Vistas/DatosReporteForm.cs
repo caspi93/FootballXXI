@@ -58,5 +58,10 @@ namespace Escritorio.Vistas {
         private void BtnAtras_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void BtnActPro_Click(object sender, EventArgs e) {
+            var actualiuzarProducto = new ActualizarProductoForm();
+            actualiuzarProducto.Show();
+        }
     }
 }

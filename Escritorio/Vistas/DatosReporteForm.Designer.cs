@@ -34,13 +34,13 @@
             this.thEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantVen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnActPro = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.nombreLigaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadExistenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadVendidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnActPro = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosReporteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -141,31 +141,6 @@
             this.thCantVen.HeaderText = "Cantidad Vendida";
             this.thCantVen.Name = "thCantVen";
             // 
-            // datosReporteBindingSource
-            // 
-            this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
-            // 
-            // btnActPro
-            // 
-            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActPro.Location = new System.Drawing.Point(483, 411);
-            this.btnActPro.Name = "btnActPro";
-            this.btnActPro.Size = new System.Drawing.Size(231, 27);
-            this.btnActPro.TabIndex = 6;
-            this.btnActPro.Text = "Actualizar Producto";
-            this.btnActPro.UseVisualStyleBackColor = true;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(324, 411);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(119, 27);
-            this.btnAtras.TabIndex = 7;
-            this.btnAtras.Text = "Atrás";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
-            // 
             // nombreLigaDataGridViewTextBoxColumn
             // 
             this.nombreLigaDataGridViewTextBoxColumn.DataPropertyName = "NombreLiga";
@@ -189,6 +164,32 @@
             this.cantidadVendidaDataGridViewTextBoxColumn.DataPropertyName = "CantidadVendida";
             this.cantidadVendidaDataGridViewTextBoxColumn.HeaderText = "CantidadVendida";
             this.cantidadVendidaDataGridViewTextBoxColumn.Name = "cantidadVendidaDataGridViewTextBoxColumn";
+            // 
+            // datosReporteBindingSource
+            // 
+            this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
+            // 
+            // btnActPro
+            // 
+            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActPro.Location = new System.Drawing.Point(483, 411);
+            this.btnActPro.Name = "btnActPro";
+            this.btnActPro.Size = new System.Drawing.Size(231, 27);
+            this.btnActPro.TabIndex = 6;
+            this.btnActPro.Text = "Actualizar Producto";
+            this.btnActPro.UseVisualStyleBackColor = true;
+            this.btnActPro.Click += new System.EventHandler(this.BtnActPro_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(324, 411);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(119, 27);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
             // DatosReporteForm
             // 

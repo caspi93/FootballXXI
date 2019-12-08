@@ -36,7 +36,7 @@ namespace Escritorio.Vistas {
         }
 
         private void Button2_Click(object sender, EventArgs e) {
-
+            Close();
         }
 
         private void CbLigas_SelectedIndexChanged(object sender, EventArgs e) {
