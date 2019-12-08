@@ -14,7 +14,7 @@ namespace Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                       "~/Scripts/bootstrap.bundle.min.js"));
+                       "~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/creative").Include(
                         "~/Scripts/creative.min.js"));

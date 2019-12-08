@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Football XXI</title>
     @Styles.Render("~/Content/css")
     <!--@Scripts.Render("~/bundles/modernizr")-->
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -61,12 +63,13 @@
             </div>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/creative")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-easing")
     @Scripts.Render("~/bundles/jquery-magnific")
-    @Scripts.Render("~/bundles/jquery")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/creative")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
