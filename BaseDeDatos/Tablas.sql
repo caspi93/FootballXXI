@@ -50,7 +50,6 @@ constraint TallaCamPK primary key(TallaId, GeneroId, CamisetaId),
 Cantidad int not null
 );
 
-alter table TallasCamiseta add constraint TallaCamPK primary key(TallaId, GeneroId, CamisetaId);
 
 create table TallasGenero(
 TallaId int not null,
@@ -61,7 +60,6 @@ constraint TallaGeneroPK primary key(TallaId, GeneroId),
 Precio float not null
 );
 
-alter table TallasGenero add constraint TallaGeneroPK primary key(TallaId, GeneroId);
 
 create table Personas(
 Id int identity(1,1) primary key not null,
@@ -96,17 +94,13 @@ Profesion varchar(100) not null,
 FechaNac date not null,
 Dirreccion varchar(100) not null,
 RolId int not null,
+Salario float not null,
 constraint EmpleadosRolId foreign key(RolId) references Roles,
 PersonaId int not null,
 constraint EmpleadosPersonaId foreign key(PersonaId) references Personas
 );
 
-alter table Empleados add PersonaId int,
-constraint EmpleadosPersonaId foreign key(PersonaId) references Personas;
-
-alter table Empleados alter column PersonaId int not null; 
-
-alter table Empleados alter column Salario float not null;
+alter table Empleados add Salario float not null;
 
 
 create table Facturas(
@@ -134,8 +128,6 @@ Cantidad int not null,
 Precio float not null
 );
 
-alter table DetallesFactura add constraint DetalleFacturaPK primary key(FacturaId, CamisetaId, TallaId, GeneroId);
-
 create table Pagos(
 Id int identity(1,1) primary key not null,
 EmpleadoId int not null,
@@ -144,7 +136,7 @@ FechaPago datetime not null,
 Sueldo float not null
 );
 
-alter table Pagos add Id int identity(1,1) primary key not null;
+
 
 
 

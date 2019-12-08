@@ -11,9 +11,9 @@ insert into Personas (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApelli
 	NumeroDocumento, GeneroId) 
 values ('Luis', 'Carlos', 'Pedroza', 'Pineda', 1, '1079935561',1);
 
-insert into Empleados ( Email, Celular, Clave, NombreUsuario, Profesion, FechaNac, Dirreccion, RolId) 
-values ('luisk301374@gmail.com', '3004255615', 'lmuairsy001993', 'luisk', 'Ingeniero de Sistemas', '1993-05-17', 
-'Cra 53A #128B - 14', 2);
+insert into Empleados ( PersonaId, Email, Celular, Clave, NombreUsuario, Profesion, FechaNac, Dirreccion, RolId, Salario) 
+values (1,'luisk301374@gmail.com', '3004255615', '12345', 'luisk', 'Ingeniero de Sistemas', '1993-05-17', 
+'Cra 53A #128B - 14', 1, 3000000);
 
 insert into Tallas(NombreLargo, NombreCorto) 
 values ('Large', 'L'), ('Medio', 'M'), ('Small', 'S'), ('10', '10'), ('6', '6'), ('4', '4');
