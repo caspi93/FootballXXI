@@ -9,7 +9,7 @@ namespace Web.Controllers
     public class AdministrarController : Controller
     {
         // GET: Administrar
-        public ActionResult Index()
+        public ActionResult VerEmpleados()
         {
             return View();
         }

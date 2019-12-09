@@ -149,6 +149,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Content\magnific-popup.css" />
     <None Include="Views\Home\Formulario.cshtml" />
+    <None Include="Views\Administrar\VerEmpleados.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -169,7 +170,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Administrar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
