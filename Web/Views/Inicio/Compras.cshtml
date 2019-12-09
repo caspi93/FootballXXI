@@ -1,0 +1,82 @@
+﻿@using Compartido.Modelo;
+@{
+    ViewBag.Titulo = "Inicio";
+}
+
+<div class="container">
+    <div>
+        <form class="row justify-content-center">
+            <div class="form-group col-sm-12 col-md-4">
+                <label for="genero">Ligas</label>
+                @{ var ligas = (List<Liga>)ViewBag.Ligas; }
+                <select class="custom-select" name="generos">
+                    <option value="">Seleccione una liga</option>
+                    @foreach (var liga in ligas) {
+                        <option value="@liga.Id">@liga.Ligas1</option>
+                    }
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-10">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipo: </li>
+                            <li class="list-group-item">Género: </li>
+                            <li class="list-group-item">Talla: </li>
+                            <li class="list-group-item">Precio: </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipo: </li>
+                            <li class="list-group-item">Género: </li>
+                            <li class="list-group-item">Talla: </li>
+                            <li class="list-group-item">Precio: </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipo: </li>
+                            <li class="list-group-item">Género: </li>
+                            <li class="list-group-item">Talla: </li>
+                            <li class="list-group-item">Precio: </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipo: </li>
+                            <li class="list-group-item">Género: </li>
+                            <li class="list-group-item">Talla: </li>
+                            <li class="list-group-item">Precio: </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipo: </li>
+                            <li class="list-group-item">Género: </li>
+                            <li class="list-group-item">Talla: </li>
+                            <li class="list-group-item">Precio: </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

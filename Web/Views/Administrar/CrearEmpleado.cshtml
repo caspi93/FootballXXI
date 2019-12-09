@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Compartido.Modelo;
+@{
     ViewBag.Titulo = "Crear Empleado";
 }
 
@@ -32,31 +33,33 @@
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="genero">Género</label>
+                    @{ var generos = (List<Genero>)ViewBag.Generos; }
                     <select class="custom-select" name="generos">
-                        <option value="">Selecione un género</option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                        <option value="">Seleccione un género</option>
+                        @foreach (var genero in generos) {
+                            <option value="@genero.Id">@genero.Nombre</option>
+                        }
                     </select>
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="tipoDoc">Tipo de Documento</label>
-                    <select class="custom-select" name="tiposdeDocumento">
-                        <option value="">Selecione un tipo de documento</option>
-                        <option value="1">Cédula de Ciudadanía</option>
-                        <option value="2">Tarjeta de Identidad</option>
-                        <option value="3">Pasaporte</option>
-                        <option value="4">Cédula de Extranjería</option>
-                    </select>
+                    @{ var tiposDocumento = (List<TipoDeDocumento>)ViewBag.TiposDocumento; }
+                <select class="custom-select" name="tiposdeDocumento">
+                    <option value="">Seleccione un tipo de documento</option>
+                    @foreach (var tipoDocumento in tiposDocumento) {
+                        <option value="@tipoDocumento.Id">@tipoDocumento.NombreLargo</option>
+                    }
+                </select>
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="rol">Cargo</label>
-                    <select class="custom-select" name="cargos">
-                        <option value="">Selecione un cargo</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Cajero</option>
-                        <option value="3">Vendedor</option>
-                    </select>
+                    @{ var roles = (List<Rol>)ViewBag.Roles; }
+                <select class="custom-select" name="cargos">
+                    <option value="">Seleccione un cargo</option>
+                    @foreach (var rol in roles) {
+                        <option value="@rol.Id">@rol.Nombre</option>
+                    }
+                </select>
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Número de Documento</label>

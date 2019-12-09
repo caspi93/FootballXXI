@@ -1,35 +1,46 @@
 ﻿@{
-    ViewBag.Titulo = "Ver Empleados";
+    ViewBag.Titulo = "Pagos";
 }
 
 <div class="row justify-content-center">
     <div class="col-sm-12 col-md-10">
-        <h2>Lista de empleados</h2>
+        <h2>Lista de empleados a pagar</h2>
         <table class="table table-sm table-dark">
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Código de empleado</th>
                     <th scope="col">Nombres</th>
                     <th scope="col">Apellidos</th>
-                    <th scope="col">T.Documento</th>
-                    <th scope="col">N.Documento</th>
-                    <th scope="col">Género</th>
-                    <th scope="col">T.Documento</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">N.Celular</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Nombre de Usuario</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Última fecha de pago</th>
+                    <th scope="col">Salario básico</th>
+                    <th scope="col">Comisiones</th>
+                    <th scope="col">Salario más comosión</th>
+                    <th scope="col">Seleccionar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">3</th>
+                    <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
+                    <td>@@mdo</td>
+                    <td>@@mdo</td>
+                    <td>@@mdo</td>
+                    <td><div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input">
+                        <label class="custom-control-label" for="defaultUnchecked"></label>
+                    </div></td>
+
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
@@ -38,26 +49,9 @@
                     <td>@@mdo</td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
+                    <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
-                    <td>@@mdo</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
                     <td>@@mdo</td>
@@ -67,5 +61,6 @@
                 </tr>
             </tbody>
         </table>
+        <button type="submit" class="btn btn-primary">Pagar</button>
     </div>
 </div>

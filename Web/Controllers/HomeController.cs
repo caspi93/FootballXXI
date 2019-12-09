@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Compartido.Dao;
+using Compartido.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +8,10 @@ using System.Web.Mvc;
 
 namespace Web.Controllers {
     public class HomeController : Controller {
+        private Entidades db;
+        public HomeController() {
+            db = new Entidades();
+        }
         public ActionResult Index() {
             return View();
         }
@@ -16,8 +22,15 @@ namespace Web.Controllers {
             return View();
         }
 
-        public ActionResult Formulario() 
+        public ActionResult CrearCliente() 
         {
+            var generoDao = new GeneroDao(db);
+            var generos = generoDao.GetGeneros();
+            var tiposDocumentoDao = new TipoDeDocumentoDao(db);
+            var tiposDocumento = tiposDocumentoDao.GetTiposDeDocumento();
+
+            ViewBag.Generos = generos;
+            ViewBag.TiposDocumento = tiposDocumento;
             return View();
         }
 

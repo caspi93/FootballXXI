@@ -1,3 +1,5 @@
+use FootballXXI;
+
 select * from Personas;
 select * from Clientes;
 select * from Empleados;

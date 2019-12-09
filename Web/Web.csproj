@@ -149,10 +149,11 @@
     <Content Include="Scripts\jquery.magnific-popup.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Content\magnific-popup.css" />
-    <None Include="Views\Home\Formulario.cshtml" />
     <None Include="Views\Administrar\VerEmpleados.cshtml" />
     <None Include="Views\Administrar\CrearEmpleado.cshtml" />
     <None Include="Views\Login\IniciarSesion.cshtml" />
+    <None Include="Views\Administrar\Pagos.cshtml" />
+    <None Include="Views\Administrar\DatosReportes.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -167,8 +168,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Inicio\Bienvenida.cshtml" />
-    <Content Include="Views\Home\Formulario.cshtml" />
+    <Content Include="Views\Inicio\Compras.cshtml" />
+    <Content Include="Views\Home\CrearCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

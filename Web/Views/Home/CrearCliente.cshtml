@@ -1,0 +1,74 @@
+﻿@using Compartido.Modelo;
+@{
+    ViewBag.Titulo = "Registro";
+}
+
+
+<div class="container">
+    <h1>Tienda Football XXI</h1>
+
+    <div class="row justify-content-center">
+        <form class="col-sm-10 col-md-6">
+            <h3>Datos del cliente</h3>
+            <div class="row">
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="primer-nombre">Primer Nombre</label>
+                    <input type="text" class="form-control" id="PrimerNombre" placeholder="Primer Nombre">
+                </div>
+
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="segundo-nombre">Segundo Nombre</label>
+                    <input type="text" class="form-control" id="SegundoNombre" placeholder="Segundo Nombre">
+
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="apellidos">Primer Apellido</label>
+                    <input type="text" class="form-control" id="PrimerApellido" placeholder="Primer Apellido">
+                </div>
+
+
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="apellidos-acudiente">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="genero">Género</label>
+                    @{ var generos = (List<Genero>)ViewBag.Generos; }
+                    <select class="custom-select" name="generos">
+                        <option value="">Seleccione un género</option>
+                        @foreach (var genero in generos) {
+                            <option value="@genero.Id">@genero.Nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="tipoDoc">Tipo de Documento</label>
+                    @{ var tiposDocumento = (List<TipoDeDocumento>)ViewBag.TiposDocumento; }
+                    <select class="custom-select" name="tiposdeDocumento">
+                        <option value="">Seleccione un tipo de documento</option>
+                        @foreach (var tipoDocumento in tiposDocumento) {
+                            <option value="@tipoDocumento.Id">@tipoDocumento.NombreLargo</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Número de Documento</label>
+                    <input type="text" class="form-control" id="numDoc" placeholder="Número de Documento">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Celular</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="Celular">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="exampleInputEmail1">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="exampleInputEmail1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Cotraseña">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar datos</button>
+        </form>
+    </div>
+</div>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Compartido.Dao;
+using Compartido.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,12 @@ namespace Web.Controllers
 {
     public class AdministrarController : Controller
     {
+        private Entidades db;
+
+        public AdministrarController() {
+            db = new Entidades();
+        }
+
         // GET: Administrar
         public ActionResult VerEmpleados()
         {
@@ -15,6 +23,37 @@ namespace Web.Controllers
         }
 
         public ActionResult CrearEmpleado() {
+            var generoDao = new GeneroDao(db);
+            var generos = generoDao.GetGeneros();
+            var rolDao = new RolDao(db);
+            var roles = rolDao.GetRoles();
+            var tiposDocumentoDao = new TipoDeDocumentoDao(db);
+            var tiposDocumento = tiposDocumentoDao.GetTiposDeDocumento();
+
+            ViewBag.Generos = generos;
+            ViewBag.Roles = roles;
+            ViewBag.TiposDocumento = tiposDocumento;
+
+            return View();
+        }
+
+        public ActionResult VerEmpledos() {
+            return View();
+        }
+
+        public ActionResult Pagos() {
+            return View();
+        }
+
+        public ActionResult DatosReportes() {
+            var generoDao = new GeneroDao(db);
+            var generos = generoDao.GetGeneros();
+            var tallaDao = new TallaDao(db);
+            var tallas = tallaDao.GetTallas();
+
+            ViewBag.Generos = generos;
+            ViewBag.Tallas = tallas;
+
             return View();
         }
     }
