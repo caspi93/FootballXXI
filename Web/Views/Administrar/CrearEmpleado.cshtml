@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Titulo = "Crear Empleado";
+}
+
+
+<div class="container">
+    <h1>Tienda Football XXI</h1>
+
+    <div class="row justify-content-center">
+        <form class="col-sm-10 col-md-6">
+            <h3>Datos del empleado</h3>
+            <div class="row">
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="primer-nombre">Primer Nombre</label>
+                    <input type="text" name="primerNombre" class="form-control" id="PrimerNombre" placeholder="Primer Nombre">
+                </div>
+
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="segundo-nombre">Segundo Nombre</label>
+                    <input type="text" name="segundoNombre" class="form-control" id="SegundoNombre" placeholder="Segundo Nombre">
+
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="apellidos">Primer Apellido</label>
+                    <input type="text" name="primerApellido" class="form-control" id="PrimerApellido" placeholder="Primer Apellido">
+                </div>
+
+
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="apellidos-acudiente">Segundo Apellido</label>
+                    <input type="text" name="segundoApellido" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="genero">Género</label>
+                    <select class="custom-select" name="generos">
+                        <option value="">Selecione un género</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        <option value="3">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="tipoDoc">Tipo de Documento</label>
+                    <select class="custom-select" name="tiposdeDocumento">
+                        <option value="">Selecione un tipo de documento</option>
+                        <option value="1">Cédula de Ciudadanía</option>
+                        <option value="2">Tarjeta de Identidad</option>
+                        <option value="3">Pasaporte</option>
+                        <option value="4">Cédula de Extranjería</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="rol">Cargo</label>
+                    <select class="custom-select" name="cargos">
+                        <option value="">Selecione un cargo</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Cajero</option>
+                        <option value="3">Vendedor</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Número de Documento</label>
+                    <input type="number" name="numeroDocumento" class="form-control" id="numDoc" placeholder="Número de Documento">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Fecha de Nacimiento</label>
+                    <input type="date" name="fechaNacimiento" class="form-control" id="telefono" placeholder="Fecha de nacimiento">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Celular</label>
+                    <input type="text" name="celular" class="form-control" id="telefono" placeholder="Celular">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Profesión</label>
+                    <input type="text" name="profesion" class="form-control" id="telefono" placeholder="Profesión">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Salario</label>
+                    <input type="number" name="salario" class="form-control" id="telefono" placeholder="Salario">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Dirección</label>
+                    <input type="text" name="direccion" class="form-control" id="telefono" placeholder="Direccion">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="exampleInputEmail1">Correo Electrónico</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="telefono">Nombre de Usuario</label>
+                    <input type="text" name="nombreUsuario" class="form-control" id="telefono" placeholder="Nombre de usuario">
+                </div>
+                <div class="form-group col-sm-12 col-md-6">
+                    <label for="exampleInputEmail1">Contraseña</label>
+                    <input type="password" name="clave" class="form-control" id="exampleInputEmail1" placeholder="Cotraseña">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar datos</button>
+        </form>
+    </div>
+</div>
