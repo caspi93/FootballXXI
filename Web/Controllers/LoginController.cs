@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
-    public class AdministrarController : Controller
+    public class LoginController : Controller
     {
-        // GET: Administrar
-        public ActionResult VerEmpleados()
+        // GET: Login
+        public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult CrearEmpleado() {
+        public ActionResult IniciarSesion() {
             return View();
         }
     }

@@ -128,6 +128,7 @@
     <Compile Include="Controllers\AdministrarController.cs" />
     <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +151,8 @@
     <Content Include="Content\magnific-popup.css" />
     <None Include="Views\Home\Formulario.cshtml" />
     <None Include="Views\Administrar\VerEmpleados.cshtml" />
+    <None Include="Views\Administrar\CrearEmpleado.cshtml" />
+    <None Include="Views\Login\IniciarSesion.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -164,12 +167,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Informacion\Formulario.cshtml" />
     <Content Include="Views\Inicio\Bienvenida.cshtml" />
+    <Content Include="Views\Home\Formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Informacion\" />
+    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
