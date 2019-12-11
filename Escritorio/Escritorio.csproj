@@ -214,9 +214,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imagenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CodigoCompartido\Compartido.csproj">
       <Project>{f4ffbfe4-cb33-4dde-9cf3-db2cb554bffa}</Project>

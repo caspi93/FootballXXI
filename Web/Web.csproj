@@ -59,12 +59,18 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -138,6 +144,43 @@
     <Content Include="Content\creative.css" />
     <Content Include="Content\creative.min.css" />
     <Content Include="Content\formulario.css" />
+    <Content Include="Content\Images\atlanta.jpg" />
+    <Content Include="Content\Images\atlatanta.jpg" />
+    <Content Include="Content\Images\atlatanta1.jpg" />
+    <Content Include="Content\Images\atletico.jpg" />
+    <Content Include="Content\Images\atlético.jpg" />
+    <Content Include="Content\Images\barcelona.jpg" />
+    <Content Include="Content\Images\bayer munchen.jpg" />
+    <Content Include="Content\Images\bayer munych.jpg" />
+    <Content Include="Content\Images\benfica.jpg" />
+    <Content Include="Content\Images\benifica.jpg" />
+    <Content Include="Content\Images\chelsea.jpg" />
+    <Content Include="Content\Images\clesea.jpg" />
+    <Content Include="Content\Images\dormund.jpg" />
+    <Content Include="Content\Images\dortmund.jpg" />
+    <Content Include="Content\Images\dortmund1.jpg" />
+    <Content Include="Content\Images\galatasaray.jpg" />
+    <Content Include="Content\Images\galatasaray1.jpg" />
+    <Content Include="Content\Images\intermazionale.jpg" />
+    <Content Include="Content\Images\internazionale.jpg" />
+    <Content Include="Content\Images\juventus.jpg" />
+    <Content Include="Content\Images\leverkusen.jpg" />
+    <Content Include="Content\Images\leverkusen1.jpg" />
+    <Content Include="Content\Images\liverpool.jpg" />
+    <Content Include="Content\Images\lyon.jpg" />
+    <Content Include="Content\Images\lyon1.jpg" />
+    <Content Include="Content\Images\manchester city.jpg" />
+    <Content Include="Content\Images\manchester city1.jpg" />
+    <Content Include="Content\Images\napoli.jpg" />
+    <Content Include="Content\Images\napoli1.jpg" />
+    <Content Include="Content\Images\paris saint ge1.jpg" />
+    <Content Include="Content\Images\paris saint geman.jpg" />
+    <Content Include="Content\Images\Paris Saint German.jpg" />
+    <Content Include="Content\Images\real madrid.jpg" />
+    <Content Include="Content\Images\real madrid1.jpg" />
+    <Content Include="Content\Images\tottenham.jpg" />
+    <Content Include="Content\Images\tottenham1.jpg" />
+    <Content Include="Content\Images\Valencia.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

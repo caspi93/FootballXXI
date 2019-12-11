@@ -20,5 +20,24 @@ namespace Compartido.Dao {
 
             return consulta.SingleOrDefault();
         }
+
+        public List<TarjetaCamiseta> GetTallaGeneros(int ligaId) {
+            var consulta = from tc in db.TallasCamiseta
+                           join tg in db.TallasGenero
+                           on tc.TallaId equals tg.TallaId
+                           where tc.GeneroId == tg.GeneroId &&
+                           tc.Camisetas.LigaId == ligaId
+                           select new TarjetaCamiseta {
+                               CamisetaId = tc.CamisetaId,
+                               NombreEquipo = tc.Camisetas.NombreEquipo,
+                               TallaId = tc.TallaId,
+                               NombreTalla = tc.Tallas.NombreCorto,
+                               GeneroId = tc.GeneroId,
+                               NombreGenero = tc.Generos.Nombre,
+                               Precio = tg.Precio
+                           }; 
+                           
+            return consulta.ToList();
+        }
     }
 }

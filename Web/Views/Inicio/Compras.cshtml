@@ -3,79 +3,39 @@
     ViewBag.Titulo = "Inicio";
 }
 
-<div class="container">
-    <div>
-        <form class="row justify-content-center">
-            <div class="form-group col-sm-12 col-md-4">
-                <label for="genero">Ligas</label>
-                @{ var ligas = (List<Liga>)ViewBag.Ligas; }
-                <select class="custom-select" name="generos">
-                    <option value="">Seleccione una liga</option>
-                    @foreach (var liga in ligas) {
-                        <option value="@liga.Id">@liga.Ligas1</option>
-                    }
-                </select>
-            </div>
-        </form>
-    </div>
+<div>
+    <form class="row justify-content-center" action="@Url.Action("Compras", "Inicio")" method="post">
+        <div class="form-group col-sm-12 col-md-4">
+            <label for="genero">Ligas</label>
+            @{ var ligas = (List<Liga>)ViewBag.Ligas; }
+            <select class="custom-select" name="liga">
+                <option value="">Seleccione una liga</option>
+                @foreach (var liga in ligas) {
+                    <option value="@liga.Id">@liga.Ligas1</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10">
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Equipo: </li>
-                            <li class="list-group-item">Género: </li>
-                            <li class="list-group-item">Talla: </li>
-                            <li class="list-group-item">Precio: </li>
-                        </ul>
+            @{var tarjetasCamiseta = (List<TarjetaCamiseta>)ViewBag.TarjetasCamiseta; }
+            <div class="row">
+                @foreach (var tarjetaCamiseta in tarjetasCamiseta) {
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <img src="@Url.Content("~/Content/Images/" + tarjetaCamiseta.NombreEquipo + ".jpg")" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Equipo: @tarjetaCamiseta.NombreEquipo </li>
+                                    <li class="list-group-item">Género: @tarjetaCamiseta.NombreGenero</li>
+                                    <li class="list-group-item">Talla: @tarjetaCamiseta.NombreTalla</li>
+                                    <li class="list-group-item">Precio: @tarjetaCamiseta.Precio</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Equipo: </li>
-                            <li class="list-group-item">Género: </li>
-                            <li class="list-group-item">Talla: </li>
-                            <li class="list-group-item">Precio: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Equipo: </li>
-                            <li class="list-group-item">Género: </li>
-                            <li class="list-group-item">Talla: </li>
-                            <li class="list-group-item">Precio: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Equipo: </li>
-                            <li class="list-group-item">Género: </li>
-                            <li class="list-group-item">Talla: </li>
-                            <li class="list-group-item">Precio: </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Equipo: </li>
-                            <li class="list-group-item">Género: </li>
-                            <li class="list-group-item">Talla: </li>
-                            <li class="list-group-item">Precio: </li>
-                        </ul>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>

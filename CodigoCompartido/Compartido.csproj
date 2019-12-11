@@ -132,6 +132,7 @@
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\TallasComplemento.cs" />
+    <Compile Include="Modelo\TarjetaCamiseta.cs" />
     <Compile Include="Modelo\TipoDeDocumento.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
