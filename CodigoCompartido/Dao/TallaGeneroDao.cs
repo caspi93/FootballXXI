@@ -21,12 +21,14 @@ namespace Compartido.Dao {
             return consulta.SingleOrDefault();
         }
 
-        public List<TarjetaCamiseta> GetTallaGeneros(int ligaId) {
+        public List<TarjetaCamiseta> GetTallaGeneros(int ligaId, int tallaId, int generoId) {
             var consulta = from tc in db.TallasCamiseta
                            join tg in db.TallasGenero
                            on tc.TallaId equals tg.TallaId
                            where tc.GeneroId == tg.GeneroId &&
-                           tc.Camisetas.LigaId == ligaId
+                           tc.Camisetas.LigaId == ligaId &&
+                           tc.Tallas.Id == tallaId &&
+                           tc.Generos.Id == generoId 
                            select new TarjetaCamiseta {
                                CamisetaId = tc.CamisetaId,
                                NombreEquipo = tc.Camisetas.NombreEquipo,

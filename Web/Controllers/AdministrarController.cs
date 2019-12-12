@@ -38,6 +38,10 @@ namespace Web.Controllers
         }
 
         public ActionResult VerEmpledos() {
+            var empleadoDao = new EmpleadoDao(db);
+            var empleados = empleadoDao.GetEmpleados();
+
+            ViewBag.Empleados = empleados;
             return View();
         }
 

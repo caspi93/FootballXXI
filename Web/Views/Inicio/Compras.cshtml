@@ -4,19 +4,43 @@
 }
 
 <div>
-    <form class="row justify-content-center" action="@Url.Action("Compras", "Inicio")" method="post">
-        <div class="form-group col-sm-12 col-md-4">
-            <label for="genero">Ligas</label>
-            @{ var ligas = (List<Liga>)ViewBag.Ligas; }
-            <select class="custom-select" name="liga">
-                <option value="">Seleccione una liga</option>
-                @foreach (var liga in ligas) {
-                    <option value="@liga.Id">@liga.Ligas1</option>
-                }
-            </select>
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8">
+            <form class="row justify-content-center" action="@Url.Action("Compras", "Inicio")" method="post">
+                <div class="form-group col-sm-12 col-md-4">
+                    <label for="genero">Ligas</label>
+                    @{ var ligas = (List<Liga>)ViewBag.Ligas; }
+                    <select class="custom-select" name="liga">
+                        <option value="">Seleccione una liga</option>
+                        @foreach (var liga in ligas) {
+                            <option value="@liga.Id">@liga.Ligas1</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-4">
+                    <label for="genero">Ligas</label>
+                    @{ var tallas = (List<Talla>)ViewBag.Tallas; }
+                    <select class="custom-select" name="talla">
+                        <option value="">Seleccione una talla</option>
+                        @foreach (var talla in tallas) {
+                            <option value="@talla.Id">@talla.NombreCorto</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-md-4">
+                    <label for="genero">Ligas</label>
+                    @{ var generos = (List<Genero>)ViewBag.Generos; }
+                    <select class="custom-select" name="genero">
+                        <option value="">Seleccione un género</option>
+                        @foreach (var genero in generos) {
+                            <option value="@genero.Id">@genero.Nombre</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Filtrar</button>
-    </form>
+    </div>
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10">
             @{var tarjetasCamiseta = (List<TarjetaCamiseta>)ViewBag.TarjetasCamiseta; }

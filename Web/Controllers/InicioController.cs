@@ -15,20 +15,31 @@ namespace Web.Controllers {
             db = new Entidades();
         }
 
-        public ActionResult Compras([FromBody]ParamCompra paramCompra) {
+        public ActionResult Compras() {
+            var ligaId = Request.Form.Get("liga");
+            var tallaId = Request.Form.Get("talla");
+            var generoId = Request.Form.Get("genero");
+
             var ligaDao = new LigaDao(db);
             var ligas = ligaDao.GetLigas();
+
+            var tallaDao = new TallaDao(db);
+            var tallas = tallaDao.GetTallas();
+
+            var generoDao = new GeneroDao(db);
+            var generos = generoDao.GetGeneros();
+
             var tallaGeneroDao = new TallaGeneroDao(db);
-            var tarjetasCamiseta = paramCompra != null? tallaGeneroDao.GetTallaGeneros(paramCompra.liga) : new List<TarjetaCamiseta>();
+            var tarjetasCamiseta = ligaId != null && tallaId != null && generoId != null? tallaGeneroDao.GetTallaGeneros(Convert.ToInt32(ligaId), Convert.ToInt32(tallaId), Convert.ToInt32(generoId)) : new List<TarjetaCamiseta>();
             
             ViewBag.Ligas = ligas;
+            ViewBag.Tallas = tallas;
+            ViewBag.Generos = generos;
+
             ViewBag.TarjetasCamiseta = tarjetasCamiseta;
 
             return View();
         }
 
-        public class ParamCompra {
-            public int liga;
-        }
     }
 }
