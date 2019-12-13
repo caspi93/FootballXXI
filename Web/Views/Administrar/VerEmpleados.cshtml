@@ -27,6 +27,7 @@
             <tbody>
                 @{var empleados = (List<Empleado>)ViewBag.Empleados; }
                 @foreach (var empleado in empleados) {
+                    Console.WriteLine(empleado.Id);
                     <tr>
                         <th scope="row">3</th>
                         <td>@empleado.Nombres</td>

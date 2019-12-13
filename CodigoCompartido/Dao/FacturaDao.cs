@@ -16,7 +16,7 @@ namespace Compartido.Dao {
 
         public Factura crearFactura(Factura factura) {
             factura.FechaCreacion = DateTime.Now;
-            //db.Facturas.Add(factura);
+            db.Facturas.Add(factura);
             db.SaveChanges();
             return factura;
         } 
