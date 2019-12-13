@@ -9,13 +9,11 @@
         <table class="table table-sm table-dark">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Nombres</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">T.Documento</th>
                     <th scope="col">N.Documento</th>
                     <th scope="col">Género</th>
-                    <th scope="col">T.Documento</th>
                     <th scope="col">Dirección</th>
                     <th scope="col">N.Celular</th>
                     <th scope="col">Correo</th>
@@ -28,46 +26,16 @@
                 @{var empleados = (List<Empleado>)ViewBag.Empleados; }
                 @foreach (var empleado in empleados) {
                     <tr>
-                        <th scope="row">3</th>
                         <td>@empleado.Nombres</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
+                        <td>@empleado.Apellidos</td>
+                        <td>@empleado.Persona.TiposDeDocumento.NombreCorto</td>
+                        <td>@empleado.Persona.NumeroDocumento</td>
+                        <td>@empleado.Persona.Generos.Nombre</td>
+                        <td>@empleado.Dirreccion</td>
+                        <td>@empleado.Celular</td>
+                        <td>@empleado.Email</td>
+                        <td>@empleado.Edad</td>
+                        <td>@empleado.NombreUsuario</td>
                     </tr>
                 }
             </tbody>

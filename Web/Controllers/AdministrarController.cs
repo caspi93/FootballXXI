@@ -16,12 +16,6 @@ namespace Web.Controllers
             db = new Entidades();
         }
 
-        // GET: Administrar
-        public ActionResult VerEmpleados()
-        {
-            return View();
-        }
-
         public ActionResult CrearEmpleado() {
             var generoDao = new GeneroDao(db);
             var generos = generoDao.GetGeneros();
@@ -37,7 +31,35 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult VerEmpledos() {
+        public ActionResult RegistrarEmpleado() {
+            var empleado = new Empleado {
+                Persona = new Persona {
+                    PrimerNombre = Request.Form.Get("primerNombre"),
+                    SegundoNombre = Request.Form.Get("segundoNombre"),
+                    PrimerApellido = Request.Form.Get("primerApellido"),
+                    SegundoApellido = Request.Form.Get("segundoApellido"),
+                    GeneroId = Convert.ToInt32(Request.Form.Get("generos")),
+                    TiposDeDocumentoId = Convert.ToInt32(Request.Form.Get("tiposdeDocumento")),
+                    NumeroDocumento = Request.Form.Get("numeroDocumento")
+                },
+                RolId = Convert.ToInt32(Request.Form.Get("cargos")),
+                FechaNac = Convert.ToDateTime(Request.Form.Get("fechaNacimiento")),
+                Celular = Request.Form.Get("celular"),
+                Profesion = Request.Form.Get("profesion"),
+                Salario = Convert.ToDouble(Request.Form.Get("salario")),
+                Dirreccion = Request.Form.Get("direccion"),
+                Email = Request.Form.Get("email"),
+                NombreUsuario = Request.Form.Get("nombreUsuario"),
+                Clave = Request.Form.Get("clave")
+            };
+
+            var empleadoDao = new EmpleadoDao(db);
+            empleadoDao.CrearEmpleado(empleado);
+            Response.Redirect("/Home/Index");
+            return View();
+        }
+
+        public ActionResult VerEmpleados() {
             var empleadoDao = new EmpleadoDao(db);
             var empleados = empleadoDao.GetEmpleados();
 
@@ -46,6 +68,32 @@ namespace Web.Controllers
         }
 
         public ActionResult Pagos() {
+            var empleadoDao = new EmpleadoDao(db);
+            var pagos = empleadoDao.GetNomina();
+
+            ViewBag.Pagos = pagos;
+            return View();
+        }
+
+        public ActionResult Pagar() {
+
+            var empleadoDao = new EmpleadoDao(db);
+            var pagos = empleadoDao.GetNomina();
+
+            var listaPagos = new List<Pago>();
+            var pagoDao = new PagoDao(db);
+
+            foreach (var pagoEmpleado in pagos) {
+                var pago = new Pago {
+                    EmpleadoId = pagoEmpleado.Codigo,
+                    FechaPago = DateTime.Now,
+                    Sueldo = pagoEmpleado.SalarioComisiones
+                };
+                listaPagos.Add(pago);
+            }
+            pagoDao.CrearPagos(listaPagos);
+
+            Response.Redirect("/Home/Index");
             return View();
         }
 

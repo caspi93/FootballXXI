@@ -32,5 +32,13 @@ namespace Compartido.Dao {
 
             return consulta.SingleOrDefault();
         }
+
+        public Cliente Login(string email, string clave) {
+            var consulta = from c in db.Clientes
+                           where c.Email == email && c.Clave == clave
+                           select c;
+
+            return consulta.SingleOrDefault();
+        }
     }
 }

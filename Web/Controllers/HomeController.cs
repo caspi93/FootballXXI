@@ -34,6 +34,31 @@ namespace Web.Controllers {
             return View();
         }
 
+        public ActionResult RegistrarCliente() {
+            var cliente = new Cliente {
+                Persona = new Persona {
+                    PrimerNombre = Request.Form.Get("primerNombre"),
+                    SegundoNombre = Request.Form.Get("segundoNombre"),
+                    PrimerApellido = Request.Form.Get("primerApellido"),
+                    SegundoApellido = Request.Form.Get("segundoApellido"),
+                    GeneroId = Convert.ToInt32(Request.Form.Get("generos")),
+                    TiposDeDocumentoId = Convert.ToInt32(Request.Form.Get("tiposdeDocumento")),
+                    NumeroDocumento = Request.Form.Get("numeroDocumento")
+                },
+                Celular = Request.Form.Get("celular"),
+                Email = Request.Form.Get("email"),
+                Clave = Request.Form.Get("clave"),
+                FechaCreacion = DateTime.Now
+            };
+
+            var clienteDao = new ClienteDao(db);
+            clienteDao.CrearCliente(cliente);
+            Response.Redirect("/Login/IniciarSesion");
+            return View();
+        }
+
+
+
         public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
 

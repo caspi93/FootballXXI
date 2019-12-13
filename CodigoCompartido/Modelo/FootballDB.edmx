@@ -22,6 +22,7 @@
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Celular" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="14" />
         </EntityType>
         <EntityType Name="DetallesFactura">
           <Key>
@@ -484,6 +485,7 @@
           <NavigationProperty Name="Persona" Relationship="Self.ClientesPersonaId" FromRole="Clientes" ToRole="Personas" />
           <NavigationProperty Name="Facturas" Relationship="Self.FacturasClienteId" FromRole="Clientes" ToRole="Facturas" />
           <Property Name="Celular" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -969,6 +971,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="Compartido.Model.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
                 <ScalarProperty Name="Celular" ColumnName="Celular" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="PersonaId" ColumnName="PersonaId" />
