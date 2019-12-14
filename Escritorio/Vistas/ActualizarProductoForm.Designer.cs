@@ -89,7 +89,6 @@
             this.lblTalla.Size = new System.Drawing.Size(55, 24);
             this.lblTalla.TabIndex = 4;
             this.lblTalla.Text = "Talla";
-            this.lblTalla.Click += new System.EventHandler(this.LblTalla_Click);
             // 
             // lblCantidad
             // 
@@ -148,7 +147,6 @@
             this.btnAtras.TabIndex = 10;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.Button2_Click);
             // 
             // cbLigas
             // 

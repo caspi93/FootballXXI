@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Ayuda;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -32,35 +33,45 @@ namespace Escritorio.Vistas {
         }
 
         private void BtnBuscarVendedor_Click(object sender, EventArgs e) {
-            string numeroDocumento = txtBuscarVendedor.Text;
-            var empleadoDao = new EmpleadoDao(db);
-            vendedor = empleadoDao.buscarVendedor(numeroDocumento);
+            if (validar()) {
+                string numeroDocumento = txtBuscarVendedor.Text;
+                var empleadoDao = new EmpleadoDao(db);
+                vendedor = empleadoDao.buscarVendedor(numeroDocumento);
 
-            if (vendedor != null) {
-                lblPrimerNombre.Text = "Primer Nombre: " + vendedor.Persona.PrimerNombre;
-                lblSegundoNombre.Text = "Segundo Nombre: " + vendedor.Persona.SegundoNombre;
-                lblPrimerApellido.Text = "Primer Apellido: " + vendedor.Persona.PrimerApellido;
-                lblSegundoApellido.Text = "Segundo Apellido: " + vendedor.Persona.SegundoApellido;
-                lblTipoDoc.Text = "Tipo de Documento: " + vendedor.Persona.TiposDeDocumento.NombreCorto;
-                lblNumIde.Text = "Número de Documento: " + vendedor.Persona.NumeroDocumento;
-                lblGenero.Text = "Género: " + vendedor.Persona.Generos.Nombre;
-                lblFecNac.Text = "Fecha de Nacimiento: " + vendedor.FechaNac;
-                lblCelular.Text = "Celular: " + vendedor.Celular;
-                lblEmail.Text = "Correo: " + vendedor.Email;
-                lblDireccion.Text = "Dirección: " + vendedor.Dirreccion;
-                lblProfesion.Text = "Profesión: " + vendedor.Profesion;
-                lblNombreUsuario.Text = "Nombre de Usuario: " + vendedor.NombreUsuario;
-                lblRol.Text = "Cargo: " + vendedor.Rol.Nombre;
-                lblEdad.Text = "Edad: " + vendedor.Edad;
+                if (vendedor != null) {
+                    lblPrimerNombre.Text = "Primer Nombre: " + vendedor.Persona.PrimerNombre;
+                    lblSegundoNombre.Text = "Segundo Nombre: " + vendedor.Persona.SegundoNombre;
+                    lblPrimerApellido.Text = "Primer Apellido: " + vendedor.Persona.PrimerApellido;
+                    lblSegundoApellido.Text = "Segundo Apellido: " + vendedor.Persona.SegundoApellido;
+                    lblTipoDoc.Text = "Tipo de Documento: " + vendedor.Persona.TiposDeDocumento.NombreCorto;
+                    lblNumIde.Text = "Número de Documento: " + vendedor.Persona.NumeroDocumento;
+                    lblGenero.Text = "Género: " + vendedor.Persona.Generos.Nombre;
+                    lblFecNac.Text = "Fecha de Nacimiento: " + vendedor.FechaNac;
+                    lblCelular.Text = "Celular: " + vendedor.Celular;
+                    lblEmail.Text = "Correo: " + vendedor.Email;
+                    lblDireccion.Text = "Dirección: " + vendedor.Dirreccion;
+                    lblProfesion.Text = "Profesión: " + vendedor.Profesion;
+                    lblNombreUsuario.Text = "Nombre de Usuario: " + vendedor.NombreUsuario;
+                    lblRol.Text = "Cargo: " + vendedor.Rol.Nombre;
+                    lblEdad.Text = "Edad: " + vendedor.Edad;
 
-            } else {
-                MessageBox.Show("El vendedor no existe");
+                } else {
+                    MessageBox.Show("El vendedor no existe");
+                }
             }
         }
 
         private void BtSeleccionar_Click(object sender, EventArgs e) {
             factura.Vendedor = vendedor;
             Close();
+        }
+
+        private bool validar() {
+            if (!Validacion.validarCampoVacio(txtBuscarVendedor)) {
+                MessageBox.Show("El campo Buscar no puede estar vacío");
+                return false;
+            }
+            return true;
         }
     }
 }

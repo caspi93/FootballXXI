@@ -69,7 +69,6 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(206, 20);
             this.txtNombreUsuario.TabIndex = 3;
-            this.txtNombreUsuario.Text = "luisk";
             // 
             // txtClave
             // 

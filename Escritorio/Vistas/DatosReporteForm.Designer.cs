@@ -189,7 +189,6 @@
             this.btnAtras.TabIndex = 7;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
             // DatosReporteForm
             // 

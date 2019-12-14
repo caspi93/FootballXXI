@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Ayuda;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Escritorio.Vistas {
-    
+
     public partial class BuscarClienteForm : Form {
 
         readonly Entidades db;
@@ -30,15 +31,16 @@ namespace Escritorio.Vistas {
         }
 
         private void BtnBuscarCliente_Click(object sender, EventArgs e) {
+            if (validar()) {
+                string numeroDocumento = txtBuscarCliente.Text;
+                var clienteDao = new ClienteDao(db);
+                cliente = clienteDao.buscarCliente(numeroDocumento);
 
-            string numeroDocumento = txtBuscarCliente.Text;
-            var clienteDao = new ClienteDao(db);
-            cliente = clienteDao.buscarCliente(numeroDocumento);
-
-            if (cliente != null) {
-                LlenarCliente();
-            } else {
-                MessageBox.Show("El cliente no existe");
+                if (cliente != null) {
+                    LlenarCliente();
+                } else {
+                    MessageBox.Show("El cliente no existe");
+                }
             }
 
         }
@@ -71,6 +73,14 @@ namespace Escritorio.Vistas {
         private void BtnSeleccionarCliente_Click(object sender, EventArgs e) {
             factura.Cliente = cliente;
             Close();
+        }
+
+        private bool validar() {
+            if (!Validacion.validarCampoVacio(txtBuscarCliente)) {
+                MessageBox.Show("El campo Buscar no puede estar vacío");
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -189,7 +189,6 @@
             this.lblProfesion.Size = new System.Drawing.Size(98, 24);
             this.lblProfesion.TabIndex = 12;
             this.lblProfesion.Text = "Profesión";
-            this.lblProfesion.Click += new System.EventHandler(this.Label12_Click);
             // 
             // lblTipoDoc
             // 
@@ -210,7 +209,6 @@
             this.lblGenero.Size = new System.Drawing.Size(80, 24);
             this.lblGenero.TabIndex = 14;
             this.lblGenero.Text = "Género";
-            this.lblGenero.Click += new System.EventHandler(this.LblGenero_Click);
             // 
             // lblRol
             // 
@@ -367,7 +365,6 @@
             this.lblSalario.Size = new System.Drawing.Size(74, 24);
             this.lblSalario.TabIndex = 34;
             this.lblSalario.Text = "Salario";
-            this.lblSalario.Click += new System.EventHandler(this.LblSalario_Click);
             // 
             // txtSalario
             // 

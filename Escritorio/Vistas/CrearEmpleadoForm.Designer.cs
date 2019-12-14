@@ -328,7 +328,7 @@
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(254, 21);
             this.cbTipoDoc.TabIndex = 31;
-            this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.CbTipoDoc_SelectedIndexChanged);
+    
             // 
             // cbGeneros
             // 

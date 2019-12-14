@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Ayuda;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,7 @@ namespace Escritorio.Vistas {
             cliente.Persona.Generos = (Genero)cbGeneros.SelectedItem;
             cliente.Celular = txtCelular.Text;
             cliente.Email = txtCorreo.Text;
+            cliente.Clave = txtClave.Text;
 
             var clienteDao = new ClienteDao(db);
             if (clienteDao.CrearCliente(cliente) != null) {
@@ -53,6 +55,60 @@ namespace Escritorio.Vistas {
             } else {
                 MessageBox.Show("Ha ocurrido un error");
             }
+        }
+
+        private bool validar() {
+            if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
+                MessageBox.Show("El campo Primer Nombre no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSegundoNombre)) {
+                MessageBox.Show("El campo Segundo Nombre no puede estar vacío");
+                return false;
+            }
+
+            if (Validacion.validarCampoVacio(txtPrimerApellido)) {
+                MessageBox.Show("El campo Primer Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSegundoApellido)) {
+                MessageBox.Show("El campo Segundo Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtNumIde)) {
+                MessageBox.Show("El campo Número de Identificación no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCorreo)) {
+                MessageBox.Show("El campo Correo no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCelular)) {
+                MessageBox.Show("El campo Celular no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtClave)) {
+                MessageBox.Show("El campo Clave no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbGeneros)) {
+                MessageBox.Show("Debe seleccionar un género");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbTiposDoc)) {
+                MessageBox.Show("Debe seleccionar un tipo de documento");
+                return false;
+            }
+
+            return true;
         }
     }
 }

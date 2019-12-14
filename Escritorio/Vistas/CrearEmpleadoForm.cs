@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Ayuda;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -38,38 +39,115 @@ namespace Escritorio.Vistas {
         }
 
         private void BtnTerminar_Click(object sender, EventArgs e) {
-            var empleado = new Empleado();
-            empleado.Persona = new Persona();
+            if (validar()) {
+                var empleado = new Empleado();
+                empleado.Persona = new Persona();
 
-            empleado.Persona.PrimerNombre = txtPrimerNombre.Text;
-            empleado.Persona.SegundoNombre = txtSegundoNombre.Text;
-            empleado.Persona.PrimerApellido = txtPrimerApellido.Text;
-            empleado.Persona.SegundoApellido = txtSegundoApellido.Text;
-            empleado.Persona.TiposDeDocumento = (TipoDeDocumento)cbTipoDoc.SelectedItem;
-            empleado.Persona.NumeroDocumento = txtNumIde.Text;
-            empleado.Persona.Generos = (Genero)cbGeneros.SelectedItem;
-            empleado.FechaNac = txtFecNac.Value;
-            empleado.Celular = txtCelular.Text;
-            empleado.Email = txtCorreo.Text;
-            empleado.Rol = (Rol)cbRoles.SelectedItem;
-            empleado.Profesion = txtProfesion.Text;
-            empleado.Dirreccion = txtDireccion.Text;
-            empleado.NombreUsuario = txtNombreUsuario.Text;
-            empleado.Clave = txtClave.Text;
-            empleado.Salario = Convert.ToDouble(txtSalario.Text);
+                empleado.Persona.PrimerNombre = txtPrimerNombre.Text;
+                empleado.Persona.SegundoNombre = txtSegundoNombre.Text;
+                empleado.Persona.PrimerApellido = txtPrimerApellido.Text;
+                empleado.Persona.SegundoApellido = txtSegundoApellido.Text;
+                empleado.Persona.TiposDeDocumento = (TipoDeDocumento)cbTipoDoc.SelectedItem;
+                empleado.Persona.NumeroDocumento = txtNumIde.Text;
+                empleado.Persona.Generos = (Genero)cbGeneros.SelectedItem;
+                empleado.FechaNac = txtFecNac.Value;
+                empleado.Celular = txtCelular.Text;
+                empleado.Email = txtCorreo.Text;
+                empleado.Rol = (Rol)cbRoles.SelectedItem;
+                empleado.Profesion = txtProfesion.Text;
+                empleado.Dirreccion = txtDireccion.Text;
+                empleado.NombreUsuario = txtNombreUsuario.Text;
+                empleado.Clave = txtClave.Text;
+                empleado.Salario = Convert.ToDouble(txtSalario.Text);
 
-            var empleadoDao = new EmpleadoDao(db);
-            if (empleadoDao.CrearEmpleado(empleado) != null) {
-                MessageBox.Show("El empleado ha sido creado correctamente");
-                Close();
-            } else {
-                MessageBox.Show("Ha ocurrido un error");
+                var empleadoDao = new EmpleadoDao(db);
+                if (empleadoDao.CrearEmpleado(empleado) != null) {
+                    MessageBox.Show("El empleado ha sido creado correctamente");
+                    Close();
+                } else {
+                    MessageBox.Show("Ha ocurrido un error");
+                }
             }
 
         }
 
-        private void CbTipoDoc_SelectedIndexChanged(object sender, EventArgs e) {
+        private bool validar() {
+            if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
+                MessageBox.Show("El campo Primer Nombre no puede estar vacío");
+                return false;
+            }
 
+            if (!Validacion.validarCampoVacio(txtSegundoNombre)) {
+                MessageBox.Show("El campo Segundo Nombre no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtPrimerApellido)) {
+                MessageBox.Show("El campo Primer Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSegundoApellido)) {
+                MessageBox.Show("El campo Segundo Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtDireccion)) {
+                MessageBox.Show("El campo Dirección no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtProfesion)) {
+                MessageBox.Show("El campo Profesión no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtNumIde)) {
+                MessageBox.Show("El campo Número de Identificación no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCorreo)) {
+                MessageBox.Show("El campo Correo no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCelular)) {
+                MessageBox.Show("El campo Celular no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtNombreUsuario)) {
+                MessageBox.Show("El campo Nombre de Usuario no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtClave)) {
+                MessageBox.Show("El campo Clave no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSalario)) {
+                MessageBox.Show("El campo Saalario no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbRoles)) {
+                MessageBox.Show("Debe seleccionar un rol");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbGeneros)) {
+                MessageBox.Show("Debe seleccionar un género");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbTipoDoc)) {
+                MessageBox.Show("Debe seleccionar un tipo de documento");
+                return false;
+            }
+
+            return true;
         }
     }
 }

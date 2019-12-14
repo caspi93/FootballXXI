@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Ayuda;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -50,47 +51,116 @@ namespace Escritorio.Vistas {
             txtSalario.Text = empleado.Salario.ToString();
         }
 
-        private void Label12_Click(object sender, EventArgs e) {
-
-        }
-
-        private void LblGenero_Click(object sender, EventArgs e) {
-
-        }
-
         private void BtnTerminar_Click(object sender, EventArgs evt) {
+            if (validar()) {
+                empleado = db.Empleados.Where(e => e.Id == empleado.Id).Single();
+                empleado.Persona.PrimerNombre = txtPrimerNombre.Text;
+                empleado.Persona.SegundoNombre = txtSegundoNombre.Text;
+                empleado.Persona.PrimerApellido = txtPrimerApellido.Text;
+                empleado.Persona.SegundoApellido = txtSegundoApellido.Text;
+                empleado.Persona.TiposDeDocumento = (TipoDeDocumento)cbTipoDoc.SelectedItem;
+                empleado.Persona.NumeroDocumento = txtNumIde.Text;
+                empleado.Persona.Generos = (Genero)cbGeneros.SelectedItem;
+                empleado.FechaNac = txtFecNac.Value;
+                empleado.Celular = txtCelular.Text;
+                empleado.Email = txtCorreo.Text;
+                empleado.Rol = (Rol)cbRoles.SelectedItem;
+                empleado.Profesion = txtProfesion.Text;
+                empleado.Dirreccion = txtDireccion.Text;
+                empleado.NombreUsuario = txtNombreUsuario.Text;
+                empleado.Clave = txtClave.Text;
+                empleado.Salario = Convert.ToDouble(txtSalario.Text);
 
-            empleado = db.Empleados.Where(e => e.Id == empleado.Id).Single();
-            empleado.Persona.PrimerNombre = txtPrimerNombre.Text;
-            empleado.Persona.SegundoNombre = txtSegundoNombre.Text;
-            empleado.Persona.PrimerApellido = txtPrimerApellido.Text;
-            empleado.Persona.SegundoApellido = txtSegundoApellido.Text;
-            empleado.Persona.TiposDeDocumento = (TipoDeDocumento)cbTipoDoc.SelectedItem;
-            empleado.Persona.NumeroDocumento = txtNumIde.Text;
-            empleado.Persona.Generos = (Genero)cbGeneros.SelectedItem;
-            empleado.FechaNac = txtFecNac.Value;
-            empleado.Celular = txtCelular.Text;
-            empleado.Email = txtCorreo.Text;
-            empleado.Rol = (Rol)cbRoles.SelectedItem;
-            empleado.Profesion = txtProfesion.Text;
-            empleado.Dirreccion = txtDireccion.Text;
-            empleado.NombreUsuario = txtNombreUsuario.Text;
-            empleado.Clave = txtClave.Text;
-            empleado.Salario = Convert.ToDouble(txtSalario.Text);
+                var editarEmpleadoDao = new EmpleadoDao(db);
 
-            var editarEmpleadoDao = new EmpleadoDao(db);
-
-            if (editarEmpleadoDao.editarEmpleado(empleado) != null) {
-                MessageBox.Show("El empleado ha sido editado correctamente");
-                Close();
-            } else {
-                MessageBox.Show("Ha ocurrido un error");
+                if (editarEmpleadoDao.editarEmpleado(empleado) != null) {
+                    MessageBox.Show("El empleado ha sido editado correctamente");
+                    Close();
+                } else {
+                    MessageBox.Show("Ha ocurrido un error");
+                }
             }
 
         }
 
-        private void LblSalario_Click(object sender, EventArgs e) {
+        private bool validar() {
+            if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
+                MessageBox.Show("El campo Primer Nombre no puede estar vacío");
+                return false;
+            }
 
+            if (!Validacion.validarCampoVacio(txtSegundoNombre)) {
+                MessageBox.Show("El campo Segundo Nombre no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtPrimerApellido)) {
+                MessageBox.Show("El campo Primer Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSegundoApellido)) {
+                MessageBox.Show("El campo Segundo Apellido no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtDireccion)) {
+                MessageBox.Show("El campo Dirección no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtProfesion)) {
+                MessageBox.Show("El campo Profesión no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtNumIde)) {
+                MessageBox.Show("El campo Número de Identificación no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCorreo)) {
+                MessageBox.Show("El campo Correo no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtCelular)) {
+                MessageBox.Show("El campo Celular no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtNombreUsuario)) {
+                MessageBox.Show("El campo Nombre de Usuario no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtClave)) {
+                MessageBox.Show("El campo Clave no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbRoles)) {
+                MessageBox.Show("Debe seleccionar un rol");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbGeneros)) {
+                MessageBox.Show("Debe seleccionar un género");
+                return false;
+            }
+
+            if (!Validacion.validarCombobox(cbTipoDoc)) {
+                MessageBox.Show("Debe seleccionar un tipo de documento");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtSalario)) {
+                MessageBox.Show("El campo Salario no puede estar vacío");
+                return false;
+            }
+
+            return true;
         }
+
     }
 }

@@ -78,7 +78,7 @@ select * from Personas;
 select * from Generos;
 select * from Pagos;
 select * from Ligas;
-
+select * from Roles;
 select * from TallasCamiseta tc
 where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
 
@@ -90,4 +90,4 @@ select sum(total) from Facturas where Id = 222;
 insert into Pagos (EmpleadoId, FechaPago, Sueldo)
 	values (2, CURRENT_TIMESTAMP, 1550000);
 
-delete from Ligas where Id >= 6;
+delete from Roles where Id >= 5;

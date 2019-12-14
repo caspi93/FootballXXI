@@ -80,9 +80,11 @@ PersonaId int not null,
 constraint ClientesPersonaId foreign key(PersonaId) references Personas,
 Celular varchar(12) not null,
 Email varchar(100) not null
+Clave varchar(14) not null,
 );
 
 alter table Clientes add Id int identity(1,1) primary key not null;
+alter table Clientes add Clave varchar(14);
 
 create table Empleados(
 Id int identity(1,1) primary key not null,
