@@ -40,5 +40,27 @@ namespace Web.Controllers
             
             return View();
         }
+
+        public ActionResult IniciarSesionCliente() {
+
+            var email = Request.Form.Get("email");
+            var clave = Request.Form.Get("clave");
+
+            if (email != null && clave != null) {
+                var clienteDao = new ClienteDao(db);
+                var cliente = clienteDao.Login(email, clave);
+
+                if (cliente != null) {
+                    Response.Redirect("/Inicio/Compras");
+                } else {
+                    TempData["Mensaje"] = "Correo o contraseña incorrecta";
+                    ViewBag.NombreUsuario = email;
+                }
+            }
+
+            return View();
+        }
+
+
     }
 }

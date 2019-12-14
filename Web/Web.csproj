@@ -251,6 +251,7 @@
     <None Include="Views\Login\IniciarSesion.cshtml" />
     <None Include="Views\Administrar\Pagos.cshtml" />
     <None Include="Views\Administrar\DatosReportes.cshtml" />
+    <None Include="Views\Login\IniciarSesionCliente.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
