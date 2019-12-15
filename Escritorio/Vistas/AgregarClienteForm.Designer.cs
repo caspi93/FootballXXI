@@ -46,6 +46,8 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -186,7 +188,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(599, 530);
+            this.btnGuardar.Location = new System.Drawing.Point(599, 579);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(101, 37);
             this.btnGuardar.TabIndex = 15;
@@ -197,7 +199,7 @@
             // bntAtras
             // 
             this.bntAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAtras.Location = new System.Drawing.Point(474, 530);
+            this.bntAtras.Location = new System.Drawing.Point(477, 579);
             this.bntAtras.Name = "bntAtras";
             this.bntAtras.Size = new System.Drawing.Size(102, 37);
             this.bntAtras.TabIndex = 16;
@@ -255,11 +257,30 @@
             this.lblClave.TabIndex = 22;
             this.lblClave.Text = "Clave";
             // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(55, 535);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(84, 20);
+            this.lblDireccion.TabIndex = 23;
+            this.lblDireccion.Text = "Dirección";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(416, 535);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(284, 20);
+            this.txtDireccion.TabIndex = 24;
+            // 
             // AgrearClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 595);
+            this.ClientSize = new System.Drawing.Size(747, 678);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtCorreo);
@@ -315,5 +336,7 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.TextBox txtDireccion;
     }
 }

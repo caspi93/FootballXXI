@@ -72,21 +72,36 @@
     </Compile>
     <Compile Include="Modelo\ClientesComplemento.cs" />
     <Compile Include="Modelo\DatosReporte.cs" />
-    <Compile Include="Modelo\DetalleFacturaComplemento.cs" />
-    <Compile Include="Modelo\EmpleadosComplemento.cs" />
-    <Compile Include="Modelo\FacturaComplemento.cs" />
-    <Compile Include="Modelo\PagoEmpleados.cs" />
-    <Compile Include="Modelo\PersonasComplemento.cs" />
-    <Compile Include="Modelo\RolesComplemento.cs" />
     <Compile Include="Modelo\DetalleFactura.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\DetalleFacturaComplemento.cs" />
     <Compile Include="Modelo\Empleado.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\EmpleadosComplemento.cs" />
     <Compile Include="Modelo\Factura.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\FacturaComplemento.cs" />
+    <Compile Include="Modelo\Genero.cs">
+      <DependentUpon>FootballDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liga.cs">
+      <DependentUpon>FootballDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Pago.cs">
+      <DependentUpon>FootballDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PagoEmpleados.cs" />
+    <Compile Include="Modelo\Persona.cs">
+      <DependentUpon>FootballDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PersonasComplemento.cs" />
+    <Compile Include="Modelo\Rol.cs">
+      <DependentUpon>FootballDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\RolesComplemento.cs" />
     <Compile Include="Modelo\FootballDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,23 +117,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FootballDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Genero.cs">
-      <DependentUpon>FootballDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\GenerosComplemento.cs" />
-    <Compile Include="Modelo\Liga.cs">
-      <DependentUpon>FootballDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\LigasComplemento.cs" />
-    <Compile Include="Modelo\Pago.cs">
-      <DependentUpon>FootballDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\Persona.cs">
-      <DependentUpon>FootballDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\Rol.cs">
-      <DependentUpon>FootballDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\sysdiagrams.cs">
       <DependentUpon>FootballDB.tt</DependentUpon>
     </Compile>

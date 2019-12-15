@@ -38,73 +38,73 @@ namespace Escritorio.Vistas {
         }
 
         private void CbLigas_SelectedIndexChanged(object sender, EventArgs e) {
-           
-                int l = cbLigas.SelectedIndex;
-                if (l >= 1) {
-                    cbEquipos.Enabled = true;
-                    var liga = (Liga)cbLigas.SelectedItem;
-                    var camisetaDao = new CamisetaDao(db);
-                    var ligas = camisetaDao.GetCamisetas(liga);
-                    cbEquipos.Items.Clear();
-                    cbEquipos.Items.Add("Seleccione un equipo");
-                    cbEquipos.Items.AddRange(ligas.ToArray());
-                }
-            
+
+            int l = cbLigas.SelectedIndex;
+            if (l >= 1) {
+                cbEquipos.Enabled = true;
+                var liga = (Liga)cbLigas.SelectedItem;
+                var camisetaDao = new CamisetaDao(db);
+                var ligas = camisetaDao.GetCamisetas(liga);
+                cbEquipos.Items.Clear();
+                cbEquipos.Items.Add("Seleccione un equipo");
+                cbEquipos.Items.AddRange(ligas.ToArray());
+            }
+
         }
 
         private void CbEquipos_SelectedIndexChanged(object sender, EventArgs e) {
-            
-                int equipo = cbEquipos.SelectedIndex;
-                if (equipo >= 1) {
-                    cbGeneros.Enabled = true;
-                    camiseta = (Camiseta)cbEquipos.SelectedItem;
 
-                    var tallasCamisetaDao = new TallaCamisetaDao(db);
-                    tallasCamisetas = tallasCamisetaDao.GetTallaCamisetas(camiseta);
-                    var generoDao = new GeneroDao(db);
-                    var generos = generoDao.GetGeneros();
-                    cbGeneros.Items.Clear();
-                    cbGeneros.Items.Add("Seleccione un genero");
-                    cbGeneros.Items.AddRange(generos.ToArray());
-                }
-            
+            int equipo = cbEquipos.SelectedIndex;
+            if (equipo >= 1) {
+                cbGeneros.Enabled = true;
+                camiseta = (Camiseta)cbEquipos.SelectedItem;
+
+                var tallasCamisetaDao = new TallaCamisetaDao(db);
+                tallasCamisetas = tallasCamisetaDao.GetTallaCamisetas(camiseta);
+                var generoDao = new GeneroDao(db);
+                var generos = generoDao.GetGeneros();
+                cbGeneros.Items.Clear();
+                cbGeneros.Items.Add("Seleccione un genero");
+                cbGeneros.Items.AddRange(generos.ToArray());
+            }
+
         }
 
         private void CbGeneros_SelectedIndexChanged(object sender, EventArgs e) {
-            
-                int g = cbGeneros.SelectedIndex;
-                if (g >= 1) {
-                    cbTallas.Enabled = true;
-                    genero = (Genero)cbGeneros.SelectedItem;
-                    var tallaDao = new TallaDao(db);
-                    var tallas = tallaDao.GetTallas();
-                    cbTallas.Items.Clear();
-                    cbTallas.Items.Add("Seleccione una talla");
-                    cbTallas.Items.AddRange(tallas.ToArray());
-                }
-            
+
+            int g = cbGeneros.SelectedIndex;
+            if (g >= 1) {
+                cbTallas.Enabled = true;
+                genero = (Genero)cbGeneros.SelectedItem;
+                var tallaDao = new TallaDao(db);
+                var tallas = tallaDao.GetTallas();
+                cbTallas.Items.Clear();
+                cbTallas.Items.Add("Seleccione una talla");
+                cbTallas.Items.AddRange(tallas.ToArray());
+            }
+
         }
 
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
-            
-                int t = cbTallas.SelectedIndex;
 
-                if (t >= 1) {
-                    var talla = (Talla)cbTallas.SelectedItem;
-                    tallaCamiseta = tallasCamisetas
-                        .Where(tc => tc.GeneroId == genero.Id && tc.TallaId == talla.Id)
-                        .FirstOrDefault();
+            int t = cbTallas.SelectedIndex;
 
-                    if (tallaCamiseta != null) {
-                        lblCantidad.Text = "Cantidad: " + tallaCamiseta.Cantidad;
-                        var tallaGeneroDao = new TallaGeneroDao(db);
-                        tallaGenero = tallaGeneroDao.GetTallaGenero(talla, genero);
-                        lblPrecio.Text = "Precio: " + tallaGenero.Precio;
-                    } else {
-                        lblPrecio.Text = "Precio: ";
-                        lblCantidad.Text = "Cantidad: ";
-                    }
-                
+            if (t >= 1) {
+                var talla = (Talla)cbTallas.SelectedItem;
+                tallaCamiseta = tallasCamisetas
+                    .Where(tc => tc.GeneroId == genero.Id && tc.TallaId == talla.Id)
+                    .FirstOrDefault();
+
+                if (tallaCamiseta != null) {
+                    lblCantidad.Text = "Cantidad: " + tallaCamiseta.Cantidad;
+                    var tallaGeneroDao = new TallaGeneroDao(db);
+                    tallaGenero = tallaGeneroDao.GetTallaGenero(talla, genero);
+                    lblPrecio.Text = "Precio: " + tallaGenero.Precio;
+                } else {
+                    lblPrecio.Text = "Precio: ";
+                    lblCantidad.Text = "Cantidad: ";
+                }
+
             }
         }
 
@@ -117,7 +117,13 @@ namespace Escritorio.Vistas {
                 } else {
                     camiseta = db.Camisetas.Where(c => c.Id == camiseta.Id).Single();
                     tallaGenero = db.TallasGenero.Where(tg => tg.TallaId == tallaGenero.TallaId && tg.GeneroId == tallaGenero.GeneroId).Single();
-                    var detalleFactura = new DetalleFactura(factura, camiseta, tallaGenero, cantidad);
+                    var detalleFactura = new DetalleFactura {
+                        Camisetas = camiseta,
+                        Tallas = tallaGenero.Tallas,
+                        Generos = tallaGenero.Generos,
+                        Cantidad = cantidad,
+                        Precio = tallaGenero.Precio
+                    };
                     factura.DetallesFactura.Add(detalleFactura);
                     Close();
                 }
@@ -151,7 +157,7 @@ namespace Escritorio.Vistas {
             }
 
             return true;
-        }        
-        
+        }
+
     }
 }

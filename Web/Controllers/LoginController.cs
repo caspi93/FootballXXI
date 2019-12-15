@@ -8,16 +8,20 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
-    public class LoginController : Controller{
+    public class LoginController : Controller {
         private Entidades db;
+
+        public enum TipoSesion {
+            Empleado,
+            Cliente
+        }
 
         public LoginController() {
             db = new Entidades();
         }
-        
+
         // GET: Login
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View();
         }
 
@@ -31,13 +35,15 @@ namespace Web.Controllers
                 var empleado = empleadoDao.Login(nombreUsuario, clave);
 
                 if (empleado != null) {
+                    Session["empleado"] = empleado;
+                    Session["tipo"] = TipoSesion.Empleado;
                     Response.Redirect("/Home/Index");
                 } else {
                     TempData["Mensaje"] = "Usuario o contraseña incorrecta";
                     ViewBag.NombreUsuario = nombreUsuario;
                 }
             }
-            
+
             return View();
         }
 
@@ -52,6 +58,8 @@ namespace Web.Controllers
 
                 if (cliente != null) {
                     Response.Redirect("/Inicio/Compras");
+                    Session["cliente"] = cliente;
+                    Session["tipo"] = TipoSesion.Cliente;
                 } else {
                     TempData["Mensaje"] = "Correo o contraseña incorrecta";
                     ViewBag.NombreUsuario = email;
@@ -61,6 +69,15 @@ namespace Web.Controllers
             return View();
         }
 
+        public ActionResult CerrarSesion() {
+            if (Session["tipo"] != null) {
+                Session["tipo"] = null;
+                Session["empleado"] = null;
+                Session["cliente"] = null;
+            }
 
+            Response.Redirect("/Home/Index");
+            return View();
+        }
     }
 }

@@ -67,6 +67,7 @@ namespace Escritorio.Vistas {
             lblFechaCreacion.Text = "Fecha de Creación: " + cliente.FechaCreacion;
             lblCelular.Text = "Celular: " + cliente.Celular;
             lblCorreo.Text = "Correo: " + cliente.Email;
+            lblDireccion.Text = "Dirección: " + cliente.Direccion;
             btnSeleccionarCliente.Enabled = true;
         }
 

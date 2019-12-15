@@ -46,6 +46,7 @@ namespace Escritorio.Vistas {
             cliente.Celular = txtCelular.Text;
             cliente.Email = txtCorreo.Text;
             cliente.Clave = txtClave.Text;
+            cliente.Direccion = txtDireccion.Text;
 
             var clienteDao = new ClienteDao(db);
             if (clienteDao.CrearCliente(cliente) != null) {
@@ -90,6 +91,11 @@ namespace Escritorio.Vistas {
 
             if (!Validacion.validarCampoVacio(txtCelular)) {
                 MessageBox.Show("El campo Celular no puede estar vacío");
+                return false;
+            }
+
+            if (!Validacion.validarCampoVacio(txtDireccion)) {
+                MessageBox.Show("El campo Dirección no puede estar vacío");
                 return false;
             }
 

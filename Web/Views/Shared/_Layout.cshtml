@@ -8,7 +8,7 @@
     <title>@ViewBag.Title - Football XXI</title>
     @Styles.Render("~/Content/css")
     <!--@Scripts.Render("~/bundles/modernizr")-->
-    
+
 </head>
 <body>
     <!-- Navigation -->
@@ -21,24 +21,25 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administrar
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @{
-                                var atributosDropdown = new Dictionary<string, object> {
+                    @if (Session["empleado"] != null) {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administrar
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @{
+                                    var atributosDropdown = new Dictionary<string, object> {
                                     {"class", "dropdown-item" }
                                 };
-                            }
+                                }
 
-                            @Html.ActionLink("Crear Empleado", "CrearEmpleado", "Administrar", null, atributosDropdown)
-                            @Html.ActionLink("Ver Empleados", "VerEmpleados", "Administrar", null, atributosDropdown)
-                            @Html.ActionLink("Ver Reportes", "DatosReportes", "Administrar", null, atributosDropdown)
-                            @Html.ActionLink("Pago de Nómina", "Pagos", "Administrar", null, atributosDropdown)
-                        </div>
-                    </li>
+                                @Html.ActionLink("Crear Empleado", "CrearEmpleado", "Administrar", null, atributosDropdown)
+                                @Html.ActionLink("Ver Empleados", "VerEmpleados", "Administrar", null, atributosDropdown)
+                                @Html.ActionLink("Ver Reportes", "DatosReportes", "Administrar", null, atributosDropdown)
+                                @Html.ActionLink("Pago de Nómina", "Pagos", "Administrar", null, atributosDropdown)
+                            </div>
+                        </li>
+                    }
                     @{
                         var atributosNavLink = new Dictionary<string, object> {
                                     {"class", "nav-link" }
@@ -51,9 +52,21 @@
                     <li class="nav-item">
                         @Html.ActionLink("Registrarse", "CrearCliente", "Home", null, atributosNavLink)
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Iniciar Sesión", "IniciarSesion", "Login", null, atributosNavLink)
-                    </li>
+                    @if (Session["tipo"] == null) {
+                        <li class="nav-item">
+                            @Html.ActionLink("Iniciar Sesión Como Administrador", "IniciarSesion", "Login", null, atributosNavLink)
+                        </li>
+                    }
+                    @if (Session["tipo"] == null) {
+                        <li class="nav-item">
+                            @Html.ActionLink("Iniciar Sesión Como Cliente", "IniciarSesionCliente", "Login", null, atributosNavLink)
+                        </li>
+                    }
+                    @if (Session["tipo"] != null) {
+                        <li class="nav-item">
+                            @Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login", null, atributosNavLink)
+                        </li>
+                    }
                 </ul>
             </div>
         </div>

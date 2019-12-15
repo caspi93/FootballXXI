@@ -23,7 +23,7 @@ namespace Compartido.Modelo
         public System.DateTime FechaCreacion { get; set; }
         public int ClienteId { get; set; }
         public double Total { get; set; }
-        public int VendedorId { get; set; }
+        public Nullable<int> VendedorId { get; set; }
         public int Id { get; set; }
     
         public virtual Cliente Cliente { get; set; }

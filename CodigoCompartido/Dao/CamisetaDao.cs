@@ -22,5 +22,12 @@ namespace Compartido.Dao {
             return consulta.ToList();
 
         }
+
+        public Camiseta GetCamiseta(int id) {
+            var consulta = from c in db.Camisetas
+                           where c.Id == id
+                           select c;
+            return consulta.Single();
+        }
     }
 }

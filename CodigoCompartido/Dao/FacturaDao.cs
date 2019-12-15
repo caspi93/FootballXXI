@@ -15,10 +15,16 @@ namespace Compartido.Dao {
         }
 
         public Factura crearFactura(Factura factura) {
-            factura.FechaCreacion = DateTime.Now;
-            db.Facturas.Add(factura);
+            var f = new Factura {
+                FechaCreacion = DateTime.Now,
+                ClienteId = factura.Cliente.Id,
+                Total = factura.Total,
+                VendedorId = factura.Vendedor != null ? new int?(factura.Vendedor.Id) : null
+            };
+
+            db.Facturas.Add(f);
             db.SaveChanges();
-            return factura;
+            return f;
         } 
 
         public int contarVentas(Empleado vendedor) {

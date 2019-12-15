@@ -75,16 +75,24 @@ constraint PersonasGeneroId foreign key(GeneroId) references Generos
 );
 
 create table Clientes(
+Id int identity(1,1) primary key not null,
 FechaCreacion date not null,
 PersonaId int not null,
 constraint ClientesPersonaId foreign key(PersonaId) references Personas,
 Celular varchar(12) not null,
 Email varchar(100) not null
 Clave varchar(14) not null,
+Direccion varchar(100) not null
 );
 
+-- Piza debe ejecutar la modificación del cliente
+-- Ejecutar primero el alter sin null y después con null
 alter table Clientes add Id int identity(1,1) primary key not null;
 alter table Clientes add Clave varchar(14);
+alter table Clientes add Direccion  varchar(100);
+
+alter table Clientes alter column  Clave varchar(14) not null;
+alter table Clientes alter column  Direccion varchar(100) not null;
 
 create table Empleados(
 Id int identity(1,1) primary key not null,

@@ -48,6 +48,7 @@ namespace Web.Controllers {
                 Celular = Request.Form.Get("celular"),
                 Email = Request.Form.Get("email"),
                 Clave = Request.Form.Get("clave"),
+                Direccion = Request.Form.Get("direccion"),
                 FechaCreacion = DateTime.Now
             };
 

@@ -22,7 +22,8 @@
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Celular" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="Clave" Type="varchar" MaxLength="14" />
+          <Property Name="Clave" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="DetallesFactura">
           <Key>
@@ -61,7 +62,7 @@
           <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="ClienteId" Type="int" Nullable="false" />
           <Property Name="Total" Type="float" Nullable="false" />
-          <Property Name="VendedorId" Type="int" Nullable="false" />
+          <Property Name="VendedorId" Type="int" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Generos">
@@ -251,7 +252,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EmpleadosVendededorId">
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
           <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleados">
@@ -485,7 +486,8 @@
           <NavigationProperty Name="Persona" Relationship="Self.ClientesPersonaId" FromRole="Clientes" ToRole="Personas" />
           <NavigationProperty Name="Facturas" Relationship="Self.FacturasClienteId" FromRole="Clientes" ToRole="Facturas" />
           <Property Name="Celular" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="Clave" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -501,7 +503,7 @@
           <Property Name="Dirreccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RolId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rol" Relationship="Self.EmpleadosRolId" FromRole="Empleados" ToRole="Roles" />
-          <NavigationProperty Name="Facturas" Relationship="Self.EmpleadosVendededorId" FromRole="Empleados" ToRole="Facturas" />
+          <NavigationProperty Name="Facturas" Relationship="Compartido.Model.FacturasVendedorId" FromRole="Empleados" ToRole="Facturas" />
           <NavigationProperty Name="Pagos" Relationship="Self.PagosEmpleadoId" FromRole="Empleados" ToRole="Pagos" />
           <Property Name="PersonaId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Persona" Relationship="Compartido.Model.EmpleadosPersonaId" FromRole="Empleado" ToRole="Persona" />
@@ -514,10 +516,10 @@
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ClienteId" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Double" Nullable="false" />
-          <Property Name="VendedorId" Type="Int32" Nullable="false" />
+          <Property Name="VendedorId" Type="Int32" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Cliente" Relationship="Self.FacturasClienteId" FromRole="Facturas" ToRole="Clientes" />
-          <NavigationProperty Name="Vendedor" Relationship="Self.EmpleadosVendededorId" FromRole="Facturas" ToRole="Empleados" />
+          <NavigationProperty Name="Vendedor" Relationship="Compartido.Model.FacturasVendedorId" FromRole="Facturas" ToRole="Empleados" />
           <NavigationProperty Name="DetallesFactura" Relationship="Self.DetFacFacturaId" FromRole="Facturas" ToRole="DetallesFactura" />
         </EntityType>
         <EntityType Name="Genero">
@@ -710,8 +712,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="EmpleadosVendededorId">
-          <End Role="Empleados" Type="Compartido.Model.Empleado" Multiplicity="1" />
+        <Association Name="FacturasVendedorId">
+          <End Role="Empleados" Type="Compartido.Model.Empleado" Multiplicity="0..1" />
           <End Role="Facturas" Type="Compartido.Model.Factura" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleados">
@@ -881,7 +883,7 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="EmpleadosVendededorId" Association="Self.EmpleadosVendededorId">
+          <AssociationSet Name="FacturasVendedorId" Association="Compartido.Model.FacturasVendedorId">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
@@ -971,6 +973,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="Compartido.Model.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
                 <ScalarProperty Name="Celular" ColumnName="Celular" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />

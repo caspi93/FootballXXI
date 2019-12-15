@@ -16,5 +16,12 @@ namespace Compartido.Dao {
         public List<Genero> GetGeneros() {
             return db.Generos.ToList();
         }
+        public Genero GetGenero(int id) {
+            var consulta = from g in db.Generos
+                           where g.Id == id
+                           select g;
+
+            return consulta.Single();
+        }
     }
 }

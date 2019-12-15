@@ -9,32 +9,32 @@
 
     <div class="row justify-content-center">
         <form class="col-sm-10 col-md-6" action="@Url.Action("RegistrarEmpleado", "Administrar")" method="post">
-            <h3>Datos del empleado</h3>
+            <h3>Registrar empleado</h3>
             <div class="row">
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="primer-nombre">Primer Nombre</label>
-                    <input type="text" name="primerNombre" class="form-control" id="PrimerNombre" placeholder="Primer Nombre">
+                    <input type="text" required name="primerNombre" class="form-control" id="PrimerNombre" placeholder="Primer Nombre">
                 </div>
 
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="segundo-nombre">Segundo Nombre</label>
-                    <input type="text" name="segundoNombre" class="form-control" id="SegundoNombre" placeholder="Segundo Nombre">
+                    <input type="text" required name="segundoNombre" class="form-control" id="SegundoNombre" placeholder="Segundo Nombre">
 
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="apellidos">Primer Apellido</label>
-                    <input type="text" name="primerApellido" class="form-control" id="PrimerApellido" placeholder="Primer Apellido">
+                    <input type="text" required name="primerApellido" class="form-control" id="PrimerApellido" placeholder="Primer Apellido">
                 </div>
 
 
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="apellidos-acudiente">Segundo Apellido</label>
-                    <input type="text" name="segundoApellido" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido">
+                    <input type="text" required name="segundoApellido" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="genero">Género</label>
                     @{ var generos = (List<Genero>)ViewBag.Generos; }
-                    <select class="custom-select" name="generos">
+                    <select class="custom-select" required name="generos">
                         <option value="">Seleccione un género</option>
                         @foreach (var genero in generos) {
                             <option value="@genero.Id">@genero.Nombre</option>
@@ -44,7 +44,7 @@
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="tipoDoc">Tipo de Documento</label>
                     @{ var tiposDocumento = (List<TipoDeDocumento>)ViewBag.TiposDocumento; }
-                <select class="custom-select" name="tiposdeDocumento">
+                <select class="custom-select" required name="tiposdeDocumento">
                     <option value="">Seleccione un tipo de documento</option>
                     @foreach (var tipoDocumento in tiposDocumento) {
                         <option value="@tipoDocumento.Id">@tipoDocumento.NombreLargo</option>
@@ -54,7 +54,7 @@
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="rol">Cargo</label>
                     @{ var roles = (List<Rol>)ViewBag.Roles; }
-                <select class="custom-select" name="cargos">
+                <select class="custom-select" required name="cargos">
                     <option value="">Seleccione un cargo</option>
                     @foreach (var rol in roles) {
                         <option value="@rol.Id">@rol.Nombre</option>
@@ -63,39 +63,39 @@
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Número de Documento</label>
-                    <input type="number" name="numeroDocumento" class="form-control" id="numDoc" placeholder="Número de Documento">
+                    <input type="number" required name="numeroDocumento" class="form-control" id="numDoc" placeholder="Número de Documento">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Fecha de Nacimiento</label>
-                    <input type="date" name="fechaNacimiento" class="form-control" id="telefono" placeholder="Fecha de nacimiento">
+                    <input type="date" required name="fechaNacimiento" class="form-control" id="telefono" placeholder="Fecha de nacimiento">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Celular</label>
-                    <input type="text" name="celular" class="form-control" id="telefono" placeholder="Celular">
+                    <input type="text" required name="celular" class="form-control" id="telefono" placeholder="Celular">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Profesión</label>
-                    <input type="text" name="profesion" class="form-control" id="telefono" placeholder="Profesión">
+                    <input type="text" required name="profesion" class="form-control" id="telefono" placeholder="Profesión">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Salario</label>
-                    <input type="number" name="salario" class="form-control" id="telefono" placeholder="Salario">
+                    <input type="number" required name="salario" class="form-control" id="telefono" placeholder="Salario">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Dirección</label>
-                    <input type="text" name="direccion" class="form-control" id="telefono" placeholder="Direccion">
+                    <input type="text" required name="direccion" class="form-control" id="telefono" placeholder="Direccion">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="exampleInputEmail1">Correo Electrónico</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico">
+                    <input type="email" required name="email" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="telefono">Nombre de Usuario</label>
-                    <input type="text" name="nombreUsuario" class="form-control" id="telefono" placeholder="Nombre de usuario">
+                    <input type="text" required name="nombreUsuario" class="form-control" id="telefono" placeholder="Nombre de usuario">
                 </div>
                 <div class="form-group col-sm-12 col-md-6">
                     <label for="exampleInputEmail1">Contraseña</label>
-                    <input type="password" name="clave" class="form-control" id="exampleInputEmail1" placeholder="Cotraseña">
+                    <input type="password" required name="clave" class="form-control" id="exampleInputEmail1" placeholder="Cotraseña">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Guardar datos</button>

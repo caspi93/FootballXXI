@@ -39,6 +39,7 @@
             this.btnSeleccionarCliente = new System.Windows.Forms.Button();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFootball
@@ -203,11 +204,21 @@
             this.lblCorreo.TabIndex = 15;
             this.lblCorreo.Text = "Correo";
             // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(33, 412);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 16;
+            this.lblDireccion.Text = "Dirección";
+            // 
             // BuscarClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 518);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.btnSeleccionarCliente);
@@ -249,5 +260,6 @@
         private System.Windows.Forms.Button btnSeleccionarCliente;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblDireccion;
     }
 }

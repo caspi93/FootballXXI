@@ -85,6 +85,16 @@ where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
 update Empleados set Salario = 3000000 where id = 1;
 update Empleados set Salario = 1500000 where id = 2;
 
+-- Piza debe ejecutarlo
+update TallasGenero set Precio = 100000 - 10000*TallaId where TallaId between 6 and 8;
+
+update Clientes set Clave = 'zxcvbnm' where Id in(3,4);
+
+update Clientes set Direccion = 'Cra 53A #128B - 14' where Id = 3;
+update Clientes set Direccion = 'Cra 24C #25 - 13' where Id = 4;
+update Clientes set Direccion = 'Cra 24C #25 - 25' where Id = 5;
+
+
 select sum(total) from Facturas where Id = 222;
 
 insert into Pagos (EmpleadoId, FechaPago, Sueldo)
