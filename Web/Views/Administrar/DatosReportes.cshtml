@@ -7,13 +7,13 @@
     <h1>Tienda Football XXI</h1>
 
     <div>
-        <form class="row justify-content-center">
+        <form class="row justify-content-center" action="@Url.Action("DatosReportes", "Administrar")" method="post">
             <div class="form-group col-sm-12 col-md-4">
                 <label for="genero">Género</label>
                 @{ var generos = (List<Genero>)ViewBag.Generos; }
                 <select class="custom-select" name="generos">
                     <option value="">Seleccione un género</option>
-                    @foreach(var genero in generos) {
+                    @foreach (var genero in generos) {
                         <option value="@genero.Id">@genero.Nombre</option>
                     }
                 </select>
@@ -23,10 +23,13 @@
                 @{ var tallas = (List<Talla>)ViewBag.Tallas; }
                 <select class="custom-select" name="tallas">
                     <option value="">Selecione una talla</option>
-                    @foreach(var talla in tallas) {
-                    <option value="@talla.Id">@talla.NombreCorto</option>
+                    @foreach (var talla in tallas) {
+                        <option value="@talla.Id">@talla.NombreCorto</option>
                     }
                 </select>
+            </div>
+            <div class="form-group col-sm-12">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
             </div>
         </form>
     </div>
@@ -37,7 +40,6 @@
             <table class="table table-sm table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nombre de la liga</th>
                         <th scope="col">Nombre del equipo</th>
                         <th scope="col">Cantidad existente</th>
@@ -45,27 +47,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@@mdo</td>
-                        <td>@@mdo</td>
-                    </tr>
+                    @{var datosReporte = (List<DatosReporte>)ViewBag.DatosReporte; }
+                    @foreach (var dr in datosReporte) {
+                        <tr>
+                            <td>@dr.NombreLiga</td>
+                            <td>@dr.NombreEquipo</td>
+                            <td>@dr.CantidadExistente</td>
+                            <td>@dr.CantidadVendida</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

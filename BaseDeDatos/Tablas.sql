@@ -124,6 +124,9 @@ constraint EmpleadosVendededorId foreign key(VendedorId) references Empleados
 
 alter table Facturas add Id int identity(1,1) primary key not null;
 
+--PIZA DEBE EJECUTARLO
+alter table Facturas alter column VendedorId int;
+
 create table DetallesFactura(
 FacturaId int not null,
 constraint DetFacFacturaId foreign key(FacturaId) references Facturas,

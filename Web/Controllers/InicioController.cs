@@ -40,7 +40,7 @@ namespace Web.Controllers {
 
             var tallaGeneroDao = new TallaGeneroDao(db);
             var tarjetasCamiseta = ligaId != null && tallaId != null && generoId != null ?
-                tallaGeneroDao.GetTallaGeneros(ligaId.Value, tallaId.Value, generoId.Value)
+                tallaGeneroDao.GetTarjetaCamiseta(ligaId.Value, tallaId.Value, generoId.Value)
                 : new List<TarjetaCamiseta>();
 
             ViewBag.Ligas = ligas;

@@ -98,15 +98,38 @@ namespace Web.Controllers
         }
 
         public ActionResult DatosReportes() {
-            var generoDao = new GeneroDao(db);
-            var generos = generoDao.GetGeneros();
+
+            var tallaIdStr = Request.Form.Get("tallas");
+            var tallaId = tallaIdStr == null ? null : new int?(Convert.ToInt32(tallaIdStr));
+            var generoIdStr = Request.Form.Get("generos");
+            var generoId = generoIdStr == null ? null : new int?(Convert.ToInt32(generoIdStr));
+
             var tallaDao = new TallaDao(db);
             var tallas = tallaDao.GetTallas();
 
-            ViewBag.Generos = generos;
+            var generoDao = new GeneroDao(db);
+            var generos = generoDao.GetGeneros();
+
+            var tallaCamisetaDao = new TallaCamisetaDao(db);
+            List<DatosReporte> datosReporte;
+            if (tallaId != null && generoId != null) {
+                var tallaGenero = new TallaGenero { 
+                    TallaId = tallaId.Value,
+                    GeneroId = generoId.Value
+                };
+                datosReporte = tallaCamisetaDao.calcularVentas(tallaGenero);
+            }else{
+                datosReporte = new List<DatosReporte>();
+            }
+
             ViewBag.Tallas = tallas;
+            ViewBag.Generos = generos;
+            ViewBag.TallaId = tallaId;
+            ViewBag.GeneroId = generoId;
+            ViewBag.DatosReporte = datosReporte;
 
             return View();
         }
+
     }
 }

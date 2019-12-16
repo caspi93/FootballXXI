@@ -49,17 +49,26 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contac">Contactos</a>
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Registrarse", "CrearCliente", "Home", null, atributosNavLink)
-                    </li>
                     @if (Session["tipo"] == null) {
                         <li class="nav-item">
-                            @Html.ActionLink("Iniciar Sesión Como Administrador", "IniciarSesion", "Login", null, atributosNavLink)
+                            @Html.ActionLink("Registrarse", "CrearCliente", "Home", null, atributosNavLink)
                         </li>
                     }
                     @if (Session["tipo"] == null) {
-                        <li class="nav-item">
-                            @Html.ActionLink("Iniciar Sesión Como Cliente", "IniciarSesionCliente", "Login", null, atributosNavLink)
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Iniciar Sesión
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @{
+                                    var atributosDropdown = new Dictionary<string, object> {
+                                    {"class", "dropdown-item" }
+                                };
+                                }
+
+                                @Html.ActionLink("Como Administrador", "IniciarSesion", "Login", null, atributosDropdown)
+                                @Html.ActionLink("Como Cliente", "IniciarSesionCliente", "Login", null, atributosDropdown)
+                            </div>
                         </li>
                     }
                     @if (Session["tipo"] != null) {
