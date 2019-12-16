@@ -70,6 +70,8 @@ namespace Escritorio.Vistas {
         private void TnCerrarSesion_Click(object sender, EventArgs e) {
             var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes) {
+                var login = new LoginForm();
+                login.Show();
                 Close();
             }
         }
@@ -93,6 +95,10 @@ namespace Escritorio.Vistas {
             lblTotal.Text = "Total: $";
             lblVendedor.Text = "Vendedor: ";
             lblCliente.Text = "Cliente: ";
+        }
+
+        private void CajaForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

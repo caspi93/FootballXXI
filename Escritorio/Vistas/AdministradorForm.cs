@@ -19,7 +19,12 @@ namespace Escritorio.Vistas {
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e) {
-            Close();
+            var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes) {
+                var login = new LoginForm();
+                login.Show();
+                Close();
+            }
 
         }
 
@@ -41,6 +46,10 @@ namespace Escritorio.Vistas {
         private void BtnVerReportes_Click(object sender, EventArgs e) {
             var datosReporte = new DatosReporteForm();
             datosReporte.Show();
+        }
+
+        private void AdministradorForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

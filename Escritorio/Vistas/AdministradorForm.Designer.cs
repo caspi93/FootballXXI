@@ -110,6 +110,7 @@
             this.Controls.Add(this.lblFootball);
             this.Name = "AdministradorForm";
             this.Text = "AdministradorForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdministradorForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

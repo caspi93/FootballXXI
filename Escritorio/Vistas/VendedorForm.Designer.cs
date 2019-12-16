@@ -134,6 +134,7 @@
             this.btnCerrarSesion.TabIndex = 11;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // VendedorForm
             // 
@@ -152,6 +153,7 @@
             this.Controls.Add(this.lblFootball);
             this.Name = "VendedorForm";
             this.Text = "VendedorForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VendedorForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

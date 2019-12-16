@@ -33,6 +33,8 @@
             this.thTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSelVen = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.btnSeleccionarCliente = new System.Windows.Forms.Button();
             this.tnCerrarSesion = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
@@ -128,6 +128,16 @@
             this.thSubtotal.Name = "thSubtotal";
             this.thSubtotal.ReadOnly = true;
             // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // detalleFacturaBindingSource
+            // 
+            this.detalleFacturaBindingSource.DataSource = typeof(Compartido.Modelo.DetalleFactura);
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -203,16 +213,6 @@
             this.lblCliente.TabIndex = 10;
             this.lblCliente.Text = "Cliente:";
             // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            // 
-            // detalleFacturaBindingSource
-            // 
-            this.detalleFacturaBindingSource.DataSource = typeof(Compartido.Modelo.DetalleFactura);
-            // 
             // btnFinalizarCompra
             // 
             this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,6 +244,7 @@
             this.Name = "CajaForm";
             this.Text = "CajaForm";
             this.Activated += new System.EventHandler(this.CajaForm_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CajaForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);

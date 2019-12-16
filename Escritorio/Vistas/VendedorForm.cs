@@ -32,5 +32,18 @@ namespace Escritorio.Vistas {
             salarioComision += vendedorActual.Salario;
             lblSalCom.Text = "Salario más comisión: $" + salarioComision;
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e) {
+            var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes) {
+                var login = new LoginForm();
+                login.Show();
+                Close();
+            }
+        }
+
+        private void VendedorForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
     }
 }

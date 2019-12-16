@@ -38,7 +38,7 @@ namespace Escritorio.Vistas {
                         }
 
                         window.Show();
-
+                        Hide();
                     } else {
                         MessageBox.Show("El usuario o contraseña son incorrectos");
                     }
@@ -66,6 +66,10 @@ namespace Escritorio.Vistas {
              if (respuesta == DialogResult.Yes) {
                 Close();
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
         }
     }
 }

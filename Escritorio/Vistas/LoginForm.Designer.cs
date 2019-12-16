@@ -102,8 +102,10 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(564, 365);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEntrar);
@@ -114,6 +116,7 @@
             this.Controls.Add(this.lblLogin);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
