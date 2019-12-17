@@ -1,4 +1,5 @@
-﻿using Compartido.Ayuda;
+﻿
+using Escritorio.Ayuda;
 using Compartido.Dao;
 using Compartido.Modelo;
 using System;

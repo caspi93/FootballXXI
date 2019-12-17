@@ -136,6 +136,7 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(284, 20);
             this.txtPrimerNombre.TabIndex = 8;
+            this.txtPrimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombre_KeyPress);
             // 
             // txtSegundoNombre
             // 
@@ -143,6 +144,7 @@
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(284, 20);
             this.txtSegundoNombre.TabIndex = 9;
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             // 
             // txtPrimerApellido
             // 
@@ -150,6 +152,7 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(284, 20);
             this.txtPrimerApellido.TabIndex = 10;
+            this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellido_KeyPress);
             // 
             // txtSegundoApellido
             // 
@@ -157,6 +160,7 @@
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(284, 20);
             this.txtSegundoApellido.TabIndex = 11;
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellido_KeyPress);
             // 
             // txtNumIde
             // 
@@ -164,6 +168,7 @@
             this.txtNumIde.Name = "txtNumIde";
             this.txtNumIde.Size = new System.Drawing.Size(284, 20);
             this.txtNumIde.TabIndex = 12;
+            this.txtNumIde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumIde_KeyPress);
             // 
             // cbTiposDoc
             // 
@@ -232,6 +237,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(284, 20);
             this.txtCelular.TabIndex = 19;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtCorreo
             // 
@@ -251,7 +257,7 @@
             // 
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(51, 485);
+            this.lblClave.Location = new System.Drawing.Point(47, 485);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(53, 20);
             this.lblClave.TabIndex = 22;
@@ -261,7 +267,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(55, 535);
+            this.lblDireccion.Location = new System.Drawing.Point(47, 533);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(84, 20);
             this.lblDireccion.TabIndex = 23;

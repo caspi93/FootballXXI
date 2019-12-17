@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Compartido.Ayuda;
+using Compartido.Utils;
+using Escritorio.Ayuda;
 using Compartido.Dao;
 
 namespace Escritorio.Vistas {
     public partial class LoginForm : Form {
+        public static LoginForm VentanaLogin;
         public LoginForm() {
             InitializeComponent();
+            VentanaLogin = this;
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e) {
@@ -39,6 +42,7 @@ namespace Escritorio.Vistas {
 
                         window.Show();
                         Hide();
+                        txtClave.Clear();
                     } else {
                         MessageBox.Show("El usuario o contraseña son incorrectos");
                     }

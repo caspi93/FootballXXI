@@ -21,8 +21,8 @@ namespace Escritorio.Vistas {
         private void BtnCerrarSesion_Click(object sender, EventArgs e) {
             var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes) {
-                var login = new LoginForm();
-                login.Show();
+               //var loginForm = new LoginForm();
+                LoginForm.VentanaLogin.Show();
                 Close();
             }
 
@@ -49,7 +49,7 @@ namespace Escritorio.Vistas {
         }
 
         private void AdministradorForm_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
+            LoginForm.VentanaLogin.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Compartido.Ayuda;
+﻿
+using Escritorio.Ayuda;
 using Compartido.Dao;
 using Compartido.Modelo;
 using System;
@@ -82,6 +83,10 @@ namespace Escritorio.Vistas {
                 return false;
             }
             return true;
+        }
+
+        private void txtBuscarCliente_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
         }
     }
 }

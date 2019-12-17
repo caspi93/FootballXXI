@@ -154,6 +154,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vistas\ActualizarProductoForm.resx">
       <DependentUpon>ActualizarProductoForm.cs</DependentUpon>
@@ -215,7 +216,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Futball.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodigoCompartido\Compartido.csproj">
       <Project>{f4ffbfe4-cb33-4dde-9cf3-db2cb554bffa}</Project>

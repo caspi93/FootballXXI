@@ -1,4 +1,5 @@
-﻿using Compartido.Ayuda;
+﻿
+using Escritorio.Ayuda;
 using Compartido.Dao;
 using Compartido.Modelo;
 using System;
@@ -72,9 +73,8 @@ namespace Escritorio.Vistas {
         }
 
         private bool validar() {
-            if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
+            if(!Validacion.validarCampoVacio(txtPrimerNombre)) {
                 MessageBox.Show("El campo Primer Nombre no puede estar vacío");
-                return false;
             }
 
             if (!Validacion.validarCampoVacio(txtSegundoNombre)) {
@@ -128,7 +128,7 @@ namespace Escritorio.Vistas {
             }
 
             if (!Validacion.validarCampoVacio(txtSalario)) {
-                MessageBox.Show("El campo Saalario no puede estar vacío");
+                MessageBox.Show("El campo Salario no puede estar vacío");
                 return false;
             }
 
@@ -148,6 +148,34 @@ namespace Escritorio.Vistas {
             }
 
             return true;
+        }
+
+        private void txtNumIde_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
+        }
+
+        private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+
+        private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+
+        private void txtPrimerApellido_KeyUp(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+
+        private void txtProfesion_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
         }
     }
 }

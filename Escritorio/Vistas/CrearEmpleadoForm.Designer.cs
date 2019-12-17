@@ -248,6 +248,7 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(222, 20);
             this.txtPrimerNombre.TabIndex = 19;
+            this.txtPrimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombre_KeyPress);
             // 
             // txtPrimerApellido
             // 
@@ -255,6 +256,7 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(222, 20);
             this.txtPrimerApellido.TabIndex = 20;
+
             // 
             // txtNumIde
             // 
@@ -262,6 +264,7 @@
             this.txtNumIde.Name = "txtNumIde";
             this.txtNumIde.Size = new System.Drawing.Size(178, 20);
             this.txtNumIde.TabIndex = 21;
+            this.txtNumIde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumIde_KeyPress);
             // 
             // txtCelular
             // 
@@ -269,6 +272,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(214, 20);
             this.txtCelular.TabIndex = 22;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtNombreUsuario
             // 
@@ -290,6 +294,7 @@
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(196, 20);
             this.txtSegundoNombre.TabIndex = 25;
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             // 
             // txtSegundoApellido
             // 
@@ -297,6 +302,7 @@
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(195, 20);
             this.txtSegundoApellido.TabIndex = 26;
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellido_KeyPress);
             // 
             // txtCorreo
             // 
@@ -318,6 +324,7 @@
             this.txtProfesion.Name = "txtProfesion";
             this.txtProfesion.Size = new System.Drawing.Size(260, 20);
             this.txtProfesion.TabIndex = 30;
+            this.txtProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProfesion_KeyPress);
             // 
             // cbTipoDoc
             // 
@@ -328,7 +335,6 @@
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(254, 21);
             this.cbTipoDoc.TabIndex = 31;
-    
             // 
             // cbGeneros
             // 

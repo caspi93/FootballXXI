@@ -1,4 +1,5 @@
-﻿using Compartido.Ayuda;
+﻿
+using Escritorio.Ayuda;
 using Compartido.Dao;
 using Compartido.Modelo;
 using System;
@@ -115,6 +116,31 @@ namespace Escritorio.Vistas {
             }
 
             return true;
+        }
+
+        private void txtNumIde_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
+        }
+
+        private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);  
+        }
+
+        private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+        
+
+        private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
+        }
+
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarLetras(e);
         }
     }
 }
