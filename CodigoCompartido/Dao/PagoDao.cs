@@ -11,6 +11,10 @@ namespace Compartido.Dao {
         public PagoDao(Entidades db) {
             this.db = db;
         }
+
+        /*
+       * Método que crea los pagos de un empleado
+       */
         public void CrearPagos(List<Pago> pagos) {
             db.Pagos.AddRange(pagos);
             db.SaveChanges();

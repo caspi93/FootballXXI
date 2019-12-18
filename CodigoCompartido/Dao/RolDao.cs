@@ -14,6 +14,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+       * Método que devuelve una lista de roles
+       */
         public List<Rol> GetRoles() {
             return db.Roles.ToList();
         }

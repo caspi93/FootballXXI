@@ -13,7 +13,9 @@ namespace Compartido.Dao {
         public FacturaDao(Entidades db) {
             this.db = db;
         }
-
+        /*
+         * Método que crea la factura
+         */
         public Factura crearFactura(Factura factura) {
             var f = new Factura {
                 FechaCreacion = DateTime.Now,
@@ -25,8 +27,11 @@ namespace Compartido.Dao {
             db.Facturas.Add(f);
             db.SaveChanges();
             return f;
-        } 
+        }
 
+        /*
+         * Método que cuenta las ventas de un mes realizadas por un vendedor 
+         */
         public int contarVentas(Empleado vendedor) {
             var inicioDeMes = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
 
@@ -37,6 +42,9 @@ namespace Compartido.Dao {
             return consulta.Count();
         }
 
+        /*
+         * Método que calcula la comicion venta de un vendedor  
+         */
         public double calcularComision(Empleado vendedor) {
             var inicioDeMes = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
 

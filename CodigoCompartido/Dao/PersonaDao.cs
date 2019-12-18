@@ -13,6 +13,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+        * Método que crea una persona
+        */
         public Persona CrearPersona(Persona persona) {
             db.Personas.Add(persona);
             db.SaveChanges();

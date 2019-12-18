@@ -14,10 +14,16 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+       * Método que devuelve una lista de tallas
+       */
         public List<Talla> GetTallas() {
             return db.Tallas.ToList();
         }
 
+        /*
+       * Método que trae la talla seleccionada 
+       */
         public Talla GetTalla(int id) {
             var consulta = from t in db.Tallas
                            where t.Id == id

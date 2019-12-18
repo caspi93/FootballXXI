@@ -13,6 +13,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+       * Método que devuelve una lista de tallaCamisetas
+       */
         public List<TallaCamiseta> GetTallaCamisetas(Camiseta camiseta) {
             var consulta = from tc in db.TallasCamiseta
                            where tc.CamisetaId == camiseta.Id
@@ -22,12 +25,18 @@ namespace Compartido.Dao {
 
         }
 
+        /*
+       * Método que actualiza la cantidad de camisetas y agregandolas a la bodega
+       */
         public bool actualizarCantidad(TallaCamiseta tallaCamiseta, int cantidad) {
             tallaCamiseta.Cantidad += cantidad;
             db.SaveChanges();
             return true;
         }
 
+        /*
+       * Método que 
+       */
         public bool actualizarCantidad(DetalleFactura detalleFactura) {
             var consulta = from tc in db.TallasCamiseta
                            where tc.CamisetaId == detalleFactura.Camisetas.Id &&
@@ -38,12 +47,16 @@ namespace Compartido.Dao {
             return actualizarCantidad(tallaCamiseta, -detalleFactura.Cantidad);
         }
 
+
         public void actualizarCantidad(Factura factura) {
             foreach(var detatalleFactura in factura.DetallesFactura) {
                 actualizarCantidad(detatalleFactura);
             }
         }
 
+        /*
+       * Método que calcula los reportes de lo que se ha vendido y que queda en bodega  
+       */
         public List<DatosReporte> calcularVentas(TallaGenero tallaGenero) {
             var consulta = from tc in db.TallasCamiseta
                            join c in db.Camisetas

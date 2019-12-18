@@ -13,6 +13,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+        * Método que realiza el logueo del empleado por medio del nombreUsuario y la contraseña
+        */
         public Empleado Login(string usuario, string clave) {
             var consulta = from e in db.Empleados
                            where e.NombreUsuario == usuario && e.Clave == clave
@@ -21,16 +24,26 @@ namespace Compartido.Dao {
             return consulta.SingleOrDefault();
         }
 
+        /*
+         * Método que crea un empleado  
+        */
+
         public Empleado CrearEmpleado(Empleado empleado) {
             db.Empleados.Add(empleado);
             db.SaveChanges();
             return empleado;
         }
 
+        /*
+         * Método que devuelve una lista de empleado
+         */
         public List<Empleado> GetEmpleados() {
             return db.Empleados.ToList();
         }
 
+        /*
+         * Método que trae un empleado de rol vendedor por del numeroDocumento 
+         */
         public Empleado buscarVendedor(string numeroDocumento) {
             var consulta = from e in db.Empleados
                            where e.Persona.NumeroDocumento == numeroDocumento
@@ -39,11 +52,17 @@ namespace Compartido.Dao {
             return consulta.SingleOrDefault();
         }
 
+        /*
+         * Método que edita un empleado y guarda los cambios  
+         */
         public Empleado editarEmpleado(Empleado empleado) {
             db.SaveChanges();
             return empleado;
         }
 
+        /*
+         * Método que devuelve una lista de pagos de empleados  
+         */
         public List<PagoEmpleados> GetNomina() {
             var inicioDeMes = DateTime.Now.AddDays(-DateTime.Now.Day*5 + 1);
 

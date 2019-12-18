@@ -13,6 +13,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+       * Método que trae las talla y el genero de una camiseta
+       */
         public TallaGenero GetTallaGenero(Talla talla, Genero genero) {
             var consulta = from tg in db.TallasGenero
                            where tg.TallaId == talla.Id && tg.GeneroId == genero.Id
@@ -21,6 +24,9 @@ namespace Compartido.Dao {
             return consulta.SingleOrDefault();
         }
 
+        /*
+       * Método que trae los datos de la tarjeta (WEB)
+       */
         public List<TarjetaCamiseta> GetTarjetaCamiseta(int ligaId, int tallaId, int generoId) {
             var consulta = from tc in db.TallasCamiseta
                            join tg in db.TallasGenero

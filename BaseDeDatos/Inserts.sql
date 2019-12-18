@@ -79,6 +79,7 @@ select * from Generos;
 select * from Pagos;
 select * from Ligas;
 select * from Roles;
+select * from TallasGenero;
 select * from TallasCamiseta tc
 where tc.CamisetaId = 1 and tc.GeneroId = 1 and tc.TallaId = 3;
 
@@ -86,7 +87,7 @@ update Empleados set Salario = 3000000 where id = 1;
 update Empleados set Salario = 1500000 where id = 2;
 
 -- Piza debe ejecutarlo
-update TallasGenero set Precio = 100000 - 10000*TallaId where TallaId between 6 and 8;
+update TallasGenero set Precio = 80000 - 10000*TallaId where TallaId between 4 and 6;
 
 update Clientes set Clave = 'zxcvbnm' where Id in(3,4);
 

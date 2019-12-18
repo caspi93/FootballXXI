@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 namespace Compartido.Modelo {
     public partial class DetalleFactura {
 
-        public string NombreGenero { get { return Generos.Nombre; } }
+        public string NombreGenero { get { return Generos.Nombre; } } //
 
-        public string NombreTalla { get { return Tallas.NombreCorto; } }
+        public string NombreTalla { get { return Tallas.NombreCorto; } } //
 
-        public string NombreCamiseta { get { return Camisetas.NombreEquipo; } }
+        public string NombreCamiseta { get { return Camisetas.NombreEquipo; } } //
 
-        public double Subtotal { get { return Precio * Cantidad; } }
+        public double Subtotal { get { return Precio * Cantidad; } } //
 
-        
+
     }
 }
