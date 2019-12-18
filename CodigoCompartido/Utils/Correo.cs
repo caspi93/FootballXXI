@@ -12,7 +12,7 @@ namespace Compartido.Utils {
         public static void EnviarCorreo(string destino, string asunto, string cuerpo) {
             MailMessage email = new MailMessage();
             email.To.Add(new MailAddress(destino));
-            email.From = new MailAddress("footballxxi2019.com");
+            email.From = new MailAddress("correo@footballxxi2019.com");
             email.Subject = asunto;
             email.Body = cuerpo;
             email.IsBodyHtml = true;
@@ -23,7 +23,7 @@ namespace Compartido.Utils {
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("footballxxi2019.com", "123456789L-");
+            smtp.Credentials = new NetworkCredential("footballxxi2019@gmail.com", "123456789L-");
 
             string output;
             try {

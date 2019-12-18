@@ -136,7 +136,7 @@ namespace Web.Controllers {
             } 
 
             cuerpo += "</tbody>" +
-                     "</table>" +
+                     "</table></br>" +
                      "Gracias por su compra";
 
             Correo.EnviarCorreo(destino, asunto, cuerpo);
