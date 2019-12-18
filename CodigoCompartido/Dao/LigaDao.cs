@@ -13,6 +13,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+       * Método que devuelve una lista de liga
+       */
         public List<Liga> GetLigas() {
             return db.Ligas.ToList();
         }

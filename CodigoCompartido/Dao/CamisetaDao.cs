@@ -14,6 +14,9 @@ namespace Compartido.Dao {
             this.db = db;
         }
 
+        /*
+         * Método que devuelve una lista de camisetas según la liga seleccionada 
+         */
         public List<Camiseta> GetCamisetas(Liga liga) {
             var consulta = from c in db.Camisetas
                            where c.LigaId == liga.Id
@@ -23,6 +26,9 @@ namespace Compartido.Dao {
 
         }
 
+        /*
+         * Método que devuelve una camiseta según la seleccionada 
+         */
         public Camiseta GetCamiseta(int id) {
             var consulta = from c in db.Camisetas
                            where c.Id == id

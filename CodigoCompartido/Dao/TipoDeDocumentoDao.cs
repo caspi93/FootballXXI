@@ -13,7 +13,9 @@ namespace Compartido.Dao {
         public TipoDeDocumentoDao(Entidades db) {
             this.db = db;
         }
-
+        /*
+       * Método que devuelve una lista de tipoDocumento
+       */
         public List<TipoDeDocumento> GetTiposDeDocumento() {
             return db.TiposDeDocumento.ToList();
         }

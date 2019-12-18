@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compartido.Modelo {
     public class DatosReporte {
+        //es una clase que representa un fila de la tabla reporte de ventas 
 
         public string NombreLiga { get; set; }
 
