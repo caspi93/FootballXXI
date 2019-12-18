@@ -13,8 +13,9 @@ namespace Compartido.Dao {
         }
 
         /*
-       * Método que crea los pagos de un empleado
-       */
+         * Autor: Luis Carlos Pedroza Pineda 
+         * Método que crea los pagos de un empleado
+         */
         public void CrearPagos(List<Pago> pagos) {
             db.Pagos.AddRange(pagos);
             db.SaveChanges();

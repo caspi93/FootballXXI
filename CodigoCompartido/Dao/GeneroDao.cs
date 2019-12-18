@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
         * Método que devuelve una lista de genero
         */
         public List<Genero> GetGeneros() {
@@ -21,6 +22,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
         * Método que un genero seleccionado
         */
         public Genero GetGenero(int id) {

@@ -15,6 +15,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que crea un cliente  
          */
         public Cliente CrearCliente(Cliente cliente) {
@@ -25,6 +26,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que devuelve una lista de clientes
          */
         public List<Cliente> GetClientes() {
@@ -32,6 +34,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que trae un clientes por del numeroDocumento 
          */
         public Cliente buscarCliente(string numeroDocumento) {
@@ -43,6 +46,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que realiza el logueo del cliente por medio del correo y la contraseña
          */
         public Cliente Login(string email, string clave) {

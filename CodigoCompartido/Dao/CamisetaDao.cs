@@ -15,6 +15,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que devuelve una lista de camisetas según la liga seleccionada 
          */
         public List<Camiseta> GetCamisetas(Liga liga) {
@@ -26,7 +27,8 @@ namespace Compartido.Dao {
 
         }
 
-        /*
+        /* 
+         * Autor: Johan Sebastian Piza Acosta
          * Método que devuelve una camiseta según la seleccionada 
          */
         public Camiseta GetCamiseta(int id) {

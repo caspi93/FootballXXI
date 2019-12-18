@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que trae las talla y el genero de una camiseta
        */
         public TallaGenero GetTallaGenero(Talla talla, Genero genero) {
@@ -25,8 +26,9 @@ namespace Compartido.Dao {
         }
 
         /*
-       * Método que trae los datos de la tarjeta (WEB)
-       */
+         * Autor: Luis Carlos Pedroza Pineda
+         * Método que trae los datos de la tarjeta (WEB)
+         */
         public List<TarjetaCamiseta> GetTarjetaCamiseta(int ligaId, int tallaId, int generoId) {
             var consulta = from tc in db.TallasCamiseta
                            join tg in db.TallasGenero

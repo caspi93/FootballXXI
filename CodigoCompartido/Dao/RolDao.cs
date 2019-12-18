@@ -15,8 +15,9 @@ namespace Compartido.Dao {
         }
 
         /*
-       * Método que devuelve una lista de roles
-       */
+         * Autor: Johan Sebastian Piza Acosta
+         * Método que devuelve una lista de roles
+         */
         public List<Rol> GetRoles() {
             return db.Roles.ToList();
         }

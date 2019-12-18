@@ -14,6 +14,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que crea la factura
          */
         public Factura crearFactura(Factura factura) {
@@ -30,6 +31,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que cuenta las ventas de un mes realizadas por un vendedor 
          */
         public int contarVentas(Empleado vendedor) {
@@ -43,6 +45,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que calcula la comicion venta de un vendedor  
          */
         public double calcularComision(Empleado vendedor) {

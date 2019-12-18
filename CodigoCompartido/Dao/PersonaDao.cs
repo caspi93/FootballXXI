@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
         * Método que crea una persona
         */
         public Persona CrearPersona(Persona persona) {

@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
         * Método que realiza el logueo del empleado por medio del nombreUsuario y la contraseña
         */
         public Empleado Login(string usuario, string clave) {
@@ -25,6 +26,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
          * Método que crea un empleado  
         */
 
@@ -35,6 +37,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que devuelve una lista de empleado
          */
         public List<Empleado> GetEmpleados() {
@@ -42,6 +45,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que trae un empleado de rol vendedor por del numeroDocumento 
          */
         public Empleado buscarVendedor(string numeroDocumento) {
@@ -53,6 +57,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta 
          * Método que edita un empleado y guarda los cambios  
          */
         public Empleado editarEmpleado(Empleado empleado) {
@@ -61,6 +66,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
          * Método que devuelve una lista de pagos de empleados  
          */
         public List<PagoEmpleados> GetNomina() {

@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Johan Sebastian Piza Acosta
        * Método que devuelve una lista de liga
        */
         public List<Liga> GetLigas() {

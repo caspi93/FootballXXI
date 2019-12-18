@@ -14,6 +14,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que devuelve una lista de tallaCamisetas
        */
         public List<TallaCamiseta> GetTallaCamisetas(Camiseta camiseta) {
@@ -26,6 +27,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que actualiza la cantidad de camisetas y agregandolas a la bodega
        */
         public bool actualizarCantidad(TallaCamiseta tallaCamiseta, int cantidad) {
@@ -35,6 +37,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que 
        */
         public bool actualizarCantidad(DetalleFactura detalleFactura) {
@@ -47,7 +50,10 @@ namespace Compartido.Dao {
             return actualizarCantidad(tallaCamiseta, -detalleFactura.Cantidad);
         }
 
-
+        /*
+        * Autor: Luis Carlos Pedroza Pineda
+        * Método que 
+        */
         public void actualizarCantidad(Factura factura) {
             foreach(var detatalleFactura in factura.DetallesFactura) {
                 actualizarCantidad(detatalleFactura);
@@ -55,8 +61,9 @@ namespace Compartido.Dao {
         }
 
         /*
-       * Método que calcula los reportes de lo que se ha vendido y que queda en bodega  
-       */
+         * Autor: Luis Carlos Pedroza Pineda
+         * Método que calcula los reportes de lo que se ha vendido y que queda en bodega  
+         */
         public List<DatosReporte> calcularVentas(TallaGenero tallaGenero) {
             var consulta = from tc in db.TallasCamiseta
                            join c in db.Camisetas

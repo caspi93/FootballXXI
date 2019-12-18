@@ -14,6 +14,7 @@ namespace Compartido.Dao {
             this.db = db;
         }
         /*
+         * Autor: Johan Sebastian Piza Acosta
        * Método que devuelve una lista de tipoDocumento
        */
         public List<TipoDeDocumento> GetTiposDeDocumento() {

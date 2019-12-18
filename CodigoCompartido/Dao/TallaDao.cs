@@ -15,6 +15,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que devuelve una lista de tallas
        */
         public List<Talla> GetTallas() {
@@ -22,6 +23,7 @@ namespace Compartido.Dao {
         }
 
         /*
+         * Autor: Luis Carlos Pedroza Pineda
        * Método que trae la talla seleccionada 
        */
         public Talla GetTalla(int id) {
