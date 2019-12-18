@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Compartido.Ayuda;
+using Escritorio.Ayuda;
 using Compartido.Dao;
 using Compartido.Modelo;
 
@@ -155,9 +155,12 @@ namespace Escritorio.Vistas {
                 MessageBox.Show("El campo Cantidad a comprar no puede estar vacío");
                 return false;
             }
-
+            
             return true;
         }
 
+        private void txtCanCom_KeyPress(object sender, KeyPressEventArgs e) {
+            Validacion.ValidarNumeros(e);
+        }
     }
 }

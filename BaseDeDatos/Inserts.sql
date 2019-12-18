@@ -93,7 +93,7 @@ update Clientes set Clave = 'zxcvbnm' where Id in(3,4);
 
 update Clientes set Direccion = 'Cra 53A #128B - 14' where Id = 3;
 update Clientes set Direccion = 'Cra 24C #25 - 13' where Id = 4;
-update Clientes set Direccion = 'Cra 24C #25 - 25' where Id = 5;
+update Clientes set Email = 'jf@pedroza.me' where Id = 3;
 
 
 select sum(total) from Facturas where Id = 222;

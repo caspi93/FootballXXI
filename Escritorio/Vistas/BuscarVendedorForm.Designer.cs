@@ -72,6 +72,7 @@
             this.txtBuscarVendedor.Name = "txtBuscarVendedor";
             this.txtBuscarVendedor.Size = new System.Drawing.Size(179, 20);
             this.txtBuscarVendedor.TabIndex = 2;
+            this.txtBuscarVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarVendedor_KeyPress);
             // 
             // lblPrimerNombre
             // 

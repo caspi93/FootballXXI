@@ -122,10 +122,12 @@
             // 
             // txtAddCamisetas
             // 
+            this.txtAddCamisetas.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtAddCamisetas.Location = new System.Drawing.Point(490, 347);
             this.txtAddCamisetas.Name = "txtAddCamisetas";
             this.txtAddCamisetas.Size = new System.Drawing.Size(51, 20);
             this.txtAddCamisetas.TabIndex = 8;
+            this.txtAddCamisetas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddCamisetas_KeyPress);
             // 
             // btnAceptar
             // 

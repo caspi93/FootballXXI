@@ -58,6 +58,7 @@
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(165, 20);
             this.txtBuscarCliente.TabIndex = 1;
+            this.txtBuscarCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarCliente_KeyPress);
             // 
             // btnBuscarCliente
             // 

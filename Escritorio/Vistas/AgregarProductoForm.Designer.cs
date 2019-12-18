@@ -127,6 +127,7 @@
             this.txtCanCom.Name = "txtCanCom";
             this.txtCanCom.Size = new System.Drawing.Size(45, 20);
             this.txtCanCom.TabIndex = 8;
+            this.txtCanCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanCom_KeyPress);
             // 
             // btnAceptar
             // 

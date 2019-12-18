@@ -1,4 +1,5 @@
-﻿using Compartido.Dao;
+﻿using Compartido.Utils;
+using Compartido.Dao;
 using Compartido.Modelo;
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,7 @@ namespace Web.Controllers {
 
             var factura = (Factura)Session["factura"];
             factura.DetallesFactura.Add(detalleFactura);
-            
+
             Response.Redirect("/Inicio/Compras?liga=" + ligaId + "&talla=" + tallaId + "&genero=" + generoId);
             return View();
         }
@@ -96,11 +97,49 @@ namespace Web.Controllers {
             var factura = (Factura)Session["factura"];
             var facturaDao = new FacturaDao(db);
             facturaDao.crearFactura(factura);
+            EnviarCorreo(factura);
 
             Response.Redirect("/Inicio/Compras");
             TempData["Mensaje"] = "La compra se ha relizado exitosamente";
             Session["factura"] = null;
             return View();
-        } 
+        }
+
+        private void EnviarCorreo(Factura factura) {
+            string destino = factura.Cliente.Email;
+            string asunto = "Compra realizada - Football XXI";
+            
+            string cuerpo = "<table>" +
+                              "<thead>" +
+                                "<tr>" +
+                                    "<th> Nombre </th>" +
+                                    "<th> Género </th>" +
+                                    "<th> Talla </th>" +
+                                    "<th> Cantidad </th>" +
+                                    "<th> Precio </th>" +
+                                    "<th> Subtotal </th>" +
+                                    "<th> Total </th>" +
+                                    "</tr>" +
+                                    "</ thead >" +
+                                "<tbody>";
+
+            foreach (var df in factura.DetallesFactura) {
+                cuerpo += "<tr>" +
+                        "<td>" + df.Camisetas.NombreEquipo + " </td>" +
+                        "<td>" + df.Generos.Nombre + "</td>" +
+                        "<td>" + df.Tallas.NombreCorto + "</td>" +
+                        "<td>" + df.Cantidad + "</td>" +
+                        "<td>" + df.Precio + "</td>" +
+                        "<td>" + df.Subtotal + "</td>" +
+                        "<td>" + factura.Total + "</td>" +
+                    "</tr>";
+            } 
+
+            cuerpo += "</tbody>" +
+                     "</table></br>" +
+                     "Gracias por su compra";
+
+            Correo.EnviarCorreo(destino, asunto, cuerpo);
+        }
     }
 }
