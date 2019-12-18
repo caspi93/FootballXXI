@@ -27,12 +27,16 @@ namespace Escritorio.Vistas {
             InitializeComponent();
 
             db = new Entidades();
-            var ligaDao = new LigaDao(db);
-            var ligas = ligaDao.GetLigas();
-            cbLigas.Items.AddRange(ligas.ToArray());
+            var ligaDao = new LigaDao(db);//Instancia de la clase LigaDao
+            var ligas = ligaDao.GetLigas();//Llamada al método que trae la lista de ligas
+            cbLigas.Items.AddRange(ligas.ToArray());//Se agrega la lista de ligas al combobox
 
         }
 
+         /*
+         * Autor: Johan Sebastian Piza Acosta
+         * Evento que selecciona una liga del combobox
+         */
         private void CbLigas_SelectedIndexChanged(object sender, EventArgs e) {
            
                 int l = cbLigas.SelectedIndex;
@@ -48,6 +52,10 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta
+        * Evento que selecciona una camiseta del combobox
+        */
         private void CbEquipos_SelectedIndexChanged(object sender, EventArgs e) {
            
                 int equipo = cbEquipos.SelectedIndex;
@@ -65,6 +73,10 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona un género del combobox
+        */
         private void CbGeneros_SelectedIndexChanged(object sender, EventArgs e) {
            
                 int g = cbGeneros.SelectedIndex;
@@ -80,6 +92,10 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona una talla del combobox
+        */
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
            
                 int t = cbTallas.SelectedIndex;
@@ -103,6 +119,10 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza
+        * Evento que agrega camisetas al inventario de productos
+        */
         private void BtnAceptar_Click(object sender, EventArgs e) {
             if (validar()) { 
                 int cantidad = Convert.ToInt32(txtAddCamisetas.Text);
@@ -116,6 +136,10 @@ namespace Escritorio.Vistas {
         }
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Método que valida que los campos no estén vacíos
+        */
         private bool validar() {
  
             if (!Validacion.validarCombobox(cbLigas)) {
@@ -147,6 +171,10 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban letras en el campo de agregar camisetas  
+        */
         private void txtAddCamisetas_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }

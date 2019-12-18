@@ -22,23 +22,31 @@ namespace Escritorio.Vistas {
 
             db = new Entidades();
 
-            var generoDao = new GeneroDao(db);
-            var generos = generoDao.GetGeneros();
-            cbGeneros.Items.AddRange(generos.ToArray());
+            var generoDao = new GeneroDao(db);//Instancia de la clase GeneroDao
+            var generos = generoDao.GetGeneros();//llamada del método que trae la lista de géneros
+            cbGeneros.Items.AddRange(generos.ToArray());//Agrega la lista de géneros al combobox
 
-            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);
-            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();
-            cbTipoDoc.Items.AddRange(tiposDeDocumento.ToArray());
+            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);//Instancia de la clase
+            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();//llamada del método que trae la lista de tipos de documento
+            cbTipoDoc.Items.AddRange(tiposDeDocumento.ToArray());//Agrega la lista de tipos de documento al combobox
 
-            var rolDao = new RolDao(db);
-            var roles = rolDao.GetRoles();
-            cbRoles.Items.AddRange(roles.ToArray());
+            var rolDao = new RolDao(db);//Instancia de la clase
+            var roles = rolDao.GetRoles();//llamada del método que trae la lista de roles
+            cbRoles.Items.AddRange(roles.ToArray());//Agrega la lista de roles al combobox
         }
 
+        /*
+        * Johan Sebastian Piza Acosta 
+        * Evento que cierra la venta
+        */
         private void BtnAtras_Click(object sender, EventArgs e) {
             Close();
         }
 
+        /*
+       * Luis Carlos Pedroza 
+       * Evento que crea y guarda el empleado
+       */
         private void BtnTerminar_Click(object sender, EventArgs e) {
             if (validar()) {
                 var empleado = new Empleado();
@@ -72,6 +80,10 @@ namespace Escritorio.Vistas {
 
         }
 
+        /*
+       * Luis Carlos Pedroza 
+       * Método privado que valida que los campos no estén vacíos
+       */
         private bool validar() {
             if(!Validacion.validarCampoVacio(txtPrimerNombre)) {
                 MessageBox.Show("El campo Primer Nombre no puede estar vacío");
@@ -150,30 +162,54 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+       * Luis Carlos Pedroza Pineda
+       * Evento que valida que no se escriban letras en el campo
+       */
         private void txtNumIde_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+         * Luis Carlos Pedroza Pineda
+         * Evento que valida que no se escriban letras en el campo
+         */
         private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+         * Luis Carlos Pedroza Pineda
+         * Evento que valida que no se escriban números en el campo
+         */
         private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
-
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
-
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtPrimerApellido_KeyUp(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
-
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
-
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtProfesion_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }

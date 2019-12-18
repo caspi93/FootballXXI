@@ -40,7 +40,6 @@
             this.lblFootball.Size = new System.Drawing.Size(159, 29);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
-            this.lblFootball.Click += new System.EventHandler(this.LblFootball_Click);
             // 
             // btnCrearUsuarios
             // 

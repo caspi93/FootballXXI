@@ -23,11 +23,15 @@ namespace Escritorio.Vistas {
             InitializeComponent();
 
             db = new Entidades();
-            var generoDao = new GeneroDao(db);
-            var generos = generoDao.GetGeneros();
-            cbGeneros.Items.AddRange(generos.ToArray());
+            var generoDao = new GeneroDao(db);//Instancia de la clase GeneroDao
+            var generos = generoDao.GetGeneros();//Llamada al método que trae la lista de géneros
+            cbGeneros.Items.AddRange(generos.ToArray());//Agrega la lista de géneros al combobox
         }
 
+        /*
+        * Johan Sebastian Piza Acosta
+        * Evento que selecciona un género del combobox
+        */
         private void CbGeneros_SelectedIndexChanged(object sender, EventArgs e) {
             
                 int g = cbGeneros.SelectedIndex;
@@ -43,6 +47,11 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Johan Sebastian Piza Acosta
+        * Evento que selecciona una talla del combobox y llama al método calcular ventas
+        * para saber lo que se ha vendido y lo que queda
+        */
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
             
                 int t = cbTallas.SelectedIndex;
@@ -59,6 +68,10 @@ namespace Escritorio.Vistas {
             
         }
 
+        /*
+        * Johan Sebastian Piza Acosta
+        * Evento que lleva a la ventana de actualizar productos
+        */
         private void BtnActPro_Click(object sender, EventArgs e) {
             var actualiuzarProducto = new ActualizarProductoForm();
             actualiuzarProducto.Show();

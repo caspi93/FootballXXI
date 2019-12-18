@@ -79,7 +79,6 @@
             this.lblEquipo.Size = new System.Drawing.Size(85, 25);
             this.lblEquipo.TabIndex = 3;
             this.lblEquipo.Text = "Equipo";
-            this.lblEquipo.Click += new System.EventHandler(this.LblEquipo_Click);
             // 
             // lblTalla
             // 

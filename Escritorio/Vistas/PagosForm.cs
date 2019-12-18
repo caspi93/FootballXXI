@@ -17,19 +17,24 @@ namespace Escritorio.Vistas {
             InitializeComponent();
 
             db = new Entidades();
-            var empleadoDao = new EmpleadoDao(db);
-            var pagoNomina = empleadoDao.GetNomina();
-            tblPagoNomina.DataSource = pagoNomina;
+            var empleadoDao = new EmpleadoDao(db);//Intancia de la clase EmpleadoDao
+            var pagoNomina = empleadoDao.GetNomina();//Llamada al método que trae la lista de empleados a pagar
+            tblPagoNomina.DataSource = pagoNomina;//Pinta la tabla de pagos
         }
 
+        /*
+       * Autor: Jphan Sebastian Piza Acosta 
+       * Evento cierra la ventana
+       */
         private void BtnAtrás_Click(object sender, EventArgs e) {
             Close();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-
-        }
-
+        /*
+       * Autor: Luis Carlos Pedroza Pineda 
+       * Evento que selecciona filas de la tabla de pagos 
+       * y llama al método que realiza el pago
+       */
         private void BtnPagar_Click(object sender, EventArgs e) {
             var pagos = new List<Pago>();
             var pagoNomina = tblPagoNomina.SelectedRows;

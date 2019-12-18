@@ -22,18 +22,22 @@ namespace Escritorio.Vistas {
             db = new Entidades();
             this.empleado = empleado;
 
-            var generoDao = new GeneroDao(db);
-            var generos = generoDao.GetGeneros();
-            cbGeneros.Items.AddRange(generos.ToArray());
+            var generoDao = new GeneroDao(db);//Instancia de la clase GeneroDao
+            var generos = generoDao.GetGeneros();//Llamada al método que trae la lista de
+            cbGeneros.Items.AddRange(generos.ToArray());//Agrega lista de géneros al combobox
 
-            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);
-            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();
-            cbTipoDoc.Items.AddRange(tiposDeDocumento.ToArray());
+            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);//Instancia de la clase TiposDeDocumentoDao
+            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();//Llamada al método que trae la lista de
+            cbTipoDoc.Items.AddRange(tiposDeDocumento.ToArray());//Agrega lista de tipos de documento al combobox
 
-            var rolDao = new RolDao(db);
-            var roles = rolDao.GetRoles();
-            cbRoles.Items.AddRange(roles.ToArray());
+            var rolDao = new RolDao(db);//Instancia de la clase RolDao
+            var roles = rolDao.GetRoles();//Llamada al método que trae la lista de
+            cbRoles.Items.AddRange(roles.ToArray());//Agrega lista de roles al combobox
 
+            /*
+            * Luis Carlos Pedroza Pineda
+            * Muestra en pantalla los datos que se van a editar
+            */
             txtPrimerNombre.Text = empleado.Persona.PrimerNombre;
             txtSegundoNombre.Text = empleado.Persona.SegundoNombre;
             txtPrimerApellido.Text = empleado.Persona.PrimerApellido;
@@ -52,6 +56,11 @@ namespace Escritorio.Vistas {
             txtSalario.Text = empleado.Salario.ToString();
         }
 
+        /*
+        *  Autor: Luis Carlos Pedroza Pineda 
+        *  Evento que guarda los datos editados del empleado y cierra la ventana
+        *  dejando el foco en la tabla de empleados
+        */
         private void BtnTerminar_Click(object sender, EventArgs evt) {
             if (validar()) {
                 empleado = db.Empleados.Where(e => e.Id == empleado.Id).Single();
@@ -84,6 +93,10 @@ namespace Escritorio.Vistas {
 
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Método privado que valida que los campos no estén vacíos 
+        */
         private bool validar() {
             if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
                 MessageBox.Show("El campo Primer Nombre no puede estar vacío");
@@ -163,30 +176,58 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban letras en este campo
+        */
         private void txtNumIde_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban letras en este campo
+        */
         private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban números en este campo
+        */
         private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban números en este campo
+        */
         private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban números en este campo
+        */
         private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban números en este campo
+        */
         private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento que valida que no se escriban números en este campo
+        */
         private void txtProfesion_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }

@@ -213,7 +213,6 @@
             this.lblCelular.Size = new System.Drawing.Size(162, 20);
             this.lblCelular.TabIndex = 16;
             this.lblCelular.Text = "Número de Celular:";
-            this.lblCelular.Click += new System.EventHandler(this.Label15_Click);
             // 
             // lblRol
             // 

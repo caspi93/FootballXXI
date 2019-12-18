@@ -26,11 +26,19 @@ namespace Escritorio.Vistas {
             this.factura = factura;
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que lleva a la ventana de Crear Cliente
+        */
         private void BtnCrearCliente_Click(object sender, EventArgs e) {
             var agregarClienteForm = new AgrearClienteForm(factura);
             agregarClienteForm.Show();
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que lleva a la ventana de Crear Cliente
+        */
         private void BtnBuscarCliente_Click(object sender, EventArgs e) {
             if (validar()) {
                 string numeroDocumento = txtBuscarCliente.Text;
@@ -45,11 +53,19 @@ namespace Escritorio.Vistas {
             }
 
         }
-
+        /*
+        * Johan Sebastian Piza
+        * Evento que cierra la venta
+        */
         private void BtnAtras_Click(object sender, EventArgs e) {
             Close();
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que busca el cliente por número de cédula, muestra los datos del cliente y
+        * asigna el cliente a la factura
+        */
         private void BuscarClienteForm_Activated(object sender, EventArgs e) {
             if (factura.Cliente != null) {
                 cliente = factura.Cliente;
@@ -57,6 +73,10 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Método privado que llena los datos del cliente
+        */
         private void LlenarCliente() {
             lblPrimerNombre.Text = "Primer Nombre: " + cliente.Persona.PrimerNombre;
             lblSegundoNombre.Text = "Segundo Nombre: " + cliente.Persona.SegundoNombre;
@@ -72,11 +92,19 @@ namespace Escritorio.Vistas {
             btnSeleccionarCliente.Enabled = true;
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que selecciona el cliente
+        */
         private void BtnSeleccionarCliente_Click(object sender, EventArgs e) {
             factura.Cliente = cliente;
             Close();
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Método privado que valida que los campo no estén vacíos
+        */
         private bool validar() {
             if (!Validacion.validarCampoVacio(txtBuscarCliente)) {
                 MessageBox.Show("El campo Buscar no puede estar vacío");
@@ -85,6 +113,10 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que valida que no se escriban letras en el campo
+        */
         private void txtBuscarCliente_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }

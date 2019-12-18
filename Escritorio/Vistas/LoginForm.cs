@@ -19,6 +19,10 @@ namespace Escritorio.Vistas {
             VentanaLogin = this;
         }
 
+        /*
+       * Autor: Luis Carlos Pedroza Pineda 
+       * Evento que inicia sesión validando el nombre de usuario y la contaseña
+       */
         private void BtnEntrar_Click(object sender, EventArgs e) {
             if (validar()) {
                 using (var db = new Compartido.Modelo.Entidades()) {
@@ -51,6 +55,10 @@ namespace Escritorio.Vistas {
         
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Método privado que valida que los campos no estén vacíos
+        */
         private bool validar() {
             if (!Validacion.validarCampoVacio(txtNombreUsuario)) {
                 MessageBox.Show("El campo Nombre de Usuario no puede estar vacío");
@@ -65,13 +73,21 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda 
+        * Evento cierra la sesión y termina el programa
+        */
         private void BtnCancelar_Click(object sender, EventArgs e) {
             var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
              if (respuesta == DialogResult.Yes) {
                 Close();
-            }
+             }
         }
 
+       /*
+       * Autor: Luis Carlos Pedroza Pineda 
+       * Evento cierra la sesión y termina el programa al dar click en la X
+       */
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
             Application.Exit();
         }

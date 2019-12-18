@@ -23,15 +23,19 @@ namespace Escritorio.Vistas {
             db = new Entidades();
             this.factura = factura;
 
-            var generoDao = new GeneroDao(db);
-            var generos = generoDao.GetGeneros();
-            cbGeneros.Items.AddRange(generos.ToArray());
+            var generoDao = new GeneroDao(db);//Instancia de la clase GeneroDao
+            var generos = generoDao.GetGeneros();//Llamada al método que trae la lista de géneros
+            cbGeneros.Items.AddRange(generos.ToArray());//Se agrega la lista de ligas al combobox
 
-            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);
-            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();
-            cbTiposDoc.Items.AddRange(tiposDeDocumento.ToArray());
+            var tipoDeDocumentoDao = new TipoDeDocumentoDao(db);//Instancia de la clase TiposDeDocumentoDao
+            var tiposDeDocumento = tipoDeDocumentoDao.GetTiposDeDocumento();//Llamada al método que trae la lista de Tipos DeD ocumento
+            cbTiposDoc.Items.AddRange(tiposDeDocumento.ToArray());//Se agrega la lista de Tipos De Documento al combobox
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que crea y guarda el cliente creado
+        */
         private void BtnGuardar_Click(object sender, EventArgs e) {
             var cliente = new Cliente {
                 Persona = new Persona()
@@ -59,6 +63,10 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda 
+        * Método privado que valida que los campos del form no esté vacío
+        */
         private bool validar() {
             if (!Validacion.validarCampoVacio(txtPrimerNombre)) {
                 MessageBox.Show("El campo Primer Nombre no puede estar vacío");
@@ -118,27 +126,44 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Evento que valida que no se escriban letras en el campo
+        */
         private void txtNumIde_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+        * Evento que valida que no se escriban letras en el campo
+        */
         private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }
 
+        /*
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);  
         }
 
+        /*
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
-        
 
+        /*
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }
 
+        /*
+        * Evento que valida que no se escriban números en el campo
+        */
         private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarLetras(e);
         }

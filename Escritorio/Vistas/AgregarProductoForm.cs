@@ -26,17 +26,17 @@ namespace Escritorio.Vistas {
             InitializeComponent();
 
             db = new Entidades();
-            var ligaDao = new LigaDao(db);
-            var ligas = ligaDao.GetLigas();
-            cbLigas.Items.AddRange(ligas.ToArray());
+            var ligaDao = new LigaDao(db);//Instancia de la clase LigaDao
+            var ligas = ligaDao.GetLigas();//Llamada al método que trae la lista de ligas
+            cbLigas.Items.AddRange(ligas.ToArray());//Agrega la lista de ligas al combobox
 
             this.factura = factura;
         }
 
-        private void LblEquipo_Click(object sender, EventArgs e) {
-
-        }
-
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona una liga del combobox 
+        */
         private void CbLigas_SelectedIndexChanged(object sender, EventArgs e) {
 
             int l = cbLigas.SelectedIndex;
@@ -52,6 +52,10 @@ namespace Escritorio.Vistas {
 
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona una camiseta del combobox 
+        */
         private void CbEquipos_SelectedIndexChanged(object sender, EventArgs e) {
 
             int equipo = cbEquipos.SelectedIndex;
@@ -70,6 +74,10 @@ namespace Escritorio.Vistas {
 
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona un género del combobox 
+        */
         private void CbGeneros_SelectedIndexChanged(object sender, EventArgs e) {
 
             int g = cbGeneros.SelectedIndex;
@@ -85,6 +93,10 @@ namespace Escritorio.Vistas {
 
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Evento que selecciona una talla del combobox 
+        */
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
 
             int t = cbTallas.SelectedIndex;
@@ -108,6 +120,10 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza Pineda
+        * Evento que selecciona una camiseta del combobox 
+        */
         private void BtnAceptar_Click(object sender, EventArgs e) {
             if (validar()) {
                 int cantidad = int.Parse(txtCanCom.Text);
@@ -130,6 +146,10 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+        * Autor: Johan Sebastian Piza Acosta 
+        * Método Privado que valida que los campos no estén vaciós
+        */
         private bool validar() {
             if (!Validacion.validarCombobox(cbLigas)) {
                 MessageBox.Show("Debe seleccionar una liga");
@@ -159,6 +179,10 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+        * Autor: Luis Carlos Pedroza
+        * Evento que valida que en el campo no se escriban letras
+        */
         private void txtCanCom_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }

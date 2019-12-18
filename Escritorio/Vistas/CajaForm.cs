@@ -23,14 +23,23 @@ namespace Escritorio.Vistas {
             InitializeComponent();
             factura = new Factura();
             this.total = 0;
-            tblCaja.DataSource = new List<DetalleFactura>();
+            tblCaja.DataSource = new List<DetalleFactura>();//Trae el detalle de factura a la tabla
         }
 
+        /*
+        * Johan Sebastian Piza Acosta 
+        * Evento que lleva a la ventana de agregar productos
+        */
         private void BtnAgregar_Click(object sender, EventArgs e) {
             var agregarProductoForm = new AgregarProductoForm(factura);
             agregarProductoForm.Show();
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda 
+        * Evento que pinta los detalles de factura en la tabla, muestra los datos del
+        * vendedor, muestra los datos del cliente y muestra el total al ganar el foco
+        */
         private void CajaForm_Activated(object sender, EventArgs e) {
             
             tblCaja.DataSource = factura.DetallesFactura.ToList();
@@ -49,16 +58,28 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+       * Johan Sebastian Piza Acosta 
+       * Evento que lleva a la ventana de buscar cliente
+       */
         private void BtnFinalizarCompra_Click(object sender, EventArgs e) {
             var buscarCliente = new BuscarClienteForm(factura);
             buscarCliente.Show();
         }
 
+        /*
+       * Johan Sebastian Piza Acosta 
+       * Evento que lleva a la ventana de buscar vendedor
+       */
         private void BtnSelVen_Click(object sender, EventArgs e) {
             var buscarVendedor = new BuscarVendedorForm(factura);
             buscarVendedor.Show();
         }
 
+        /*
+       * Johan Sebastian Piza Acosta 
+       * Evento que borra los datos de la tabla cancelando la compra
+       */
         private void BtnCancelarCompra_Click(object sender, EventArgs e) {
             
             var respuesta = MessageBox.Show("¿Desea cancelar la compra?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -67,15 +88,23 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+       * Johan Sebastian Piza Acosta 
+       * Evento que cierra la sesión y retorna  la ventana de login
+       */
         private void TnCerrarSesion_Click(object sender, EventArgs e) {
             var respuesta = MessageBox.Show("¿Desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes) {
-                //var loginForm = new LoginForm();
                 LoginForm.VentanaLogin.Show();
                 Close();
             }
         }
 
+       /*
+       * Luis Carlos Pedroza Pineda 
+       * Evento que llama al método de crear factura, reliza la compra 
+       * y limpia la tabla del carrito
+       */
         private void BtnFinalizarCompra_Click_1(object sender, EventArgs e) {
             var tallaCamisetaDao = new TallaCamisetaDao(db);
             var facturaDao = new FacturaDao(db);
@@ -86,6 +115,10 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+       * Luis Carlos Pedroza Pineda
+       * Método privado que limpia la ventana de compras
+       */
         private void limpiarVentana() {
             factura = new Factura();
 
@@ -97,6 +130,10 @@ namespace Escritorio.Vistas {
             lblCliente.Text = "Cliente: ";
         }
 
+        /*
+       * Johan Sebastian Piza Acosta 
+       * Evento cierra la sesión y retorna a la venta login al hacer click em la X
+       */
         private void CajaForm_FormClosed(object sender, FormClosedEventArgs e) {
             LoginForm.VentanaLogin.Show();
         }

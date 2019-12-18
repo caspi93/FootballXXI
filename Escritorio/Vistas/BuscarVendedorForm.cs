@@ -19,20 +19,27 @@ namespace Escritorio.Vistas {
         private Factura factura;
         readonly Entidades db;
 
+        /*
+        * El método constructor del form recibe como parámetro la factura 
+        */
         public BuscarVendedorForm(Factura factura) {
             InitializeComponent();
             db = new Entidades();
             this.factura = factura;
         }
 
-        private void Label15_Click(object sender, EventArgs e) {
-
-        }
-
+        /*
+        * Johan Sebastian Piza Acosta
+        * Evento que cierra la ventana
+        */
         private void BtnAtras_Click(object sender, EventArgs e) {
             Close();
         }
 
+        /*
+        * Luis Carlos Pedroza Pineda
+        * Evento que busca el vendedor por el número de documento
+        */
         private void BtnBuscarVendedor_Click(object sender, EventArgs e) {
             if (validar()) {
                 string numeroDocumento = txtBuscarVendedor.Text;
@@ -62,11 +69,19 @@ namespace Escritorio.Vistas {
             }
         }
 
+        /*
+         * Luis Carlos Pedroza Pineda
+         * Evento selecciona el vendedor
+         */
         private void BtSeleccionar_Click(object sender, EventArgs e) {
             factura.Vendedor = vendedor;
             Close();
         }
 
+        /*
+         * Luis Carlos Pedroza Pineda
+         * Método privado que valida que los campos no estén vacíos
+         */
         private bool validar() {
             if (!Validacion.validarCampoVacio(txtBuscarVendedor)) {
                 MessageBox.Show("El campo Buscar no puede estar vacío");
@@ -75,6 +90,10 @@ namespace Escritorio.Vistas {
             return true;
         }
 
+        /*
+         * Luis Carlos Pedroza Pineda
+         * Evento que valida que no se escriaban letras en el campo
+         */
         private void txtBuscarVendedor_KeyPress(object sender, KeyPressEventArgs e) {
             Validacion.ValidarNumeros(e);
         }

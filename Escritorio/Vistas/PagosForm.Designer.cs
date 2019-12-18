@@ -88,8 +88,6 @@
             this.tblPagoNomina.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tblPagoNomina.Size = new System.Drawing.Size(843, 268);
             this.tblPagoNomina.TabIndex = 1;
-            this.tblPagoNomina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
             // thCodEmpleado
             // 
             this.thCodEmpleado.DataPropertyName = "Codigo";

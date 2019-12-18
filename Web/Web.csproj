@@ -157,6 +157,7 @@
     <Content Include="Content\Images\atlético Go.jpg" />
     <Content Include="Content\Images\atlético.jpg" />
     <Content Include="Content\Images\australia.jpg" />
+    <Content Include="Content\Images\Austria.jpg" />
     <Content Include="Content\Images\bahía.jpg" />
     <Content Include="Content\Images\barcelona.jpg" />
     <Content Include="Content\Images\bayer munchen.jpg" />
@@ -189,6 +190,7 @@
     <Content Include="Content\Images\gales.jpg" />
     <Content Include="Content\Images\hungría.jpg" />
     <Content Include="Content\Images\icasa.jpg" />
+    <Content Include="Content\Images\Icono.ico" />
     <Content Include="Content\Images\inglaterra.jpg" />
     <Content Include="Content\Images\internazionale.jpg" />
     <Content Include="Content\Images\irlanda del norte.jpg" />
@@ -223,6 +225,7 @@
     <Content Include="Content\Images\santafé.jpg" />
     <Content Include="Content\Images\santos.jpg" />
     <Content Include="Content\Images\sao paulo.jpg" />
+    <Content Include="Content\Images\Sport Recife.jpg" />
     <Content Include="Content\Images\suecia.jpg" />
     <Content Include="Content\Images\suiza.jpg" />
     <Content Include="Content\Images\tolima.jpg" />
