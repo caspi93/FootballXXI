@@ -46,9 +46,16 @@
                         };
                     }
 
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contac">Contactos</a>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contactos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Teléfono: 3004255615</a>
+                        <a class="dropdown-item" href="#">Correo: football@gmail.com</a>
+                        <a class="dropdown-item" href="#">Dirección: Cra 53A #128B - 14</a>
+                    </div>
+                </li>
                     @if (Session["tipo"] == null) {
                         <li class="nav-item">
                             @Html.ActionLink("Registrarse", "CrearCliente", "Home", null, atributosNavLink)
@@ -92,7 +99,7 @@
         <!-- Footer -->
         <footer class="bg-light py-5">
             <div class="container">
-                <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+                <div class="small text-center text-muted">Copyright &copy; luisk301374@gmail.com</div>
             </div>
         </footer>
     </div>
