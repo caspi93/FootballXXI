@@ -41,11 +41,11 @@ namespace Escritorio.Vistas {
            
                 int l = cbLigas.SelectedIndex;
                 if (l >= 1) {
-                    cbEquipos.Enabled = true;
-                    var liga = (Liga)cbLigas.SelectedItem;
+                    cbEquipos.Enabled = true; // se activa el combobox de equipos
+                    var liga = (Liga)cbLigas.SelectedItem; //  selecciona una liga y la convierte en liga
                     var camisetaDao = new CamisetaDao(db);
-                    var camisetas = camisetaDao.GetCamisetas(liga);
-                    cbEquipos.Items.Clear();
+                    var camisetas = camisetaDao.GetCamisetas(liga); 
+                    cbEquipos.Items.Clear(); // limpia el combobox
                     cbEquipos.Items.Add("Seleccione un equipo");
                     cbEquipos.Items.AddRange(camisetas.ToArray());
                 }
@@ -98,7 +98,7 @@ namespace Escritorio.Vistas {
         */
         private void CbTallas_SelectedIndexChanged(object sender, EventArgs e) {
            
-                int t = cbTallas.SelectedIndex;
+                int t = cbTallas.SelectedIndex;// se guarda el combobox en una variable de tipo int
 
                 if (t >= 1) {
                     var talla = (Talla)cbTallas.SelectedItem;

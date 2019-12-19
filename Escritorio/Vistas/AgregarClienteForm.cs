@@ -44,7 +44,7 @@ namespace Escritorio.Vistas {
             cliente.Persona.PrimerNombre = txtPrimerNombre.Text;
             cliente.Persona.SegundoNombre = txtSegundoNombre.Text;
             cliente.Persona.PrimerApellido = txtPrimerApellido.Text;
-            cliente.Persona.SegundoApellido = txtPrimerApellido.Text;
+            cliente.Persona.SegundoApellido = txtSegundoApellido.Text;
             cliente.Persona.TiposDeDocumento = (TipoDeDocumento)cbTiposDoc.SelectedItem;
             cliente.Persona.NumeroDocumento = txtNumIde.Text;
             cliente.Persona.Generos = (Genero)cbGeneros.SelectedItem;

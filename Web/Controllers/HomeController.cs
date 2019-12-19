@@ -54,7 +54,7 @@ namespace Web.Controllers {
 
             var clienteDao = new ClienteDao(db);
             clienteDao.CrearCliente(cliente);
-            Response.Redirect("/Login/IniciarSesion");
+            Response.Redirect("/Login/IniciarSesionCliente");
             return View();
         }
 
