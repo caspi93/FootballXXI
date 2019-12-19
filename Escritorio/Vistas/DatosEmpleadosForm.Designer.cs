@@ -47,19 +47,19 @@
             // 
             // lblFootball
             // 
-            this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(499, 25);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(12, 25);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(1198, 33);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDatos
             // 
             this.lblDatos.AutoSize = true;
             this.lblDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatos.Location = new System.Drawing.Point(455, 77);
+            this.lblDatos.Location = new System.Drawing.Point(480, 73);
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(265, 25);
             this.lblDatos.TabIndex = 1;
@@ -176,13 +176,14 @@
             // 
             // btnEditarEmpleado
             // 
+            this.btnEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarEmpleado.Location = new System.Drawing.Point(939, 558);
             this.btnEditarEmpleado.Name = "btnEditarEmpleado";
             this.btnEditarEmpleado.Size = new System.Drawing.Size(243, 35);
             this.btnEditarEmpleado.TabIndex = 3;
             this.btnEditarEmpleado.Text = "Editar Empleado";
-            this.btnEditarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEditarEmpleado.UseVisualStyleBackColor = false;
             this.btnEditarEmpleado.Click += new System.EventHandler(this.BtnEditarEmpleado_Click);
             // 
             // btnAtras
@@ -206,6 +207,7 @@
             this.Controls.Add(this.tblEmpleados);
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DatosEmpleadosForm";
             this.Text = "DatosEmpleadosForm";
             ((System.ComponentModel.ISupportInitialize)(this.tblEmpleados)).EndInit();

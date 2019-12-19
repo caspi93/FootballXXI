@@ -118,7 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="atlanta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atlanta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="españa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\españa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brasil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brasil.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flamengo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flamengo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A nacional" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A nacional.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unión magdalena" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unión magdalena.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="italia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\italia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="juventus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\juventus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corinthians" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corinthians.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="D pasto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\D pasto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcelona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcelona.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ceará" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ceará.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="junior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\junior.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paris Saint German" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paris Saint German.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="américa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\américa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Futball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Futball.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="liverpool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\liverpool.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

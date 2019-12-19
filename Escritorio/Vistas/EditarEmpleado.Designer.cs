@@ -62,13 +62,13 @@
             // 
             // lblFootball
             // 
-            this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(452, 9);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(26, 9);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(1062, 42);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPrimerNombre
             // 
@@ -222,13 +222,14 @@
             // 
             // btnTerminar
             // 
+            this.btnTerminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminar.Location = new System.Drawing.Point(928, 493);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(160, 32);
             this.btnTerminar.TabIndex = 16;
             this.btnTerminar.Text = "Terminar";
-            this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.UseVisualStyleBackColor = false;
             this.btnTerminar.Click += new System.EventHandler(this.BtnTerminar_Click);
             // 
             // bnAtras
@@ -420,6 +421,7 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditarEmpleado";
             this.Text = "EditarEmpleado";
             this.ResumeLayout(false);

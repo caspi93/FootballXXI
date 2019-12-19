@@ -62,13 +62,13 @@
             // 
             // lblFootball
             // 
-            this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(430, 9);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(17, 9);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(1029, 33);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPrimerNombre
             // 
@@ -222,13 +222,14 @@
             // 
             // btnTerminar
             // 
+            this.btnTerminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminar.Location = new System.Drawing.Point(918, 429);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(128, 29);
             this.btnTerminar.TabIndex = 17;
             this.btnTerminar.Text = "Terminar";
-            this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.UseVisualStyleBackColor = false;
             this.btnTerminar.Click += new System.EventHandler(this.BtnTerminar_Click);
             // 
             // btnAtras
@@ -256,7 +257,6 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(222, 20);
             this.txtPrimerApellido.TabIndex = 20;
-
             // 
             // txtNumIde
             // 
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 474);
+            this.ClientSize = new System.Drawing.Size(1079, 476);
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.txtFecNac);
@@ -421,6 +421,7 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CrearEmpleadoForm";
             this.Text = "CrearUsuarioForm";
             this.ResumeLayout(false);

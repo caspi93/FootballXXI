@@ -48,15 +48,16 @@
             this.lblClave = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblImagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFootball
             // 
             this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(265, 21);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(236, 18);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(246, 41);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
             // 
@@ -192,13 +193,14 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(599, 579);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(101, 37);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // bntAtras
@@ -280,11 +282,20 @@
             this.txtDireccion.Size = new System.Drawing.Size(284, 20);
             this.txtDireccion.TabIndex = 24;
             // 
+            // lblImagen
+            // 
+            this.lblImagen.Image = global::Escritorio.Properties.Resources.brasil;
+            this.lblImagen.Location = new System.Drawing.Point(160, 355);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(223, 230);
+            this.lblImagen.TabIndex = 25;
+            // 
             // AgrearClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 678);
+            this.ClientSize = new System.Drawing.Size(747, 632);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblClave);
@@ -310,7 +321,9 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AgrearClienteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label lblImagen;
     }
 }

@@ -235,6 +235,54 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A nacional.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brasil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\juventus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unión magdalena.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\junior.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\américa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D pasto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flamengo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corinthians.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceará.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atlanta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcelona.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\españa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paris Saint German.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liverpool.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

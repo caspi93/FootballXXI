@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFootball = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblTalla = new System.Windows.Forms.Label();
             this.cbGeneros = new System.Windows.Forms.ComboBox();
@@ -34,26 +34,28 @@
             this.thEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCantVen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActPro = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.lblImagen2 = new System.Windows.Forms.Label();
             this.nombreLigaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadExistenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadVendidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datosReporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnActPro = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosReporteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblFootball
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(290, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Football XXI";
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(12, 9);
+            this.lblFootball.Name = "lblFootball";
+            this.lblFootball.Size = new System.Drawing.Size(868, 33);
+            this.lblFootball.TabIndex = 0;
+            this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGenero
             // 
@@ -69,7 +71,7 @@
             // 
             this.lblTalla.AutoSize = true;
             this.lblTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTalla.Location = new System.Drawing.Point(526, 62);
+            this.lblTalla.Location = new System.Drawing.Point(659, 62);
             this.lblTalla.Name = "lblTalla";
             this.lblTalla.Size = new System.Drawing.Size(55, 24);
             this.lblTalla.TabIndex = 2;
@@ -92,7 +94,7 @@
             this.cbTallas.FormattingEnabled = true;
             this.cbTallas.Items.AddRange(new object[] {
             "Seleccione una talla"});
-            this.cbTallas.Location = new System.Drawing.Point(410, 89);
+            this.cbTallas.Location = new System.Drawing.Point(540, 89);
             this.cbTallas.Name = "cbTallas";
             this.cbTallas.Size = new System.Drawing.Size(305, 21);
             this.cbTallas.TabIndex = 4;
@@ -112,7 +114,7 @@
             this.cantidadExistenteDataGridViewTextBoxColumn,
             this.cantidadVendidaDataGridViewTextBoxColumn});
             this.tblDatosReporte.DataSource = this.datosReporteBindingSource;
-            this.tblDatosReporte.Location = new System.Drawing.Point(176, 127);
+            this.tblDatosReporte.Location = new System.Drawing.Point(242, 132);
             this.tblDatosReporte.Name = "tblDatosReporte";
             this.tblDatosReporte.Size = new System.Drawing.Size(444, 264);
             this.tblDatosReporte.TabIndex = 5;
@@ -140,6 +142,44 @@
             this.thCantVen.DataPropertyName = "CantidadVendida";
             this.thCantVen.HeaderText = "Cantidad Vendida";
             this.thCantVen.Name = "thCantVen";
+            // 
+            // btnActPro
+            // 
+            this.btnActPro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActPro.Location = new System.Drawing.Point(483, 411);
+            this.btnActPro.Name = "btnActPro";
+            this.btnActPro.Size = new System.Drawing.Size(231, 27);
+            this.btnActPro.TabIndex = 6;
+            this.btnActPro.Text = "Actualizar Producto";
+            this.btnActPro.UseVisualStyleBackColor = false;
+            this.btnActPro.Click += new System.EventHandler(this.BtnActPro_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(324, 411);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(119, 27);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.Image = global::Escritorio.Properties.Resources.Paris_Saint_German;
+            this.lblImagen.Location = new System.Drawing.Point(5, 132);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(231, 231);
+            this.lblImagen.TabIndex = 9;
+            // 
+            // lblImagen2
+            // 
+            this.lblImagen2.Image = global::Escritorio.Properties.Resources.liverpool;
+            this.lblImagen2.Location = new System.Drawing.Point(692, 132);
+            this.lblImagen2.Name = "lblImagen2";
+            this.lblImagen2.Size = new System.Drawing.Size(228, 231);
+            this.lblImagen2.TabIndex = 8;
             // 
             // nombreLigaDataGridViewTextBoxColumn
             // 
@@ -169,32 +209,13 @@
             // 
             this.datosReporteBindingSource.DataSource = typeof(Compartido.Modelo.DatosReporte);
             // 
-            // btnActPro
-            // 
-            this.btnActPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActPro.Location = new System.Drawing.Point(483, 411);
-            this.btnActPro.Name = "btnActPro";
-            this.btnActPro.Size = new System.Drawing.Size(231, 27);
-            this.btnActPro.TabIndex = 6;
-            this.btnActPro.Text = "Actualizar Producto";
-            this.btnActPro.UseVisualStyleBackColor = true;
-            this.btnActPro.Click += new System.EventHandler(this.BtnActPro_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(324, 411);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(119, 27);
-            this.btnAtras.TabIndex = 7;
-            this.btnAtras.Text = "Atrás";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            // 
             // DatosReporteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(925, 450);
+            this.Controls.Add(this.lblImagen);
+            this.Controls.Add(this.lblImagen2);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnActPro);
             this.Controls.Add(this.tblDatosReporte);
@@ -202,7 +223,7 @@
             this.Controls.Add(this.cbGeneros);
             this.Controls.Add(this.lblTalla);
             this.Controls.Add(this.lblGenero);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFootball);
             this.Name = "DatosReporteForm";
             this.Text = "DatosReporteForm";
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosReporte)).EndInit();
@@ -214,7 +235,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFootball;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.Label lblTalla;
         private System.Windows.Forms.ComboBox cbGeneros;
@@ -231,5 +252,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadExistenteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadVendidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblImagen2;
+        private System.Windows.Forms.Label lblImagen;
     }
 }

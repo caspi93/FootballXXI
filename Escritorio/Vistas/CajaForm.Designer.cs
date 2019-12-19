@@ -33,8 +33,6 @@
             this.thTalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSelVen = new System.Windows.Forms.Button();
@@ -43,19 +41,23 @@
             this.tnCerrarSesion = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
+            this.lblImagen2 = new System.Windows.Forms.Label();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFootball
             // 
-            this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(327, 9);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(53, 9);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(774, 33);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
+            this.lblFootball.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -71,7 +73,7 @@
             // 
             this.lblVendedor.AutoSize = true;
             this.lblVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendedor.Location = new System.Drawing.Point(13, 234);
+            this.lblVendedor.Location = new System.Drawing.Point(56, 261);
             this.lblVendedor.Name = "lblVendedor";
             this.lblVendedor.Size = new System.Drawing.Size(92, 20);
             this.lblVendedor.TabIndex = 2;
@@ -128,6 +130,114 @@
             this.thSubtotal.Name = "thSubtotal";
             this.thSubtotal.ReadOnly = true;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(666, 290);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(69, 20);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "Total: $";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(53, 510);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(88, 34);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // btnSelVen
+            // 
+            this.btnSelVen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSelVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelVen.Location = new System.Drawing.Point(175, 510);
+            this.btnSelVen.Name = "btnSelVen";
+            this.btnSelVen.Size = new System.Drawing.Size(219, 34);
+            this.btnSelVen.TabIndex = 6;
+            this.btnSelVen.Text = "Seleccionar Vendedor";
+            this.btnSelVen.UseVisualStyleBackColor = false;
+            this.btnSelVen.Click += new System.EventHandler(this.BtnSelVen_Click);
+            // 
+            // btnCancelarCompra
+            // 
+            this.btnCancelarCompra.BackColor = System.Drawing.Color.Red;
+            this.btnCancelarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCompra.Location = new System.Drawing.Point(438, 510);
+            this.btnCancelarCompra.Name = "btnCancelarCompra";
+            this.btnCancelarCompra.Size = new System.Drawing.Size(184, 34);
+            this.btnCancelarCompra.TabIndex = 7;
+            this.btnCancelarCompra.Text = "Cancelar Comprar";
+            this.btnCancelarCompra.UseVisualStyleBackColor = false;
+            this.btnCancelarCompra.Click += new System.EventHandler(this.BtnCancelarCompra_Click);
+            // 
+            // btnSeleccionarCliente
+            // 
+            this.btnSeleccionarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarCliente.Location = new System.Drawing.Point(654, 510);
+            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
+            this.btnSeleccionarCliente.Size = new System.Drawing.Size(173, 34);
+            this.btnSeleccionarCliente.TabIndex = 8;
+            this.btnSeleccionarCliente.Text = "Seleccionar Cliente";
+            this.btnSeleccionarCliente.UseVisualStyleBackColor = false;
+            this.btnSeleccionarCliente.Click += new System.EventHandler(this.BtnFinalizarCompra_Click);
+            // 
+            // tnCerrarSesion
+            // 
+            this.tnCerrarSesion.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tnCerrarSesion.Location = new System.Drawing.Point(438, 553);
+            this.tnCerrarSesion.Name = "tnCerrarSesion";
+            this.tnCerrarSesion.Size = new System.Drawing.Size(184, 34);
+            this.tnCerrarSesion.TabIndex = 9;
+            this.tnCerrarSesion.Text = "Cerrar Sesión";
+            this.tnCerrarSesion.UseVisualStyleBackColor = false;
+            this.tnCerrarSesion.Click += new System.EventHandler(this.TnCerrarSesion_Click);
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(56, 290);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(70, 20);
+            this.lblCliente.TabIndex = 10;
+            this.lblCliente.Text = "Cliente:";
+            // 
+            // btnFinalizarCompra
+            // 
+            this.btnFinalizarCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarCompra.Location = new System.Drawing.Point(654, 553);
+            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
+            this.btnFinalizarCompra.Size = new System.Drawing.Size(173, 34);
+            this.btnFinalizarCompra.TabIndex = 11;
+            this.btnFinalizarCompra.Text = "Finalizar Compra";
+            this.btnFinalizarCompra.UseVisualStyleBackColor = false;
+            this.btnFinalizarCompra.Click += new System.EventHandler(this.BtnFinalizarCompra_Click_1);
+            // 
+            // lblImagen2
+            // 
+            this.lblImagen2.Image = global::Escritorio.Properties.Resources.italia;
+            this.lblImagen2.Location = new System.Drawing.Point(645, 42);
+            this.lblImagen2.Name = "lblImagen2";
+            this.lblImagen2.Size = new System.Drawing.Size(235, 239);
+            this.lblImagen2.TabIndex = 13;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.Image = global::Escritorio.Properties.Resources.españa;
+            this.lblImagen.Location = new System.Drawing.Point(12, 42);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(231, 219);
+            this.lblImagen.TabIndex = 12;
+            // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
@@ -138,97 +248,13 @@
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(Compartido.Modelo.DetalleFactura);
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(675, 234);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(69, 20);
-            this.lblTotal.TabIndex = 4;
-            this.lblTotal.Text = "Total: $";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(53, 510);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 34);
-            this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // btnSelVen
-            // 
-            this.btnSelVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelVen.Location = new System.Drawing.Point(175, 510);
-            this.btnSelVen.Name = "btnSelVen";
-            this.btnSelVen.Size = new System.Drawing.Size(219, 34);
-            this.btnSelVen.TabIndex = 6;
-            this.btnSelVen.Text = "Seleccionar Vendedor";
-            this.btnSelVen.UseVisualStyleBackColor = true;
-            this.btnSelVen.Click += new System.EventHandler(this.BtnSelVen_Click);
-            // 
-            // btnCancelarCompra
-            // 
-            this.btnCancelarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCompra.Location = new System.Drawing.Point(438, 510);
-            this.btnCancelarCompra.Name = "btnCancelarCompra";
-            this.btnCancelarCompra.Size = new System.Drawing.Size(184, 34);
-            this.btnCancelarCompra.TabIndex = 7;
-            this.btnCancelarCompra.Text = "Cancelar Comprar";
-            this.btnCancelarCompra.UseVisualStyleBackColor = true;
-            this.btnCancelarCompra.Click += new System.EventHandler(this.BtnCancelarCompra_Click);
-            // 
-            // btnSeleccionarCliente
-            // 
-            this.btnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarCliente.Location = new System.Drawing.Point(654, 510);
-            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
-            this.btnSeleccionarCliente.Size = new System.Drawing.Size(173, 34);
-            this.btnSeleccionarCliente.TabIndex = 8;
-            this.btnSeleccionarCliente.Text = "Seleccionar Cliente";
-            this.btnSeleccionarCliente.UseVisualStyleBackColor = true;
-            this.btnSeleccionarCliente.Click += new System.EventHandler(this.BtnFinalizarCompra_Click);
-            // 
-            // tnCerrarSesion
-            // 
-            this.tnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tnCerrarSesion.Location = new System.Drawing.Point(438, 553);
-            this.tnCerrarSesion.Name = "tnCerrarSesion";
-            this.tnCerrarSesion.Size = new System.Drawing.Size(184, 34);
-            this.tnCerrarSesion.TabIndex = 9;
-            this.tnCerrarSesion.Text = "Cerrar Sesión";
-            this.tnCerrarSesion.UseVisualStyleBackColor = true;
-            this.tnCerrarSesion.Click += new System.EventHandler(this.TnCerrarSesion_Click);
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(17, 258);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(70, 20);
-            this.lblCliente.TabIndex = 10;
-            this.lblCliente.Text = "Cliente:";
-            // 
-            // btnFinalizarCompra
-            // 
-            this.btnFinalizarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarCompra.Location = new System.Drawing.Point(654, 553);
-            this.btnFinalizarCompra.Name = "btnFinalizarCompra";
-            this.btnFinalizarCompra.Size = new System.Drawing.Size(173, 34);
-            this.btnFinalizarCompra.TabIndex = 11;
-            this.btnFinalizarCompra.Text = "Finalizar Compra";
-            this.btnFinalizarCompra.UseVisualStyleBackColor = true;
-            this.btnFinalizarCompra.Click += new System.EventHandler(this.BtnFinalizarCompra_Click_1);
-            // 
             // CajaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 599);
+            this.Controls.Add(this.lblImagen2);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnFinalizarCompra);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.tnCerrarSesion);
@@ -241,6 +267,7 @@
             this.Controls.Add(this.lblVendedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CajaForm";
             this.Text = "CajaForm";
             this.Activated += new System.EventHandler(this.CajaForm_Activated);
@@ -273,5 +300,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnFinalizarCompra;
+        private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.Label lblImagen2;
     }
 }

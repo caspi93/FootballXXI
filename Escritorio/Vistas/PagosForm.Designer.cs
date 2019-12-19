@@ -26,27 +26,19 @@
             this.components = new System.ComponentModel.Container();
             this.lblFootball = new System.Windows.Forms.Label();
             this.tblPagoNomina = new System.Windows.Forms.DataGridView();
-            this.thCodEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thUltFecPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thComisiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagoEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTabla = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnAtrás = new System.Windows.Forms.Button();
+            this.thCodEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ultimaFechaPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioBasicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comisionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioComisionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagoEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thUltFecPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thComisiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tblPagoNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagoEmpleadosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -73,21 +65,61 @@
             this.thUltFecPago,
             this.thSalario,
             this.thComisiones,
-            this.thTotal,
-            this.codigoDataGridViewTextBoxColumn,
-            this.nombresDataGridViewTextBoxColumn,
-            this.apellidosDataGridViewTextBoxColumn,
-            this.cargoDataGridViewTextBoxColumn,
-            this.ultimaFechaPagoDataGridViewTextBoxColumn,
-            this.salarioBasicoDataGridViewTextBoxColumn,
-            this.comisionesDataGridViewTextBoxColumn,
-            this.salarioComisionesDataGridViewTextBoxColumn});
+            this.thTotal});
             this.tblPagoNomina.DataSource = this.pagoEmpleadosBindingSource;
-            this.tblPagoNomina.Location = new System.Drawing.Point(61, 136);
+            this.tblPagoNomina.Location = new System.Drawing.Point(61, 128);
             this.tblPagoNomina.Name = "tblPagoNomina";
             this.tblPagoNomina.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tblPagoNomina.Size = new System.Drawing.Size(843, 268);
             this.tblPagoNomina.TabIndex = 1;
+            // 
+            // pagoEmpleadosBindingSource
+            // 
+            this.pagoEmpleadosBindingSource.DataSource = typeof(Compartido.Modelo.PagoEmpleados);
+            // 
+            // lblTabla
+            // 
+            this.lblTabla.AutoSize = true;
+            this.lblTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabla.Location = new System.Drawing.Point(383, 87);
+            this.lblTabla.Name = "lblTabla";
+            this.lblTabla.Size = new System.Drawing.Size(198, 29);
+            this.lblTabla.TabIndex = 2;
+            this.lblTabla.Text = "Tabla de Pagos";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(314, 422);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(139, 24);
+            this.lblTotal.TabIndex = 3;
+            this.lblTotal.Text = "Total a Pagar:";
+            // 
+            // btnPagar
+            // 
+            this.btnPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagar.Location = new System.Drawing.Point(404, 460);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(180, 34);
+            this.btnPagar.TabIndex = 4;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.BtnPagar_Click);
+            // 
+            // btnAtrás
+            // 
+            this.btnAtrás.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrás.Location = new System.Drawing.Point(797, 492);
+            this.btnAtrás.Name = "btnAtrás";
+            this.btnAtrás.Size = new System.Drawing.Size(107, 37);
+            this.btnAtrás.TabIndex = 5;
+            this.btnAtrás.Text = "Atrás";
+            this.btnAtrás.UseVisualStyleBackColor = true;
+            this.btnAtrás.Click += new System.EventHandler(this.BtnAtrás_Click);
+            // 
             // thCodEmpleado
             // 
             this.thCodEmpleado.DataPropertyName = "Codigo";
@@ -105,6 +137,12 @@
             this.thApellidos.DataPropertyName = "Apellidos";
             this.thApellidos.HeaderText = "Apellidos";
             this.thApellidos.Name = "thApellidos";
+            // 
+            // thCargo
+            // 
+            this.thCargo.DataPropertyName = "Cargo";
+            this.thCargo.HeaderText = "Cargo";
+            this.thCargo.Name = "thCargo";
             // 
             // thUltFecPago
             // 
@@ -129,106 +167,6 @@
             this.thTotal.DataPropertyName = "SalarioComisiones";
             this.thTotal.HeaderText = "Salario más comisión";
             this.thTotal.Name = "thTotal";
-            // 
-            // lblTabla
-            // 
-            this.lblTabla.AutoSize = true;
-            this.lblTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTabla.Location = new System.Drawing.Point(383, 87);
-            this.lblTabla.Name = "lblTabla";
-            this.lblTabla.Size = new System.Drawing.Size(198, 29);
-            this.lblTabla.TabIndex = 2;
-            this.lblTabla.Text = "Tabla de Pagos";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(314, 422);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(139, 24);
-            this.lblTotal.TabIndex = 3;
-            this.lblTotal.Text = "Total a Pagar:";
-            // 
-            // btnPagar
-            // 
-            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.Location = new System.Drawing.Point(404, 460);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(180, 34);
-            this.btnPagar.TabIndex = 4;
-            this.btnPagar.Text = "Pagar";
-            this.btnPagar.UseVisualStyleBackColor = true;
-            this.btnPagar.Click += new System.EventHandler(this.BtnPagar_Click);
-            // 
-            // btnAtrás
-            // 
-            this.btnAtrás.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrás.Location = new System.Drawing.Point(797, 492);
-            this.btnAtrás.Name = "btnAtrás";
-            this.btnAtrás.Size = new System.Drawing.Size(107, 37);
-            this.btnAtrás.TabIndex = 5;
-            this.btnAtrás.Text = "Atrás";
-            this.btnAtrás.UseVisualStyleBackColor = true;
-            this.btnAtrás.Click += new System.EventHandler(this.BtnAtrás_Click);
-            // 
-            // thCargo
-            // 
-            this.thCargo.DataPropertyName = "Cargo";
-            this.thCargo.HeaderText = "Cargo";
-            this.thCargo.Name = "thCargo";
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
-            this.nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
-            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            // 
-            // cargoDataGridViewTextBoxColumn
-            // 
-            this.cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
-            this.cargoDataGridViewTextBoxColumn.HeaderText = "Cargo";
-            this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
-            // 
-            // ultimaFechaPagoDataGridViewTextBoxColumn
-            // 
-            this.ultimaFechaPagoDataGridViewTextBoxColumn.DataPropertyName = "UltimaFechaPago";
-            this.ultimaFechaPagoDataGridViewTextBoxColumn.HeaderText = "UltimaFechaPago";
-            this.ultimaFechaPagoDataGridViewTextBoxColumn.Name = "ultimaFechaPagoDataGridViewTextBoxColumn";
-            // 
-            // salarioBasicoDataGridViewTextBoxColumn
-            // 
-            this.salarioBasicoDataGridViewTextBoxColumn.DataPropertyName = "SalarioBasico";
-            this.salarioBasicoDataGridViewTextBoxColumn.HeaderText = "SalarioBasico";
-            this.salarioBasicoDataGridViewTextBoxColumn.Name = "salarioBasicoDataGridViewTextBoxColumn";
-            // 
-            // comisionesDataGridViewTextBoxColumn
-            // 
-            this.comisionesDataGridViewTextBoxColumn.DataPropertyName = "Comisiones";
-            this.comisionesDataGridViewTextBoxColumn.HeaderText = "Comisiones";
-            this.comisionesDataGridViewTextBoxColumn.Name = "comisionesDataGridViewTextBoxColumn";
-            // 
-            // salarioComisionesDataGridViewTextBoxColumn
-            // 
-            this.salarioComisionesDataGridViewTextBoxColumn.DataPropertyName = "SalarioComisiones";
-            this.salarioComisionesDataGridViewTextBoxColumn.HeaderText = "SalarioComisiones";
-            this.salarioComisionesDataGridViewTextBoxColumn.Name = "salarioComisionesDataGridViewTextBoxColumn";
-            // 
-            // pagoEmpleadosBindingSource
-            // 
-            this.pagoEmpleadosBindingSource.DataSource = typeof(Compartido.Modelo.PagoEmpleados);
             // 
             // PagosForm
             // 
@@ -258,6 +196,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnAtrás;
+        private System.Windows.Forms.BindingSource pagoEmpleadosBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn thCodEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn thNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn thApellidos;
@@ -266,14 +205,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thSalario;
         private System.Windows.Forms.DataGridViewTextBoxColumn thComisiones;
         private System.Windows.Forms.DataGridViewTextBoxColumn thTotal;
-        private System.Windows.Forms.BindingSource pagoEmpleadosBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ultimaFechaPagoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salarioBasicoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comisionesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salarioComisionesDataGridViewTextBoxColumn;
     }
 }

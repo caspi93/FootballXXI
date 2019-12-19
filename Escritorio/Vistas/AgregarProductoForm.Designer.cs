@@ -38,15 +38,16 @@
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.cbEquipos = new System.Windows.Forms.ComboBox();
             this.cbTallas = new System.Windows.Forms.ComboBox();
+            this.lblImagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFootball
             // 
             this.lblFootball.AutoSize = true;
-            this.lblFootball.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFootball.Location = new System.Drawing.Point(326, 35);
+            this.lblFootball.Font = new System.Drawing.Font("Lucida Calligraphy", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFootball.Location = new System.Drawing.Point(363, 30);
             this.lblFootball.Name = "lblFootball";
-            this.lblFootball.Size = new System.Drawing.Size(185, 33);
+            this.lblFootball.Size = new System.Drawing.Size(222, 37);
             this.lblFootball.TabIndex = 0;
             this.lblFootball.Text = "Football XXI";
             // 
@@ -64,7 +65,7 @@
             // 
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero.Location = new System.Drawing.Point(580, 98);
+            this.lblGenero.Location = new System.Drawing.Point(736, 98);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(89, 25);
             this.lblGenero.TabIndex = 2;
@@ -84,7 +85,7 @@
             // 
             this.lblTalla.AutoSize = true;
             this.lblTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTalla.Location = new System.Drawing.Point(593, 228);
+            this.lblTalla.Location = new System.Drawing.Point(736, 228);
             this.lblTalla.Name = "lblTalla";
             this.lblTalla.Size = new System.Drawing.Size(64, 25);
             this.lblTalla.TabIndex = 4;
@@ -114,7 +115,7 @@
             // 
             this.lblCanCom.AutoSize = true;
             this.lblCanCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCanCom.Location = new System.Drawing.Point(534, 327);
+            this.lblCanCom.Location = new System.Drawing.Point(684, 327);
             this.lblCanCom.Name = "lblCanCom";
             this.lblCanCom.Size = new System.Drawing.Size(169, 20);
             this.lblCanCom.TabIndex = 7;
@@ -122,7 +123,7 @@
             // 
             // txtCanCom
             // 
-            this.txtCanCom.Location = new System.Drawing.Point(598, 368);
+            this.txtCanCom.Location = new System.Drawing.Point(741, 368);
             this.txtCanCom.Name = "txtCanCom";
             this.txtCanCom.Size = new System.Drawing.Size(45, 20);
             this.txtCanCom.TabIndex = 8;
@@ -130,19 +131,20 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(665, 415);
+            this.btnAceptar.Location = new System.Drawing.Point(817, 415);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(109, 33);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(521, 415);
+            this.btnAtras.Location = new System.Drawing.Point(626, 415);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(119, 33);
             this.btnAtras.TabIndex = 10;
@@ -166,7 +168,7 @@
             this.cbGeneros.FormattingEnabled = true;
             this.cbGeneros.Items.AddRange(new object[] {
             "Seleccione un género"});
-            this.cbGeneros.Location = new System.Drawing.Point(480, 126);
+            this.cbGeneros.Location = new System.Drawing.Point(635, 126);
             this.cbGeneros.Name = "cbGeneros";
             this.cbGeneros.Size = new System.Drawing.Size(294, 21);
             this.cbGeneros.TabIndex = 12;
@@ -190,17 +192,26 @@
             this.cbTallas.FormattingEnabled = true;
             this.cbTallas.Items.AddRange(new object[] {
             "Seleccione una talla"});
-            this.cbTallas.Location = new System.Drawing.Point(483, 265);
+            this.cbTallas.Location = new System.Drawing.Point(635, 266);
             this.cbTallas.Name = "cbTallas";
             this.cbTallas.Size = new System.Drawing.Size(291, 21);
             this.cbTallas.TabIndex = 14;
             this.cbTallas.SelectedIndexChanged += new System.EventHandler(this.CbTallas_SelectedIndexChanged);
             // 
+            // lblImagen
+            // 
+            this.lblImagen.Image = global::Escritorio.Properties.Resources.juventus;
+            this.lblImagen.Location = new System.Drawing.Point(356, 129);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(242, 210);
+            this.lblImagen.TabIndex = 15;
+            // 
             // AgregarProductoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 456);
+            this.ClientSize = new System.Drawing.Size(965, 456);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.cbTallas);
             this.Controls.Add(this.cbEquipos);
             this.Controls.Add(this.cbGeneros);
@@ -216,6 +227,7 @@
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.lblLiga);
             this.Controls.Add(this.lblFootball);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AgregarProductoForm";
             this.Text = "AgregarProductoForm";
             this.ResumeLayout(false);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.ComboBox cbGeneros;
         private System.Windows.Forms.ComboBox cbEquipos;
         private System.Windows.Forms.ComboBox cbTallas;
+        private System.Windows.Forms.Label lblImagen;
     }
 }
